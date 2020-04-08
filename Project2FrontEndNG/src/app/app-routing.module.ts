@@ -1,8 +1,19 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { CaseyComponent } from './component/casey/casey.component';
+import { JoelComponent } from './component/joel/joel.component';
+import { SamComponent } from './component/sam/sam.component';
+import { RomeComponent } from './component/rome/rome.component';
+import { MattComponent } from './component/matt/matt.component';
 
 
-const routes: Routes = [];
+const routes: Routes = [
+  {path : 'casey', component : CaseyComponent},
+  {path : 'joel', component : JoelComponent},
+  {path : 'sam', component : SamComponent},
+  {path : 'rome', component : RomeComponent},
+  {path : 'matt', component : MattComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
