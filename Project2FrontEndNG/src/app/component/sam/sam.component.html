@@ -4,7 +4,7 @@
         <td><table>
         <tr>
             <td width = 100>{{f.name}}</td>
-            <td>${{f.price}}</td>
+            <td>{{f.price | currency: 'USD'}}</td>
         </tr>
         <tr>
             <td colspan="2"><br>{{f.description}}</td>
@@ -15,7 +15,7 @@
     </tr>
     <tr><td></td>
     <td style = "text-align: right">
-        Total:<br>${{total}}
+        Total:<br>{{total | currency: 'USD'}}
     </td>
     <td><button>Checkout</button></td></tr>
 </table>
