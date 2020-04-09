@@ -21,10 +21,10 @@ export class SamComponent implements OnInit {
       
     });
   }
-  
+
   ngOnInit(): void {
   }
 
-}
+
 }
 
