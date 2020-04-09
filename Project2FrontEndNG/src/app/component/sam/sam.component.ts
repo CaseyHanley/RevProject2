@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sam.component.css']
 })
 export class SamComponent implements OnInit {
+
   orders: {name: string, price: number, description: string}[] = [
     {"name": "Lobster", price: 29.99, description:  "Proin suscipit aliquam ligula, a condimentum massa aliquet ut. Nam at cursus massa, nec sollicitudin nisi. Aenean in neque ullamcorper amet."},
     {"name": "Steak", price: 19.99, description:  "Curabitur in pretium erat, nec ultricies diam. Vivamus vitae nulla mattis, volutpat ante ut, gravida diam. Donec elementum a neque at metus."},
@@ -23,7 +24,10 @@ export class SamComponent implements OnInit {
     });
   }
 
+
   ngOnInit(): void {
   }
 
+
 }
+
