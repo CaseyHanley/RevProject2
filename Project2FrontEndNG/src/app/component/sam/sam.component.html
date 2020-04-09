@@ -1,1 +1,30 @@
+
+<table width = 700 style = "margin: auto;">
+    <tr *ngFor = "let f of orders">
+        <td><img src = "{{'/assets/Images/' + f.name + '.jpg'}}" width = 150></td>
+        <td><table>
+        <tr>
+            <td width = 100>{{f.name}}</td>
+            <td>{{f.price | currency: 'USD'}}</td>
+        </tr>
+        <tr>
+            <td colspan="2"><br>{{f.description}}</td>
+        </tr>
+    </table>
+</td>
+<td><button>Remove</button></td>
+    </tr>
+    <tr><td></td>
+    <td style = "text-align: right">
+        Total:<br>{{total | currency: 'USD'}}
+    </td>
+    <td><button>Checkout</button></td></tr>
+</table>
+
+
+
+<a routerLink = "" >Home Page</a>
+<router-outlet></router-outlet>
+
 <p>sam works!</p>
+
