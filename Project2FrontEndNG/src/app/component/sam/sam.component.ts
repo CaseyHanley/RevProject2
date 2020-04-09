@@ -13,7 +13,6 @@ export class SamComponent implements OnInit {
     {"name": "Fancy Feast", price: 1.99, description:  "Duis id purus libero. Mauris non erat id orci pharetra ultrices. Duis tempus purus vitae pretium condimentum. Nullam ultricies nulla in sed."},
 ];
 
-
   total: number = 0;
 
   constructor() { 
@@ -22,8 +21,10 @@ export class SamComponent implements OnInit {
       
     });
   }
-
+  
   ngOnInit(): void {
   }
 
 }
+}
+
