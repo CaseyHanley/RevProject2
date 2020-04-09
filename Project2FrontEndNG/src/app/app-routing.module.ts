@@ -5,6 +5,7 @@ import { JoelComponent } from './component/joel/joel.component';
 import { SamComponent } from './component/sam/sam.component';
 import { RomeComponent } from './component/rome/rome.component';
 import { MattComponent } from './component/matt/matt.component';
+
 import { AppComponent } from './app.component';
 import { LoginComponent } from './component/login/login.component';
 
@@ -17,6 +18,8 @@ const routes: Routes = [
   {path : 'matt', component : MattComponent},
   {path : 'login', component : LoginComponent},
   {path : '', redirectTo:'/', pathMatch : 'full'}
+
+
 ];
 
 @NgModule({
