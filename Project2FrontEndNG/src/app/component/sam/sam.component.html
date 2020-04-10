@@ -1,13 +1,13 @@
 <table width = 700 style = "margin: auto;">
-    <tr *ngFor = "let f of orders">
-        <td><img src = "{{'/assets/Images/' + f.name + '.jpg'}}" width = 150></td>
+    <tr *ngFor = "let f of order.order.food">
+        <td><img src = "{{'/assets/Images/' + f.productName + '.jpg'}}" width = 150></td>
         <td><table>
         <tr>
-            <td width = 100>{{f.name}}</td>
+            <td width = 100>{{f.productName}}</td>
             <td>{{f.price | currency: 'USD'}}</td>
         </tr>
         <tr>
-            <td colspan="2"><br>{{f.description}}</td>
+            <td colspan="2"><br>{{f.descriptions}}</td>
         </tr>
     </table>
 </td>
@@ -15,7 +15,7 @@
     </tr>
     <tr><td></td>
     <td style = "text-align: right">
-        Total:<br>{{total | currency: 'USD'}}
+        Total:<br>{{order.order.price | currency: 'USD'}}
     </td>
-    <td><button>Checkout</button></td></tr>
+    <td><a routerLink = "../matt" ><button>Checkout</button></a></td></tr>
 </table>

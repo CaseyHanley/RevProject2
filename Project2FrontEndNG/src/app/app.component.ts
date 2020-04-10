@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { Order } from './Models/Order'
 
 @Component({
   selector: 'app-root',
@@ -8,6 +8,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Pittsburgh | Good Eats Fine Dining';
-
+  public order: Order;
 
 }
