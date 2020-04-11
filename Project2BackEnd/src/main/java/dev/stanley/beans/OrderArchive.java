@@ -12,8 +12,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
 @Entity
-public class Orders {
-	
+public class OrderArchive {
+
+
 	@Id
 	@Column(name = "o_id", updatable = false)
 	@GeneratedValue
@@ -62,11 +63,11 @@ public class Orders {
 	@JoinColumn(name = "menuitems")
 	private List<MenuItems> menuitems;
 
-	public Orders() {
+	public OrderArchive() {
 		super();
 	}
 
-	public Orders(int o_id, int u_id, String username, String productname1, String productname2, String productname3,
+	public OrderArchive(int o_id, int u_id, String username, String productname1, String productname2, String productname3,
 			String productname4, String productname5, String productname6, String productname7, int price,
 			String comments, String status, boolean pickup, List<MenuItems> menuitems) {
 		super();
@@ -88,7 +89,7 @@ public class Orders {
 	}
 
 
-	public Orders(int o_id, int u_id, int price, String comments, String status, boolean pickup) {
+	public OrderArchive(int o_id, int u_id, int price, String comments, String status, boolean pickup) {
 		super();
 		this.o_id = o_id;
 		this.u_id = u_id;
@@ -230,9 +231,4 @@ public class Orders {
 				+ ", menuitems=" + menuitems + "]";
 	}
 
-
-	
-	
-	
 }
-	
