@@ -41,6 +41,7 @@ price number(10)
 
 );
 
+select * from orders;
 create table orders(
 o_id number(10) primary key,
 u_id number(10),
