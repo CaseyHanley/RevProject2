@@ -7,8 +7,8 @@
             <th>Action</th>
         </tr>
         <tr *ngFor = "let p of addressList">
-            <td>{{p.number}} {{p.streetName}}
-                {{p.line2}}
+            <td>{{p.number}} {{p.streetName}} <br>
+                {{p.line2}} <br>
                 {{p.city}} {{p.state}}, {{p.postal}}
             </td>
             <td>{{p.SpecInstr}</td>
@@ -18,15 +18,16 @@
         </tr>
     </table>
     <button (click) = "ViewAddAddress()"> Add Addresses</button>
-    <div>
-    <input type="number" [(ngModel)] = "number" (input) = "validateInputFields()">
-    <input type="text" [(ngModel)] = "streetName" (input) = "validateInputFields()">
-    <input type="text" [(ngModel)] = "line2" (input) = "validateInputFields()">
-    <input type="text" [(ngModel)] = "city" (input) = "validateInputFields()">
-    <input type="text" [(ngModel)] = "state" (input) = "validateInputFields()">
-    <input type="number" [(ngModel)] = "postal" (input) = "validateInputFields()">
-    <input type="text" [(ngModel)] = "specialInstructions" (input) = "validateInputFields()">
-    <button (click) = "addPokemon()">Add Pokemon</button>
+    <div id="addressform" style = "display:none">
+    Number: <input type="number" [(ngModel)] = "number" (input) = "validateInputFields()"><br>
+    Street: <input type="text" [(ngModel)] = "streetName" (input) = "validateInputFields()"><br>
+    2nd Line: <input type="text" [(ngModel)] = "line2" (input) = "validateInputFields()"><br>
+    City: <input type="text" [(ngModel)] = "city" (input) = "validateInputFields()"><br>
+    State: <input type="text" [(ngModel)] = "state" (input) = "validateInputFields()"><br>
+    Zip: <input type="number" [(ngModel)] = "postal" (input) = "validateInputFields()"><br><br>
+
+    Special Instructions: <input type="text" [(ngModel)] = "SpecInstr" (input) = "validateInputFields()"><br>
+    <button (click) = "addAddress()">Submit</button>
     <p *ngIf="!valid">You have invalid fields!</p>
 </div>    
-    <button (click)="Pay()">View Your Forms</button>    
+    <button (click)="Pay()">Pay your bill</button>    
