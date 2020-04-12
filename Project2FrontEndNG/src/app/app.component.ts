@@ -8,11 +8,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Pittsburgh | Vision Fine Dining';
-  showText :boolean = true;
+  showText: boolean = true;
 
   showAbout(){
-    this.showText = true ? false: true;
-    // this.showText = !(this.showText);
+    this.showText = true;
+  }
+
+  showPage(){
+    this.showText = false;
   }
 
 }
