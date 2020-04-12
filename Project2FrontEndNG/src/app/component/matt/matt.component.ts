@@ -40,6 +40,10 @@ export class MattComponent implements OnInit {
     );
   }
 
+  ViewAddAddress(){
+    document.getElementById("addressform").style.display = "block";
+
+}
   addAddress(){
 
     if (this.validateInputFields()) {

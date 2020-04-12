@@ -14,7 +14,6 @@ import { MattComponent } from './component/matt/matt.component';
 import { LoginService } from './service/login.service';
 import{ HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './component/login/login.component';
-import { AddressComponent } from './component/matt/address/address.component';
 
 
 @NgModule({
@@ -25,8 +24,7 @@ import { AddressComponent } from './component/matt/address/address.component';
     RomeComponent,
     SamComponent,
     MattComponent,
-    LoginComponent,
-    AddressComponent
+    LoginComponent
   ],
   imports: [
     BrowserModule,
