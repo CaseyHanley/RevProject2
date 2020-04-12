@@ -10,5 +10,6 @@ export class OrderService {
   public order: Order;
   constructor() { 
     this.order = new Order(0, 0, 0, 0, '','',0, []);
+    this.order.food.push(new MenuItem(1, "a lobster", "Lobster", 75));
   }
 }
