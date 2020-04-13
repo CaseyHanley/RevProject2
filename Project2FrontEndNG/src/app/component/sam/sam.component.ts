@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OrderService } from 'src/app/service/order.service';
+import { MenuItem } from 'src/app/Models/MenuItem';
 
 
 @Component({
@@ -20,7 +21,38 @@ export class SamComponent implements OnInit {
   }
 
   remove(index: number): void{
-    this.order.order.food.splice(index);
+    switch(index){
+      case 1:{
+        this.order.order.menuItem1 = null;
+        break;
+      }
+      case 2:{
+        this.order.order.menuItem2 = null;
+        break;
+      }
+      case 3:{
+        this.order.order.menuItem3 = null;
+        break;
+      }
+      case 4:{
+        this.order.order.menuItem4 = null;
+        break;
+      }
+      case 5:{
+        this.order.order.menuItem5 = null;
+        break;
+      }
+      case 6:{
+        this.order.order.menuItem6 = null;
+        break;
+      }
+      case 7:{
+        this.order.order.menuItem7 = null;
+        break;
+      }
+      
+    }
+    //this.order.order.food.splice(index);
   }
 
 
