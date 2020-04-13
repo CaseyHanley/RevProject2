@@ -15,13 +15,14 @@ export class SamComponent implements OnInit {
   constructor(order: OrderService) {
     this.order = order;
   }
-  
+
   ngOnInit(): void {
   }
 
   remove(index: number): void{
     this.order.order.food.splice(index);
   }
+
 
 }
 

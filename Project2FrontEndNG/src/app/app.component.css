@@ -103,12 +103,12 @@ a:visited{
 .topleft{
   background-color: #f2f2f2;
   position: absolute;
-  top: 1vh;
+  top: 0vh;
   text-align: center;
   padding: 5px;
   border: solid rgba(30, 27, 26, 0.81) ;
   width: 250px;
-  height: 400px;
+  height: 500px;
   margin: auto;
 }
 

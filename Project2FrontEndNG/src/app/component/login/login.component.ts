@@ -14,4 +14,7 @@ export class LoginComponent implements OnInit {
     this.loginService.printHello();
   }
 
+  username :string;
+  password :string;
+
 }
