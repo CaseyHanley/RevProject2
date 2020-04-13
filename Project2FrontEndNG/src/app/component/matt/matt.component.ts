@@ -79,6 +79,18 @@ export class MattComponent implements OnInit {
     }
   }
 
+  deleteMyAddress(){
+
+  }
+
+  EditMyAddress(){
+
+  }
+
+  Pay(){
+
+  }
+
 }
 
 

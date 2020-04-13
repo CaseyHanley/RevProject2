@@ -42,7 +42,6 @@ export class JoelComponent implements OnInit {
   maincoursePrice :number = 0;
   dessertPrice :number = 0;
   beveragePrice :number = 0;
-
   constructor() { }
 
   ngOnInit(): void {
