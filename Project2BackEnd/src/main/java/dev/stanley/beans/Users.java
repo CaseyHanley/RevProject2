@@ -10,7 +10,7 @@ public class Users {
 	
 	@Id
 	@GeneratedValue
-	@Column(name = "id", updatable = false)
+	@Column(name = "u_id", updatable = false)
 	private int u_id;
 	
 	@Column(name = "username", nullable = false) 
@@ -42,6 +42,13 @@ public class Users {
 		this.firstname = firstname;
 		this.lastname = lastname;
 		this.account_type = account_type;
+	}
+
+
+	public Users(String username, String password) {
+		super();
+		this.username = username;
+		this.password = password;
 	}
 
 

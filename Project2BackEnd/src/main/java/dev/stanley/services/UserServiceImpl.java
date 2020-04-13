@@ -13,14 +13,14 @@ public class UserServiceImpl implements UserService {
 
 	@Autowired
 	UserRepository ur;
-	
+
 	@Override
 	public Users createUser(Users user) {
 		return ur.save(user);
 	}
 
 	@Override
-	public Users getUser(int id) {
+	public Users getUserById(int id) {
 		return ur.findById(id).get();
 	}
 
@@ -28,6 +28,7 @@ public class UserServiceImpl implements UserService {
 	public Users getUser(String username) {
 		return ur.findByUsername(username);
 	}
+
 
 	@Override
 	public List<Users> allUsers() {
@@ -43,14 +44,33 @@ public class UserServiceImpl implements UserService {
 	public boolean deleteUser(Users user) {
 		try {
 			ur.delete(user);
-			
-		}catch(IllegalArgumentException e) {
+
+		} catch (IllegalArgumentException e) {
 			e.printStackTrace();
 			return false;
 		}
 		return true;
 	}
-	
+
+	@Override
+	public boolean loginUser(String username, String password) {
+		if(username != null && password != null) {
+		System.out.println("method working");
+		ur.findByUsernameAndPassword(username,password);
+		return true;
+		}
+		else {
+			return false;
+		}
+	}
+
+	@Override
+	public Users getUserByP(String password) {
+		return ur.findByPassword(password);
+	}
+
+
+
 
 
 }
