@@ -12,8 +12,8 @@
                 {{p.city}} {{p.state}}, {{p.postal}}
             </td>
             <td>{{p.SpecInstr}</td>
-            <td><button (click)="EditMyAddress()">Edit Address </button>    
-                <button (click)="deleteMyAddress()">Delete</button>   
+            <td><button (click)="EditMyAddress(this)">Edit Address </button>    
+                <button (click)="deleteMyAddress(this)">Delete</button>   
              </td>
         </tr>
     </table>

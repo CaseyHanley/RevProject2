@@ -18,6 +18,7 @@ export class MattComponent implements OnInit {
 
   uid: number; //Need User ID
   addressList: Array<Address>;
+  addressID: string;
   number: number;
   streetName: string;
   line2 : string;
@@ -47,7 +48,7 @@ export class MattComponent implements OnInit {
   addAddress(){
 
     if (this.validateInputFields()) {
-      let address = new Address ( this.number,  this.streetName,  this.line2, this.city, this.state, this.postal, this.SpecInstr)
+      let address = new Address ( this.number,  this.streetName,  this.line2, this.city, this.state, this.postal, this.SpecInstr, null)
       this.myaddress.addAddress(address).subscribe(
         (response) => {
           console.log(response);
@@ -78,6 +79,28 @@ export class MattComponent implements OnInit {
       return true;
     }
   }
+
+  deleteMyAddress(x){
+   
+   //var rowIndex = $(x).closest('tr').index();
+    var rowIndex = (x).closest('tr').index();
+
+    this.myaddress.deleteAddress(this.addressList[rowIndex].addressID);
+  }
+
+
+  EditMyAddress(x){
+    //var rowIndex = $(x).closest('tr').index();
+    var rowIndex = (x).closest('tr').index();
+    var edit = this.addressList[rowIndex];
+
+    //Todo not sure how I want to build this yet.
+
+    this.myaddress.editAddress(edit);
+    }
+
+  Pay(){}
+
 
 }
 

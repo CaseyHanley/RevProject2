@@ -13,12 +13,20 @@ export class AddressService {
   
   getAddresses(uid : number): Observable<Address[]> {
     //Needs Correct URL
-    return this.http.get<Address[]>('urlforaddress/uid');
+    return this.http.get<Address[]>('urlforaddress/' + uid);
   }
 
   addAddress(add: Address): Observable<Address>{
     return this.http.post<Address>('urlforaddress/', add, {headers: this.headers}); 
   }
 
- // deleteMyAddress()
+  deleteAddress(AddressId: string){
+    return this.http.delete<Address>('urlforaddress/' + AddressId);
+  }
+    
+  editAddress(edit: Address){
+      return this.http.post<Address>('urlforeditaddress/', edit, {headers: this.headers});
+
+  }
+ 
 }
