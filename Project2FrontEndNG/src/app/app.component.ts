@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { Order } from './Models/Order'
 
 @Component({
   selector: 'app-root',
@@ -7,12 +7,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Pittsburgh | Vision Fine Dining';
-  showText :boolean = true;
+
+  title = 'Pittsburgh | Good Eats Fine Dining';
+  public order: Order;
+
+  showText: boolean = true;
 
   showAbout(){
-    this.showText = true ? false: true;
-    // this.showText = !(this.showText);
+    this.showText = true;
   }
+
+  showPage(){
+    this.showText = false;
+  }
+
 
 }
