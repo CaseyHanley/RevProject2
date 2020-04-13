@@ -1,5 +1,5 @@
 <table width = 700 style = "margin: auto;">
-    <tr *ngFor = "let f of order.order.food">
+    <tr *ngFor = "let f of order.order.food; let i = index">
         <td><img src = "{{'/assets/Images/' + f.productName + '.jpg'}}" width = 150></td>
         <td><table>
         <tr>
@@ -11,11 +11,11 @@
         </tr>
     </table>
 </td>
-<td><button>Remove</button></td>
+<td><button (click) = "remove(i)">Remove</button></td>
     </tr>
     <tr><td></td>
     <td style = "text-align: right">
         Total:<br>{{order.order.price | currency: 'USD'}}
     </td>
-    <td><a routerLink = "../matt" ><button>Checkout</button></a></td></tr>
+    <td><a routerLink = "../matt" ><button >Checkout</button></a></td></tr>
 </table>

@@ -19,5 +19,9 @@ export class SamComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  remove(index: number): void{
+    this.order.order.food.splice(index);
+  }
+
 }
 
