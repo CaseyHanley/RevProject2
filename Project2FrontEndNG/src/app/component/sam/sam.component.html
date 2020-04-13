@@ -1,18 +1,110 @@
 <table width = 700 style = "margin: auto;">
-    <tr *ngFor = "let f of order.order.food; let i = index">
-        <td><img src = "{{'/assets/Images/' + f.productName + '.jpg'}}" width = 150></td>
+    <tr  *ngIf = "order.order.menuItem1 != null">
+        <td><img src = "{{'/assets/Images/' + order.order.menuItem1.productName + '.jpg'}}" width = 150></td>
         <td><table>
         <tr>
-            <td width = 100>{{f.productName}}</td>
-            <td>{{f.price | currency: 'USD'}}</td>
+            <td width = 100>{{order.order.menuItem1.productName}}</td>
+            <td>{{order.order.menuItem1.price | currency: 'USD'}}</td>
         </tr>
         <tr>
-            <td colspan="2"><br>{{f.descriptions}}</td>
+            <td colspan="2"><br>{{order.order.menuItem1.descriptions}}</td>
         </tr>
-    </table>
-</td>
-<td><button (click) = "remove(i)">Remove</button></td>
+        </table>
+        </td>
+        <td><button (click) = "remove(1)">Remove</button></td>
     </tr>
+
+    <tr  *ngIf = "order.order.menuItem2 != null">
+        <td><img src = "{{'/assets/Images/' + order.order.menuItem2.productName + '.jpg'}}" width = 150></td>
+        <td><table>
+        <tr>
+            <td width = 100>{{order.order.menuItem2.productName}}</td>
+            <td>{{order.order.menuItem2.price | currency: 'USD'}}</td>
+        </tr>
+        <tr>
+            <td colspan="2"><br>{{order.order.menuItem2.descriptions}}</td>
+        </tr>
+        </table>
+        </td>
+        <td><button (click) = "remove(2)">Remove</button></td>
+    </tr>
+
+    <tr  *ngIf = "order.order.menuItem3 != null">
+        <td><img src = "{{'/assets/Images/' + order.order.menuItem3.productName + '.jpg'}}" width = 150></td>
+        <td><table>
+        <tr>
+            <td width = 100>{{order.order.menuItem3.productName}}</td>
+            <td>{{order.order.menuItem3.price | currency: 'USD'}}</td>
+        </tr>
+        <tr>
+            <td colspan="2"><br>{{order.order.menuItem3.descriptions}}</td>
+        </tr>
+        </table>
+        </td>
+        <td><button (click) = "remove(3)">Remove</button></td>
+    </tr>
+
+    <tr  *ngIf = "order.order.menuItem4 != null">
+        <td><img src = "{{'/assets/Images/' + order.order.menuItem4.productName + '.jpg'}}" width = 150></td>
+        <td><table>
+        <tr>
+            <td width = 100>{{order.order.menuItem4.productName}}</td>
+            <td>{{order.order.menuItem4.price | currency: 'USD'}}</td>
+        </tr>
+        <tr>
+            <td colspan="2"><br>{{order.order.menuItem4.descriptions}}</td>
+        </tr>
+        </table>
+        </td>
+        <td><button (click) = "remove(4)">Remove</button></td>
+    </tr>
+
+    <tr  *ngIf = "order.order.menuItem5 != null">
+        <td><img src = "{{'/assets/Images/' + order.order.menuItem5.productName + '.jpg'}}" width = 150></td>
+        <td><table>
+        <tr>
+            <td width = 100>{{order.order.menuItem5.productName}}</td>
+            <td>{{order.order.menuItem5.price | currency: 'USD'}}</td>
+        </tr>
+        <tr>
+            <td colspan="2"><br>{{order.order.menuItem5.descriptions}}</td>
+        </tr>
+        </table>
+        </td>
+        <td><button (click) = "remove(5)">Remove</button></td>
+    </tr>
+
+    <tr  *ngIf = "order.order.menuItem6 != null">
+        <td><img src = "{{'/assets/Images/' + order.order.menuItem6.productName + '.jpg'}}" width = 150></td>
+        <td><table>
+        <tr>
+            <td width = 100>{{order.order.menuItem6.productName}}</td>
+            <td>{{order.order.menuItem6.price | currency: 'USD'}}</td>
+        </tr>
+        <tr>
+            <td colspan="2"><br>{{order.order.menuItem6.descriptions}}</td>
+        </tr>
+        </table>
+        </td>
+        <td><button (click) = "remove(6)">Remove</button></td>
+    </tr>
+
+    <tr  *ngIf = "order.order.menuItem7 != null">
+        <td><img src = "{{'/assets/Images/' + order.order.menuItem7.productName + '.jpg'}}" width = 150></td>
+        <td><table>
+        <tr>
+            <td width = 100>{{order.order.menuItem7.productName}}</td>
+            <td>{{order.order.menuItem7.price | currency: 'USD'}}</td>
+        </tr>
+        <tr>
+            <td colspan="2"><br>{{order.order.menuItem7.descriptions}}</td>
+        </tr>
+        </table>
+        </td>
+        <td><button (click) = "remove(7)">Remove</button></td>
+    </tr>
+
+    
     <tr><td></td>
     <td style = "text-align: right">
         Total:<br>{{order.order.price | currency: 'USD'}}
