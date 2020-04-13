@@ -14,6 +14,7 @@ import { MattComponent } from './component/matt/matt.component';
 import { LoginService } from './service/login.service';
 import{ HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './component/login/login.component';
+import { AddressService } from './component/matt/service/address.service';
 
 
 @NgModule({
@@ -29,9 +30,10 @@ import { LoginComponent } from './component/login/login.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [LoginService],
+  providers: [LoginService, AddressService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

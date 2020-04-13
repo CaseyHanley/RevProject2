@@ -3,9 +3,12 @@ body,html {
     padding: 0;
     height : 100%;
     width: 100%;
-    background-image: url('/assets/download.png');
+    /* background-image: url('/assets/download.png'); */
+    background-image: linear-gradient(red, orange, yellow, green, blue, indigo);
     background-position: center;
-    background-repeat: no-repeat;
+    /* background-repeat: no-repeat; */
+    /* mirroe each repeat */
+    /* vertical gradient */
     background-size: cover;
    
   }
