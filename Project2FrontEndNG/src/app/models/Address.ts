@@ -1,19 +1,21 @@
-export class Address{
-    a_id: number;
-    u_id: number;
+export class Address {
+    number: number;
+    streetName: string;
+    line2 : string;
+    city: String;
     state: String;
-    address: String;
-    address2: String;
-    zipcode: number;
-    comments: String;
+    postal: number;
+    SpecInstr: String;
 
-    constructor(a_id: number, u_id: number, state: String, address: String, address2: String, zipcode: number, comments: String){
-        this.a_id = a_id;
-        this.u_id = u_id;
+    constructor( number: number, streetName: string, line2: string,  city: String,  state: String, postal: number, SpecInstr: String) {
+        this.number = number;
+        this.streetName = streetName;
+        this.line2 = line2;
+        this.city = city;
         this.state = state;
-        this.address = address;
-        this.address2 = address2;
-        this.zipcode = zipcode;
-        this.comments = comments;
-    }
-}
+        this.postal = postal;
+        this.SpecInstr = SpecInstr;
+
+        }
+
+  }

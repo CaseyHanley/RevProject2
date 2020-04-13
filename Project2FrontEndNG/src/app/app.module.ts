@@ -14,7 +14,7 @@ import { MattComponent } from './component/matt/matt.component';
 import { LoginService } from './service/login.service';
 import{ HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './component/login/login.component';
-import { AddressService } from './component/matt/service/address.service';
+import { AddressService } from './service/address.service';
 
 
 @NgModule({
