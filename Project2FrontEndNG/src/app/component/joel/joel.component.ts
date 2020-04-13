@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JoelComponent implements OnInit {
 
+  //name
   starterName :string = "";
   appetizerName :string = "";
   soupName :string = "";
@@ -41,10 +42,11 @@ export class JoelComponent implements OnInit {
   maincoursePrice :number = 0;
   dessertPrice :number = 0;
   beveragePrice :number = 0;
-  
   constructor() { }
 
   ngOnInit(): void {
   }
+
+
 
 }
