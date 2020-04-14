@@ -46,8 +46,15 @@ public class Orders {
 	@Column(name = "productname7", columnDefinition = "varchar(255) default 'Null'")
 	private String productname7;
 	
+	@Column(name = "extra1")
+	private String extra1;
+	
+	@Column(name="extra2")
+	private String extra2;
+	
+	
 	@Column(name = "price")
-	private int price;
+	private double price;
 	
 	@Column(name="comments")
 	private String comments;
@@ -66,9 +73,12 @@ public class Orders {
 		super();
 	}
 
+
+
+
 	public Orders(int o_id, int u_id, String username, String productname1, String productname2, String productname3,
-			String productname4, String productname5, String productname6, String productname7, int price,
-			String comments, String status, boolean pickup, List<MenuItems> menuitems) {
+			String productname4, String productname5, String productname6, String productname7, String extra1,
+			String extra2, double price, String comments, String status, boolean pickup, List<MenuItems> menuitems) {
 		super();
 		this.o_id = o_id;
 		this.u_id = u_id;
@@ -80,12 +90,16 @@ public class Orders {
 		this.productname5 = productname5;
 		this.productname6 = productname6;
 		this.productname7 = productname7;
+		this.extra1 = extra1;
+		this.extra2 = extra2;
 		this.price = price;
 		this.comments = comments;
 		this.status = status;
 		this.pickup = pickup;
-		this.menuitems = menuitems;
+		this.menuitems = new ArrayList(menuitems);
 	}
+
+
 
 
 	public Orders(int o_id, int u_id, int price, String comments, String status, boolean pickup) {
@@ -96,10 +110,40 @@ public class Orders {
 		this.comments = comments;
 		this.status = status;
 		this.pickup = pickup;
-		this.menuitems = new ArrayList();
+		this.menuitems = new ArrayList(menuitems);
 	}
 
 	
+	
+	
+	public String getExtra1() {
+		return extra1;
+	}
+
+
+
+
+	public void setExtra1(String extra1) {
+		this.extra1 = extra1;
+	}
+
+
+
+
+	public String getExtra2() {
+		return extra2;
+	}
+
+
+
+
+	public void setExtra2(String extra2) {
+		this.extra2 = extra2;
+	}
+
+
+
+
 	public String getUsername() {
 		return username;
 	}
@@ -189,11 +233,11 @@ public class Orders {
 	}
 
 
-	public int getPrice() {
+	public double getPrice() {
 		return price;
 	}
 
-	public void setPrice(int price) {
+	public void setPrice(double price) {
 		this.price = price;
 	}
 
@@ -226,8 +270,8 @@ public class Orders {
 		return "Orders [o_id=" + o_id + ", u_id=" + u_id + ", username=" + username + ", productname1=" + productname1
 				+ ", productname2=" + productname2 + ", productname3=" + productname3 + ", productname4=" + productname4
 				+ ", productname5=" + productname5 + ", productname6=" + productname6 + ", productname7=" + productname7
-				+ ", price=" + price + ", comments=" + comments + ", status=" + status + ", pickup=" + pickup
-				+ ", menuitems=" + menuitems + "]";
+				+ ", extra1=" + extra1 + ", extra2=" + extra2 + ", price=" + price + ", comments=" + comments
+				+ ", status=" + status + ", pickup=" + pickup + ", menuitems=" + menuitems + "]";
 	}
 
 
