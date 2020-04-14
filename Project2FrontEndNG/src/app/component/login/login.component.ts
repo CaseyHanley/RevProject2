@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticateUserService } from 'src/app/service/authenticate-user.service';
+import { LoginService } from 'src/app/service/login.service';
+import { LoginUser } from 'src/app/models/loginuser';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +11,7 @@ import { AuthenticateUserService } from 'src/app/service/authenticate-user.servi
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private router :Router, private loginService: AuthenticateUserService) { }
+  constructor(private router :Router, private loginService: AuthenticateUserService, private userLogin: LoginService) { }
 
   ngOnInit(): void {
     
@@ -19,6 +21,19 @@ export class LoginComponent implements OnInit {
   password :string;
   invalidLogin = false;
 
+  login(){
+    let loginuser = new LoginUser(this.username, this.password);
+    this.userLogin.getUserByUP(loginuser).subscribe(
+      (response) =>{
+        this.checkLogin();
+        console.log(response);
+      },
+      (response) => {
+        console.log("no user")
+      }
+    )
+
+  }
 
   checkLogin(){
     if(this.loginService.authenticate(this.username,this.password)){
