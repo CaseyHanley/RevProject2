@@ -1,0 +1,12 @@
+.container1 {
+    border: black 2px;
+    width: 725px;
+    height: 150px;
+    margin: auto;
+    text-align: center;
+
+  }
+
+  .bor{
+      border: gray 2px;
+  }
