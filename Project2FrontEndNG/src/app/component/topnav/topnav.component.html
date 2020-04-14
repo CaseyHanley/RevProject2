@@ -1,0 +1,33 @@
+<header>
+  <nav>
+<div class="container">
+    <img src="/assets/Fine-Dining.jpg">
+</div>
+    <div class="topnav">
+    <ul>
+       <li><a routerLink = "homepage" >Home Page</a></li> 
+       <li><a routerLink = "menu">View Menu</a></li> 
+       <li><a routerLink = "neworder">New Order</a></li> 
+       <li><a routerLink = "viewcart">View cart</a></li> 
+       <li><a routerLink = "staff">Meet our staff</a></li> 
+    </ul>
+  </div>
+
+  <div class="topright1" *ngIf="isLoggedin()"><a routerLink = "login">Login</a></div>
+  <div class="topright1" *ngIf="!isLoggedin()"><a routerLink = "logout">Logout</a></div>
+  
+
+  <div class="topleft">
+    <p id = "title">V</p>
+    <p id = "title">I</p>
+    <p id = "title">S</p>
+    <p id = "title">I</p>
+    <p id = "title">O</p>
+    <p id = "title">N</p>
+    <p id = "title2">Fine Dining</p>
+  </div>
+</nav>
+</header>
+
+  
+
