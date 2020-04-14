@@ -1,0 +1,21 @@
+<table width = 700 style = "margin: auto;">
+    <tr *ngFor = "let f of order.order.food; let i = index">
+        <td><img src = "{{'/assets/Images/' + f.productName + '.jpg'}}" width = 150></td>
+        <td><table>
+        <tr>
+            <td width = 100>{{f.productName}}</td>
+            <td>{{f.price | currency: 'USD'}}</td>
+        </tr>
+        <tr>
+            <td colspan="2"><br>{{f.descriptions}}</td>
+        </tr>
+    </table>
+</td>
+<td><button (click) = "remove(i)">Remove</button></td>
+    </tr>
+    <tr><td></td>
+    <td style = "text-align: right">
+        Total:<br>{{order.order.price | currency: 'USD'}}
+    </td>
+    <td><a routerLink = "../matt" ><button >Checkout</button></a></td></tr>
+</table>
