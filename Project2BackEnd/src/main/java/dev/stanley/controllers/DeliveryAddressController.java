@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import dev.stanley.beans.DeliveryAddress;
+import dev.stanley.services.DeliveryAddressService;
 
 @RestController
 public class DeliveryAddressController {
@@ -29,7 +30,7 @@ public class DeliveryAddressController {
 	
 	@GetMapping(value="/deliveryaddress", produces="application/Json")
 	public List<DeliveryAddress>allAddresses(){
-		return das.getAllAddresses();
+		return (List<DeliveryAddress>)das.allAddresses();
 		
 	}
 	
@@ -44,13 +45,13 @@ public class DeliveryAddressController {
 	@PutMapping(value="/deliveryaddress", consumes="application/Json")
 	public DeliveryAddress updateAddress(@RequestBody DeliveryAddress change) {
 		
-		return das.updateDeliveryAddress(change);
+		return das.updateAddress(change);
 	}
 	
 	
 	@DeleteMapping(value="/deliveryaddress/{a_id}")
 	public boolean deleteDeliveryAddress(@PathVariable("a_id") int a_id) {
-		das.deleteDeliveryAddress(das.getAddressById("a_id"));
+		das.deleteDeliveryAddress(das.getAddressById(a_id));
 		return true;
 	}
 }
