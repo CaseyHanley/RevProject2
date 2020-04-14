@@ -1,3 +1,30 @@
 <!-- <input type="text" [(ngModel)] = "username">
 <input type="password" [(ngModel)] = "password">    -->
-<p style="text-align: center;">Login</p>
+<!-- <div class = container1>
+    <input type = "text" name="username" [(ngModel)] = "username">
+    <input type = "password" name = "password" [(ngModel)] = "username">
+    <div><button (click) = "checkLogin()">Login</button></div>
+</div> -->
+<!-- Default form login -->
+<div class="bor">
+<div class="container1">
+    <p >Sign in</p>
+  
+    <!-- Email -->
+    <input type="email" id="username"  placeholder="Username" [(ngModel)] = "username">
+  
+    <!-- Password -->
+    <input type="password" id="password"  placeholder="Password" [(ngModel)] = "password">
+  
+    <br>
+    <!-- Sign in button -->
+    <button (click) = "login()">Sign in</button>
+  
+    <!-- Register -->
+    <p>Not a member?
+      <a routerLink = "registeruser">Register</a>
+    </p>
+  
+</div>
+</div>
+<router-outlet></router-outlet>
