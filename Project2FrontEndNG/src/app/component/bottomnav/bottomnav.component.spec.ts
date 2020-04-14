@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SamComponent } from './sam.component';
+import { BottomnavComponent } from './bottomnav.component';
 
-describe('SamComponent', () => {
-  let component: SamComponent;
-  let fixture: ComponentFixture<SamComponent>;
+describe('BottomnavComponent', () => {
+  let component: BottomnavComponent;
+  let fixture: ComponentFixture<BottomnavComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SamComponent ]
+      declarations: [ BottomnavComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SamComponent);
+    fixture = TestBed.createComponent(BottomnavComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

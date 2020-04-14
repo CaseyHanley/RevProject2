@@ -8,16 +8,26 @@ import { MattComponent } from './component/matt/matt.component';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './component/login/login.component';
+import { LogoutComponent } from './component/logout/logout.component';
+import { NewUserComponent } from './component/new-user/new-user.component';
+import { StaffpageComponent } from './component/staffpage/staffpage.component';
+import { ContactusComponent } from './component/contactus/contactus.component';
 
 
 const routes: Routes = [
-  {path : 'casey', component : CaseyComponent},
-  {path : 'joel', component : JoelComponent},
-  {path : 'sam', component : SamComponent},
-  {path : 'rome', component : RomeComponent},
-  {path : 'matt', component : MattComponent},
+  {path : 'menu', component : CaseyComponent},
+  {path : 'neworder', component : JoelComponent},
+  {path : 'viewcart', component : SamComponent},
+  {path : 'homepage', component : RomeComponent},
+  {path : 'payment', component : MattComponent},
+  {path : 'staff', component : StaffpageComponent},
   {path : 'login', component : LoginComponent},
-  {path : '', redirectTo:'/', pathMatch : 'full'}
+  {path : 'logout', component : LogoutComponent},
+  {path : 'contactus', component : ContactusComponent},
+  {path : 'registeruser', component : NewUserComponent},
+  {path : 'viewcart/payment', redirectTo : '/payment', pathMatch : 'full'},
+  {path : 'login/registeruser', redirectTo : '/registeruser', pathMatch : 'full'}
+ 
 
 
 ];

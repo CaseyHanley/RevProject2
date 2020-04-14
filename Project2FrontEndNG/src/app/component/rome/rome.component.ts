@@ -12,4 +12,14 @@ export class RomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  showText: boolean = true;
+
+  showAbout(){
+    this.showText = true;
+  }
+
+  showPage(){
+    this.showText = false;
+  }
+
 }

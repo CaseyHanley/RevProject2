@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SamComponent } from './sam.component';
+import { TopnavComponent } from './topnav.component';
 
-describe('SamComponent', () => {
-  let component: SamComponent;
-  let fixture: ComponentFixture<SamComponent>;
+describe('TopnavComponent', () => {
+  let component: TopnavComponent;
+  let fixture: ComponentFixture<TopnavComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SamComponent ]
+      declarations: [ TopnavComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SamComponent);
+    fixture = TestBed.createComponent(TopnavComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

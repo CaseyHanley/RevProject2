@@ -1,28 +1,58 @@
 import { Component, OnInit } from '@angular/core';
+import { OrderService } from 'src/app/service/order.service';
+import { MenuItem } from 'src/app/Models/MenuItem';
+
 
 @Component({
   selector: 'app-sam',
   templateUrl: './sam.component.html',
   styleUrls: ['./sam.component.css']
 })
-export class SamComponent implements OnInit {
-  orders: {name: string, price: number, description: string}[] = [
-    {"name": "Lobster", price: 29.99, description:  "Proin suscipit aliquam ligula, a condimentum massa aliquet ut. Nam at cursus massa, nec sollicitudin nisi. Aenean in neque ullamcorper amet."},
-    {"name": "Steak", price: 19.99, description:  "Curabitur in pretium erat, nec ultricies diam. Vivamus vitae nulla mattis, volutpat ante ut, gravida diam. Donec elementum a neque at metus."},
-    {"name": "Caviar", price: 74.99, description:  "Ut lorem mauris, lacinia id lectus quis, blandit sodales metus. Duis quis arcu in libero bibendum porta sed ac mauris. Fusce nibh cras amet."},
-    {"name": "Fancy Feast", price: 1.99, description:  "Duis id purus libero. Mauris non erat id orci pharetra ultrices. Duis tempus purus vitae pretium condimentum. Nullam ultricies nulla in sed."},
-];
 
+export class SamComponent implements OnInit {
+  order: OrderService;
   total: number = 0;
 
-  constructor() { 
-    this.orders.forEach(element => {
-      this.total +=  element.price;
-      
-    });
+  constructor(order: OrderService) {
+    this.order = order;
   }
 
   ngOnInit(): void {
+  }
+
+  remove(index: number): void{
+    switch(index){
+      case 1:{
+        this.order.order.menuItem1 = null;
+        break;
+      }
+      case 2:{
+        this.order.order.menuItem2 = null;
+        break;
+      }
+      case 3:{
+        this.order.order.menuItem3 = null;
+        break;
+      }
+      case 4:{
+        this.order.order.menuItem4 = null;
+        break;
+      }
+      case 5:{
+        this.order.order.menuItem5 = null;
+        break;
+      }
+      case 6:{
+        this.order.order.menuItem6 = null;
+        break;
+      }
+      case 7:{
+        this.order.order.menuItem7 = null;
+        break;
+      }
+      
+    }
+    //this.order.order.food.splice(index);
   }
 
 

@@ -1,51 +1,5 @@
-
-<div class="container">
-    <img src="/assets/Fine-Dining.jpg">
-</div>
-    <div class="topnav">
-    <ul>
-       <li><a routerLink = "rome" (click) = "showPage()">Rome Page</a></li> 
-       <li><a routerLink = "sam" (click) = "showPage()">Sam Page</a></li> 
-       <li><a routerLink = "casey" (click) = "showPage()">Casey Page</a></li> 
-       <li><a routerLink = "joel" (click) = "showPage()">Joel Page</a></li> 
-       <li><a routerLink = "matt" (click) = "showPage()">Matt Page</a></li> 
-       <li> <a routerLink = "" (click) = "showAbout()">Home Page</a></li> 
-    </ul>
-  </div>
-
-  <router-outlet></router-outlet>
-
-<div class="navbottom">
-    <ul>
-        <li class = "second"><a routerLink = "rome" (click) = "showPage()">Contact us</a></li>
-        <li class = "second"><a routerLink = "casey" (click) = "showPage()">Leave a Review</a></li>
-        <li class = "second"><a routerLink = "sam" (click) = "showPage()">Menu</a></li>
-    </ul>
-</div>
-<!-- missing closing div-->
-
-<div class="topright"><a routerLink = "login" (click) = "showPage()">Login</a></div>
-
-<div class="topleft">
-  <p id = "title">V</p>
-  <p id = "title">I</p>
-  <p id = "title">S</p>
-  <p id = "title">I</p>
-  <p id = "title">O</p>
-  <p id = "title">N</p>
-  <p id = "title2">Fine Dining</p>
-</div>
-
-
-<h2 *ngIf = "showText" style="text-decoration: underline;" style="font-weight: bolder;" style="text-align: center;">Welcome to Vi$ion</h2>
-
-<div *ngIf = "showText" class="about">
-     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-   <div class = "photo"></div>
-</div>
-
-
-
-
+<app-topnav></app-topnav>
+<router-outlet></router-outlet>
+<app-bottomnav></app-bottomnav>
   
   

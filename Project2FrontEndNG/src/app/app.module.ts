@@ -11,9 +11,16 @@ import { RomeComponent } from './component/rome/rome.component';
 import { SamComponent } from './component/sam/sam.component';
 import { MattComponent } from './component/matt/matt.component';
 
-import { LoginService } from './service/login.service';
 import{ HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './component/login/login.component';
+import { AddressService } from './service/address.service';
+import { AuthenticateUserService } from './service/authenticate-user.service';
+import { LogoutComponent } from './component/logout/logout.component';
+import { TopnavComponent } from './component/topnav/topnav.component';
+import { BottomnavComponent } from './component/bottomnav/bottomnav.component';
+import { NewUserComponent } from './component/new-user/new-user.component';
+import { StaffpageComponent } from './component/staffpage/staffpage.component';
+import { ContactusComponent } from './component/contactus/contactus.component';
 
 
 @NgModule({
@@ -24,7 +31,13 @@ import { LoginComponent } from './component/login/login.component';
     RomeComponent,
     SamComponent,
     MattComponent,
-    LoginComponent
+    LoginComponent,
+    LogoutComponent,
+    TopnavComponent,
+    BottomnavComponent,
+    NewUserComponent,
+    StaffpageComponent,
+    ContactusComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +45,7 @@ import { LoginComponent } from './component/login/login.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [LoginService],
+  providers: [AddressService, AuthenticateUserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
