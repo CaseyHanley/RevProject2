@@ -13,40 +13,41 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import dev.stanley.beans.DiscountCodes;
+import dev.stanley.services.DiscountCodesService;
 
 @RestController
 public class DiscountCodesController {
 
 	@Autowired
-	DiscountCodes dc;
+	DiscountCodesService dcs;
 	
 	@RequestMapping(value="/discountcodes", method=RequestMethod.POST, consumes="application/Json")
 	public DiscountCodes createDiscountCodes(@RequestBody DiscountCodes code) {
 		
-		return dc.createDiscountCodes(code);
+		return dcs.createDiscountCodes(code);
 	}
 	
 	@GetMapping(value="/discountcodes", produces="application/Json")
 	public List<DiscountCodes> getAllDiscountCodes(){
 		
-		return dc.getAllDiscountCodes();
+		return dcs.getAllDiscountCodes();
 	}
 	
 	@GetMapping(value = "/discountcodess/{dc_id}")
 	public DiscountCodes getDiscountCodesById(@PathVariable("dc_id") int dc_id) {
 		
-		return dc.getDiscountCodesById(dc_id);
+		return dcs.getDiscountCodesById(dc_id);
 	}
 	
 	@PutMapping(value="/discountcodes", consumes="application/Json")
 	public DiscountCodes updateDiscountCodes(@RequestBody DiscountCodes change) {
 		
-		return dc.updateDiscountCodes(change);
+		return dcs.updateDiscountCodes(change);
 	}
 	
 	@DeleteMapping(value="/discountcodes/{dc_id}")
 	public boolean deleteDiscountCodes(@PathVariable("dc_id") int dc_id) {
 		
-		return dc.deleteDiscountCodes(dc_id);
+		return dcs.deleteDiscountCodes(dcs.getDiscountCodesById(dc_id));
 	}
 }

@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import dev.stanley.beans.DiscountCodes;
-import dev.stanley.beans.Users;
 import dev.stanley.repository.DiscountCodesRepository;
 
 
@@ -19,13 +18,13 @@ public class DiscountCodesServiceImpl implements DiscountCodesService {
 
 	@Override
 	public DiscountCodes createDiscountCodes(DiscountCodes code) {
-		// TODO Auto-generated method stub
+	
 		return dcr.save(code);
 	}
 
 	@Override
 	public DiscountCodes updateDiscountCodes(DiscountCodes code) {
-		// TODO Auto-generated method stub
+		
 		return dcr.save(code);
 	}
 
@@ -43,15 +42,17 @@ public class DiscountCodesServiceImpl implements DiscountCodesService {
 
 	@Override
 	public List<DiscountCodes> getAllDiscountCodes() {
-		// TODO Auto-generated method stub
-		return (List<DiscountCodes>)dcr.findAllCodes();
+	
+		return (List<DiscountCodes>)dcr.findAll();
 	}
 
 	@Override
 	public DiscountCodes getDiscountCodesById(int c_id) {
-		// TODO Auto-generated method stub
-		return dcr.findDiscountCodesById(c_id);
+		
+		return dcr.findById(c_id).get();
 	}
+
+
 	
 
 }
