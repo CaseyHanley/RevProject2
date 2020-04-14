@@ -52,16 +52,22 @@ public class UserServiceImpl implements UserService {
 		return true;
 	}
 
+//	@Override
+//	public boolean loginUser(String username, String password) {
+//		if(ur.findByUsernameAndPassword(username,password) != null) {
+//		System.out.println("method working");
+//		return true;
+//		}
+//		else {
+//			return false;
+//		}
+//	}
+	
 	@Override
-	public boolean loginUser(String username, String password) {
-		if(username != null && password != null) {
-		System.out.println("method working");
-		ur.findByUsernameAndPassword(username,password);
-		return true;
-		}
-		else {
-			return false;
-		}
+	public Users loginUser(String username, String password) {
+		return ur.findByUsernameAndPassword(username,password);
+		
+		
 	}
 
 	@Override

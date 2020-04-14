@@ -2,7 +2,10 @@ package dev.stanley.controllers;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,11 +16,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import dev.stanley.aspects.AuthorizeDelete;
-import dev.stanley.aspects.AuthorizeUser;
 import dev.stanley.beans.Users;
 import dev.stanley.services.UserService;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
 public class UserController {
 
 	@Autowired
@@ -64,9 +67,9 @@ public class UserController {
 //			@RequestParam(required = true) String password) {
 //		return us.loginUser(username, password);
 //	}
-	@AuthorizeUser
+
 	@RequestMapping(value = "/users/login", method = RequestMethod.POST, consumes = "application/Json")
-	public boolean loginUser(@RequestBody Users user) {
+	public Users loginUser(@Valid @RequestBody Users user) {
 		System.out.println(user.getUsername());
 		System.out.println(user.getPassword());
 		String username = user.getUsername();
@@ -74,23 +77,7 @@ public class UserController {
 		return us.loginUser(username, password);
 	}
 
-//	public static String loginUN(Users u) {
-//		
-//		System.out.println(u);
-//		String username = u.getUsername();
-//		return us.getUser(username).getUsername();
-//
-//	}
-	
-	
-//	
-//public static String loginP(Users u) {
-//		
-//		System.out.println(u);
-//		String password = u.getPassword();
-//		return us.getUser(password).getPassword();
-//
-//	}
+
 
 	
 
