@@ -10,6 +10,7 @@ import dev.stanley.beans.Users;
 public interface UserRepository extends CrudRepository<Users,Integer> {
 	
 	Users findByUsername(String username);
-	
+	Users findByUsernameAndPassword(String username, String password);
+	Users findByPassword(String password);
 
 }
