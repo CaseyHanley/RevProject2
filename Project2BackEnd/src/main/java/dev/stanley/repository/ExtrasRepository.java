@@ -8,7 +8,7 @@ import dev.stanley.beans.Extras;
 @Repository
 public interface ExtrasRepository extends CrudRepository<Extras,Integer>{
 
-	Extras findExtraById(int e_id);
+	Extras findExtraByEid(int e_id);
 
 
 }
