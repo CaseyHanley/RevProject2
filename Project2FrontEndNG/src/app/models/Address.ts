@@ -1,22 +1,25 @@
 export class Address {
-    streetA: string;
-    line2 : string;
+    a_id: string;
+    address: string;
+    address2 : string;
     city: String;
     state: String;
-    postal: number;
-    SpecInstr: String;
-    addressID: string;
+    zipcode: number;
+    comments: String;
+    uid:number;
 
-    constructor(streetA: string, line2: string,  city: String,  state: String, postal: number, SpecInstr: String, addressID: string) {
+    constructor(address: string, address2: string,  city: String,  state: String, zipcode: number, comments: String, a_id: string, uid:number) {
 
-        this.streetA = streetA;
-        this.line2 = line2;
+        this.address = address;
+        this.address2 = address2;
         this.city = city;
         this.state = state;
-        this.postal = postal;
-        this.SpecInstr = SpecInstr;
-        if (addressID != null)
-            this.addressID = addressID;
+        this.zipcode = zipcode;
+        this.comments = comments;
+        if (a_id != null)
+            this.a_id = a_id;
+        if (uid != null)
+            this.uid = uid;
 
 
         }

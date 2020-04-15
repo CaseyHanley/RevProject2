@@ -16,16 +16,18 @@ export class MattComponent implements OnInit {
     this.viewMyAddress()
   }
 
-  uid: number; //Need User ID
+  uid: number = 1; //Need User ID
   addressList: Array<Address>;
-  addressID: string;
-  streetA: string;
-  line2 : string;
+  a_id: string;
+  address: string;
+  address2 : string;
   city: String;
   state: String;
-  postal: number;
-  SpecInstr: String;
+  zipcode: number;
+  comments: String;
   valid :boolean = false;
+
+
 
   viewMyAddress() {
     this.myaddress.getAddresses(this.uid).subscribe(
@@ -47,7 +49,7 @@ export class MattComponent implements OnInit {
   addAddress(){
 
     if (this.validateInputFields()) {
-      let address = new Address (this.streetA,  this.line2, this.city, this.state, this.postal, this.SpecInstr, null)
+      let address = new Address (this.address, this.address2, this.city, this.state, this.zipcode, this.comments, null, this.uid)
       this.myaddress.addAddress(address).subscribe(
         (response) => {
           console.log(response);
@@ -64,13 +66,13 @@ export class MattComponent implements OnInit {
   validateInputFields(): boolean {
 
     if (
-      this.streetA== undefined ||
-      this.streetA == "" ||
+      this.address== undefined ||
+      this.address == "" ||
       this.city == undefined ||
       this.city == "" ||
       this.state == undefined ||
       this.state == "" ||
-      this.postal == undefined) {
+      this.zipcode == undefined) {
         this.valid = false;
       return false;
     } else {
@@ -84,7 +86,7 @@ export class MattComponent implements OnInit {
    //var rowIndex = $(x).closest('tr').index();
     var rowIndex = (x).closest('tr').index();
 
-    this.myaddress.deleteAddress(this.addressList[rowIndex].addressID);
+    this.myaddress.deleteAddress(this.addressList[rowIndex].a_id);
   }
 
 

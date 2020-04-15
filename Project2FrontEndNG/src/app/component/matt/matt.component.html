@@ -7,9 +7,9 @@
             <th>Action</th>
         </tr>
         <tr *ngFor = "let p of addressList">
-            <td> {{p.streetA}} <br>
-                {{p.line2}} <br>
-                {{p.city}} {{p.state}}, {{p.postal}}
+            <td> {{p.address}} <br>
+                {{p.address2}} <br>
+                {{p.city}} {{p.state}}, {{p.zipcode}}
             </td>
             <td>{{p.SpecInstr}</td>
             <td><button (click)="EditMyAddress(this)">Edit Address </button>    
@@ -19,13 +19,13 @@
     </table>
     <button (click) = "ViewAddAddress()"> Add Addresses</button>
     <div id="addressform" style = "display:none">
-    Street: <input type="text" [(ngModel)] = "streetA" (input) = "validateInputFields()"><br>
-    2nd Line: <input type="text" [(ngModel)] = "line2" (input) = "validateInputFields()"><br>
+    Street: <input type="text" [(ngModel)] = "address" (input) = "validateInputFields()"><br>
+    2nd Line: <input type="text" [(ngModel)] = "address2" (input) = "validateInputFields()"><br>
     City: <input type="text" [(ngModel)] = "city" (input) = "validateInputFields()"><br>
     State: <input type="text" [(ngModel)] = "state" (input) = "validateInputFields()"><br>
-    Zip: <input type="number" [(ngModel)] = "postal" (input) = "validateInputFields()"><br><br>
+    Zip: <input type="number" [(ngModel)] = "zipcode" (input) = "validateInputFields()"><br><br>
 
-    Special Instructions: <input type="text" [(ngModel)] = "SpecInstr" (input) = "validateInputFields()"><br>
+    Special Instructions: <input type="text" [(ngModel)] = "comments" (input) = "validateInputFields()"><br>
     <button (click) = "addAddress()">Submit</button>
     <p *ngIf="!valid">You have invalid fields!</p>
 </div>    
