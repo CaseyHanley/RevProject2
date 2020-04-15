@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Address } from 'src/app/component/matt/models/Address'
-import { AddressService } from 'src/app/component/matt/service/address.service'
+import { Address } from 'src/app/models/Address'
+import { AddressService } from 'src/app/service/address.service'
 
 @Component({
   selector: 'app-matt',
@@ -100,8 +100,4 @@ export class MattComponent implements OnInit {
     }
 
   Pay(){}
-
-
-}
-
-
+  }
