@@ -26,7 +26,8 @@ const routes: Routes = [
   {path : 'contactus', component : ContactusComponent},
   {path : 'registeruser', component : NewUserComponent},
   {path : 'viewcart/payment', redirectTo : '/payment', pathMatch : 'full'},
-  {path : 'login/registeruser', redirectTo : '/registeruser', pathMatch : 'full'}
+  {path : 'login/registeruser', redirectTo : '/registeruser', pathMatch : 'full'},
+  {path : '', redirectTo : '/homepage', pathMatch : 'full'}
  
 
 
