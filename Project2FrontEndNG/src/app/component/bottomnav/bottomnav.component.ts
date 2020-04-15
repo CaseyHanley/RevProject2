@@ -9,7 +9,18 @@ export class BottomnavComponent implements OnInit {
 
   constructor() { }
 
+  username :string;
+
   ngOnInit(): void {
+    this.isManager();
+  }
+
+  isManager() {
+    if(sessionStorage.getItem('username')==='sam'){
+      return true;
+    }else{
+      return false;
+    }
   }
 
 
