@@ -47,6 +47,10 @@ a:link{
 a:hover{
   background-color: black;
 }
+a:visited{
+  color: white;
+}
+
 
 .about{
   text-align: center;
@@ -57,9 +61,6 @@ a:hover{
   margin: auto;
 }
 
-a:visited{
-  color: white;
-}
 
 .photo{
   border: solid red;
@@ -104,11 +105,12 @@ a:visited{
   background-color: #f2f2f2;
   position: absolute;
   top: 0vh;
+  left: 0vw;
   text-align: center;
   padding: 5px;
   border: solid rgba(30, 27, 26, 0.81) ;
   width: 250px;
-  height: 400px;
+  height: 500px;
   margin: auto;
 }
 
