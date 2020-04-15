@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { LoginService } from 'src/app/service/login.service';
 import { LoginUser } from 'src/app/models/loginuser';
-import { User } from '../models/user';
+
 
 @Injectable({
   providedIn: 'root'
@@ -79,3 +79,4 @@ export class AuthenticateUserService {
   return false;
   }
 }
+
