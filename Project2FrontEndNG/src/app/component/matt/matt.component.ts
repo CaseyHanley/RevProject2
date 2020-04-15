@@ -19,8 +19,7 @@ export class MattComponent implements OnInit {
   uid: number; //Need User ID
   addressList: Array<Address>;
   addressID: string;
-  number: number;
-  streetName: string;
+  streetA: string;
   line2 : string;
   city: String;
   state: String;
@@ -48,7 +47,7 @@ export class MattComponent implements OnInit {
   addAddress(){
 
     if (this.validateInputFields()) {
-      let address = new Address ( this.number,  this.streetName,  this.line2, this.city, this.state, this.postal, this.SpecInstr, null)
+      let address = new Address (this.streetA,  this.line2, this.city, this.state, this.postal, this.SpecInstr, null)
       this.myaddress.addAddress(address).subscribe(
         (response) => {
           console.log(response);
@@ -64,9 +63,9 @@ export class MattComponent implements OnInit {
 
   validateInputFields(): boolean {
 
-    if (this.number == undefined ||
-      this.streetName== undefined ||
-      this.streetName == "" ||
+    if (
+      this.streetA== undefined ||
+      this.streetA == "" ||
       this.city == undefined ||
       this.city == "" ||
       this.state == undefined ||

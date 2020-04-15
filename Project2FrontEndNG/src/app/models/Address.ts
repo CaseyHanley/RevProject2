@@ -1,6 +1,5 @@
 export class Address {
-    number: number;
-    streetName: string;
+    streetA: string;
     line2 : string;
     city: String;
     state: String;
@@ -8,9 +7,9 @@ export class Address {
     SpecInstr: String;
     addressID: string;
 
-    constructor( number: number, streetName: string, line2: string,  city: String,  state: String, postal: number, SpecInstr: String, addressID: string) {
-        this.number = number;
-        this.streetName = streetName;
+    constructor(streetA: string, line2: string,  city: String,  state: String, postal: number, SpecInstr: String, addressID: string) {
+
+        this.streetA = streetA;
         this.line2 = line2;
         this.city = city;
         this.state = state;

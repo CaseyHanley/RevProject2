@@ -7,7 +7,7 @@
             <th>Action</th>
         </tr>
         <tr *ngFor = "let p of addressList">
-            <td>{{p.number}} {{p.streetName}} <br>
+            <td> {{p.streetA}} <br>
                 {{p.line2}} <br>
                 {{p.city}} {{p.state}}, {{p.postal}}
             </td>
@@ -19,8 +19,7 @@
     </table>
     <button (click) = "ViewAddAddress()"> Add Addresses</button>
     <div id="addressform" style = "display:none">
-    Number: <input type="number" [(ngModel)] = "number" (input) = "validateInputFields()"><br>
-    Street: <input type="text" [(ngModel)] = "streetName" (input) = "validateInputFields()"><br>
+    Street: <input type="text" [(ngModel)] = "streetA" (input) = "validateInputFields()"><br>
     2nd Line: <input type="text" [(ngModel)] = "line2" (input) = "validateInputFields()"><br>
     City: <input type="text" [(ngModel)] = "city" (input) = "validateInputFields()"><br>
     State: <input type="text" [(ngModel)] = "state" (input) = "validateInputFields()"><br>
