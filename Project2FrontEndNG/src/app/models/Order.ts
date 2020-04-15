@@ -1,4 +1,4 @@
-import { MenuItem } from './MenuItem';
+
 
 export class Order{
     username: string;
@@ -6,6 +6,7 @@ export class Order{
     comments: String;
     status: string;
     pickup: number;
+
     menuItem1: string;
     menuItem2: string;
     menuItem3: string;
@@ -37,10 +38,12 @@ export class Order{
         quantity7: number ){
        
         this.username = username;
+
         this.price = price;
         this.comments = comments;
         this.status = status;
         this.pickup = pickup;
+
         this.menuItem1 = menuItem1;
         this.menuItem2 = menuItem3;
         this.menuItem3 = menuItem2;
@@ -55,5 +58,5 @@ export class Order{
         this.quantity5 = quantity5;
         this.quantity6 = quantity6;
         this.quantity7 = quantity7;
-    }
+
 }
