@@ -1,13 +1,16 @@
   
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import{FormsModule} from '@angular/forms';
+// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+// import { NgbdCarouselBasic } from './carousel-basic';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CaseyComponent } from './component/casey/casey.component';
 import { JoelComponent } from './component/joel/joel.component';
-import { RomeComponent } from './component/rome/rome.component';
+import { RomeComponent } from './component/homepage (rome)/rome.component';
 import { SamComponent } from './component/sam/sam.component';
 import { MattComponent } from './component/matt/matt.component';
 
@@ -21,6 +24,8 @@ import { BottomnavComponent } from './component/bottomnav/bottomnav.component';
 import { NewUserComponent } from './component/new-user/new-user.component';
 import { StaffpageComponent } from './component/staffpage/staffpage.component';
 import { ContactusComponent } from './component/contactus/contactus.component';
+import { LoginService } from './service/login.service';
+import { OrderService } from './service/order.service';
 
 
 @NgModule({
@@ -38,14 +43,19 @@ import { ContactusComponent } from './component/contactus/contactus.component';
     NewUserComponent,
     StaffpageComponent,
     ContactusComponent
+    // NgbdCarouselBasic
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule
+    // NgbModule
+
+ 
   ],
-  providers: [AddressService, AuthenticateUserService],
+  // schemas:[NO_ERRORS_SCHEMA],
+  providers: [AddressService, AuthenticateUserService, LoginService, OrderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
