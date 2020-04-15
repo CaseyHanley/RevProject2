@@ -2,7 +2,7 @@ import { identifierModuleUrl } from '@angular/compiler';
 
 export class User{
 
-    u_id :number;
+   
     username :string;
     password :string;
     firstname :string;
@@ -10,8 +10,7 @@ export class User{
     account_type :string;
 
 
-    constructor(u_id :number, username :string, password :string, firstname :string, lastname :string, account_type :string){
-            this.u_id=u_id;
+    constructor(username :string, password :string, firstname :string, lastname :string, account_type :string){
             this.username=username;
             this.password=password;
             this.firstname=firstname;

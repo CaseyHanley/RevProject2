@@ -1,15 +1,31 @@
 import { Injectable } from '@angular/core';
-import { Order } from '../Models/Order';
-import { MenuItem } from '../Models/MenuItem';
+
+import { Order } from '../models/Order';
+import { MenuItem } from '../models/MenuItem';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class OrderService {
 
-  public order: Order;
-  constructor() { 
-    this.order = new Order(0, 0, 0, 0, '','',0, null, null, null, null, null, null, null);
-    this.order.menuItem1 = new MenuItem(1, "a lobster", "Lobster", 75);
+  private headers = new HttpHeaders({'Content-Type':'application/json'});
+
+  private url = 'http://localhost:8080';
+
+  constructor(private http: HttpClient) { }
+
+  getOrders(): Observable<Order[]>{
+    return this.http.get<Order[]>(this.url + '/orders/' + sessionStorage.getItem("username"));
+    console.log(this.url + '/orders/' + sessionStorage.getItem("username"));
+
   }
+
+  updateOrders(update: Order): Observable<Order>{
+    return this.http.put<Order>(this.url + "/orders", JSON.stringify(update));
+  } 
+
+
 }

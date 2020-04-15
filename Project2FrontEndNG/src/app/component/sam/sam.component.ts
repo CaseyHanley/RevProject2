@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { OrderService } from 'src/app/service/order.service';
+
 import { MenuItem } from 'src/app/Models/MenuItem';
+import { Order } from 'src/app/Models/Order';
 
 
 @Component({
@@ -10,11 +12,15 @@ import { MenuItem } from 'src/app/Models/MenuItem';
 })
 
 export class SamComponent implements OnInit {
-  order: OrderService;
+  order: Order;
   total: number = 0;
 
   constructor(order: OrderService) {
-    this.order = order;
+    order.getOrders().subscribe(
+      (response) => {
+        this.order = response[0]
+      }
+    )
   }
 
   ngOnInit(): void {
@@ -23,36 +29,35 @@ export class SamComponent implements OnInit {
   remove(index: number): void{
     switch(index){
       case 1:{
-        this.order.order.menuItem1 = null;
+        this.order.menuItem1 = null;
         break;
       }
       case 2:{
-        this.order.order.menuItem2 = null;
+        this.order.menuItem2 = null;
         break;
       }
       case 3:{
-        this.order.order.menuItem3 = null;
+        this.order.menuItem3 = null;
         break;
       }
       case 4:{
-        this.order.order.menuItem4 = null;
+        this.order.menuItem4 = null;
         break;
       }
       case 5:{
-        this.order.order.menuItem5 = null;
+        this.order.menuItem5 = null;
         break;
       }
       case 6:{
-        this.order.order.menuItem6 = null;
+        this.order.menuItem6 = null;
         break;
       }
       case 7:{
-        this.order.order.menuItem7 = null;
+        this.order.menuItem7 = null;
         break;
       }
       
     }
-    //this.order.order.food.splice(index);
   }
 
 
