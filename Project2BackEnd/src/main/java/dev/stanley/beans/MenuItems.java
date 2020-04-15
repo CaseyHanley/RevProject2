@@ -21,6 +21,9 @@ public class MenuItems {
 	
 	@Column(name ="price")
 	private double price;
+	
+	@Column(name = "quantity")
+	private int quantity;
 
 	public MenuItems() {
 		super();
