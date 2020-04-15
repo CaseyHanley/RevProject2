@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { LoginService } from 'src/app/service/login.service';
 import { LoginUser } from 'src/app/models/loginuser';
+import { User } from '../models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -11,9 +12,13 @@ export class AuthenticateUserService {
 
   username :string;
   password :string;
+  users :LoginUser;
 
   authenticate(username, password) {
     if(username !==null && password !==null){
+      // if (this.checkUser()){
+      //   sessionStorage.setItem('username', username)
+      // }
       //Chef
     if (username === "rome" && password === "pass") {
       sessionStorage.setItem('username', username)
@@ -53,11 +58,24 @@ export class AuthenticateUserService {
       return false
     }
   }
-    // console.log(!(user === null))
-    // return !(user === null)
-
+  
   logOut() {
     sessionStorage.removeItem('username')
     
+  }
+
+  checkUser() :boolean{
+    
+    this.userLogin.authUserByUP().subscribe(
+      (response) =>{
+        console.log(response)
+        return true;
+      },
+      (response) => {
+        console.log(response)
+        
+      }
+    )
+  return false;
   }
 }
