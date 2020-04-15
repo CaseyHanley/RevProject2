@@ -19,6 +19,9 @@ public class DeliveryAddress {
 	@Column(name ="state")
 	private String state;
 	
+	@Column(name ="city")
+	private String city;
+	
 	@Column(name ="address")
 	private String address;
 	
