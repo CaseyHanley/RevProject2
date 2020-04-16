@@ -56,7 +56,7 @@ export class MattComponent implements OnInit {
           this.addressList.push(response);
         },
         (response) => {
-          console.log("Failed to add Addres")
+          console.log("Failed to add Address")
           console.log(response);
         }
       );

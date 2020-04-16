@@ -1,20 +1,49 @@
 @import "~bootstrap/dist/css/bootstrap.css";
+@font-face{
+  src: url(assets/fonts/Cinzel/Cinzel-Regular.ttf);
+  font-family: Cinzel;
+}
 
+@font-face{
+  src: url(assets/fonts/Viaoda_Libre/ViaodaLibre-Regular.ttf);
+  font-family: Viaoda;
+}
+
+@font-face{
+  src: url(assets/fonts/Alex_Brush/AlexBrush-Regular.ttf);
+  font-family: AlexB;
+}
+
+@font-face{
+  src: url(assets/fonts/Cinzel_Decorative/CinzelDecorative-Regular.ttf);
+  font-family: CinzelD;
+}
+
+@font-face{
+  src: url(assets/fonts/Cormorant_Infant/CormorantInfant-SemiBoldItalic.ttf);
+  font-family: Cormo;
+}
+
+@font-face{
+  src: url(assets/fonts/Cormorant_Infant/CormorantInfant-Regular.ttf);
+  font-family: Cormo1;
+}
 
 body,html {
     margin: 0;
     padding: 0;
-    height : 100%;
-    width: 100%;
-    /* background-image: url('/assets/download.png'); */
-    background-image: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(255,140,35,1) 72%);
+    background-image: url('/assets/michael-maasen-rJE8oIF4uco-unsplash.jpg');
     background-position: center;
-    /* background-repeat: no-repeat; */
-    /* mirroe each repeat */
-    /* vertical gradient */
+    background-repeat: no-repeat;
     background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    
+    
    
   }
+
+
 
 
   
