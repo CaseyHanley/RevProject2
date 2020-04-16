@@ -15,9 +15,11 @@ export class OrderService {
 
   private authorized = new HttpHeaders({'authorized':'pa$$word'});
 
+
   private url = 'http://localhost:8080';
 
   constructor(private http: HttpClient) { }
+ 
 
   getOrders(): Observable<Order>{
     console.log(this.url + '/orders/' + sessionStorage.getItem("username"));
@@ -29,8 +31,12 @@ export class OrderService {
     return this.http.delete<boolean>(this.url + '/orders/' + id, {headers : this.authorized});
   }
 
+  addOrders(add: Order): Observable<Order>{
+    return this.http.post<Order>(this.url + '/orders', add ,{headers : this.headers});
+  } 
+
   updateOrders(update: Order): Observable<Order>{
-    return this.http.put<Order>(this.url + "/orders", JSON.stringify(update));
+    return this.http.put<Order>(this.url + '/orders', JSON.stringify(update));
   } 
 
 
