@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { OrderService } from 'src/app/service/order.service';
-
-import { MenuItem } from 'src/app/Models/MenuItem';
 import { Order } from 'src/app/Models/Order';
 
 
@@ -18,7 +16,16 @@ export class SamComponent implements OnInit {
   constructor(order: OrderService) {
     order.getOrders().subscribe(
       (response) => {
-        this.order = response[0]
+        this.order = response;
+        console.log(this.order);
+        //this.order.push(null);
+        console.log(this.order);
+        console.log(this.order[0]);
+        console.log("success");
+      },
+
+      (response) => {
+        console.log("failure");
       }
     )
   }
@@ -29,31 +36,31 @@ export class SamComponent implements OnInit {
   remove(index: number): void{
     switch(index){
       case 1:{
-        this.order.menuItem1 = null;
+        this.order[0].productname1 = null;
         break;
       }
       case 2:{
-        this.order.menuItem2 = null;
+        this.order[0].productname2 = null;
         break;
       }
       case 3:{
-        this.order.menuItem3 = null;
+        this.order[0].productname3 = null;
         break;
       }
       case 4:{
-        this.order.menuItem4 = null;
+        this.order[0].productname4 = null;
         break;
       }
       case 5:{
-        this.order.menuItem5 = null;
+        this.order[0].productname5 = null;
         break;
       }
       case 6:{
-        this.order.menuItem6 = null;
+        this.order[0].productname6 = null;
         break;
       }
       case 7:{
-        this.order.menuItem7 = null;
+        this.order[0].productname7 = null;
         break;
       }
       

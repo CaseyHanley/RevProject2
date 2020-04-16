@@ -1,16 +1,7 @@
-<!-- <table width = 700 style = "margin: auto;">
-    <tr  *ngIf = "order.order.menuItem1 != null">
-        <td><img src = "{{'/assets/Images/' + order.order.menuItem1 + '.jpg'}}" width = 150></td>
-        <td><table>
-        <tr>
-            <td width = 100>{{order.order.menuItem1.productName}}</td>
-            <td>{{order.order.menuItem1.price | currency: 'USD'}}</td>
-        </tr>
-        <tr>
-            <td colspan="2"><br>{{order.order.menuItem1.descriptions}}</td>
-        </tr>
-        </table>
-        </td>
+<table width = 700 style = "margin: auto;">
+    <tr  *ngIf = "order.productname1 != null">
+        <td><img src = "{{'/assets/Images/' + order.productname1 + '.jpg'}}" width = 150></td>
+        <td width = 100>{{order.productname1}}</td>
         <td><button (click) = "remove(1)">Remove</button></td>
     </tr>
 
@@ -21,5 +12,5 @@
     </td>
     <td><a routerLink = "payment"><button>Checkout</button></a></td></tr>
 </table>
-<router-outlet></router-outlet> -->
+<router-outlet></router-outlet>
 sams component
