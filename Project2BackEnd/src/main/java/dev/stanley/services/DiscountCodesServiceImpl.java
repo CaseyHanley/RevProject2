@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import dev.stanley.beans.DiscountCodes;
-import dev.stanley.repository.DiscountCodesRepository;
+import dev.stanley.repositories.DiscountCodesRepository;
 
 
 

@@ -1,15 +1,9 @@
 package dev.stanley.beans;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
 
 @Entity
 public class Orders {
@@ -19,11 +13,9 @@ public class Orders {
 	@GeneratedValue
 	private int o_id;
 	
-	@Column(name = "u_id")
-	private int u_id;
 	
-	@Column(name = "username")
-	private String username;
+	@Column(name = "ousername")
+	private String ousername;
 	
 	@Column(name = "productname1", columnDefinition = "varchar(255) default 'Null'")
 	private String productname1;
@@ -70,18 +62,12 @@ public class Orders {
 	@Column(name = "price")
 	private double price;
 	
-	@Column(name="comments")
+	@Column(name="comments", nullable = true)
 	private String comments;
 	
 	@Column(name = "status")
 	private String status;
 	
-	@Column(name = "pickup")
-	private boolean pickup;
-	
-	@OneToMany(fetch = FetchType.EAGER)
-	@JoinColumn(name = "menuitems")
-	private List<MenuItems> menuitems;
 
 
 	public Orders() {
@@ -89,13 +75,30 @@ public class Orders {
 	}
 
 
-	public Orders(int o_id, int u_id, String username, String productname1, String productname2, String productname3,
-			String productname4, String productname5, String productname6, String productname7, int quantity1,
-			int quantity2, int quantity3, int quantity4, int quantity5, int quantity6, int quantity7, double price, String comments, String status, boolean pickup, List<MenuItems> menuitems) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	public Orders(String ousername, String productname1, String productname2, String productname3, String productname4,
+			String productname5, String productname6, String productname7, int quantity1, int quantity2, int quantity3,
+			int quantity4, int quantity5, int quantity6, int quantity7, double price, String comments, String status) {
 		super();
-		this.o_id = o_id;
-		this.u_id = u_id;
-		this.username = username;
+		this.ousername = ousername;
 		this.productname1 = productname1;
 		this.productname2 = productname2;
 		this.productname3 = productname3;
@@ -113,22 +116,93 @@ public class Orders {
 		this.price = price;
 		this.comments = comments;
 		this.status = status;
-		this.pickup = pickup;
-		this.menuitems = menuitems;
-		this.menuitems = new ArrayList(menuitems);
 	}
 
-	
-	
 
 
-	public String getUsername() {
-		return username;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	public Orders(int o_id, String ousername, String productname1, String productname2, String productname3,
+			String productname4, String productname5, String productname6, String productname7, int quantity1,
+			int quantity2, int quantity3, int quantity4, int quantity5, int quantity6, int quantity7, double price,
+			String comments, String status) {
+		super();
+		this.o_id = o_id;
+		this.ousername = ousername;
+		this.productname1 = productname1;
+		this.productname2 = productname2;
+		this.productname3 = productname3;
+		this.productname4 = productname4;
+		this.productname5 = productname5;
+		this.productname6 = productname6;
+		this.productname7 = productname7;
+		this.quantity1 = quantity1;
+		this.quantity2 = quantity2;
+		this.quantity3 = quantity3;
+		this.quantity4 = quantity4;
+		this.quantity5 = quantity5;
+		this.quantity6 = quantity6;
+		this.quantity7 = quantity7;
+		this.price = price;
+		this.comments = comments;
+		this.status = status;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	public String getOusername() {
+		return ousername;
 	}
+
+
+
+
+
+
+
+	public void setOusername(String ousername) {
+		this.ousername = ousername;
+	}
+
+
+
+
+
+
 
 	public String getProductname1() {
 		return productname1;
@@ -186,13 +260,7 @@ public class Orders {
 		this.productname7 = productname7;
 	}
 
-	public List<MenuItems> getMenuitems() {
-		return menuitems;
-	}
 
-	public void setMenuitems(List<MenuItems> menuitems) {
-		this.menuitems = menuitems;
-	}
 
 	public int getO_id() {
 		return o_id;
@@ -200,14 +268,6 @@ public class Orders {
 
 	public void setO_id(int o_id) {
 		this.o_id = o_id;
-	}
-
-	public int getU_id() {
-		return u_id;
-	}
-
-	public void setU_id(int u_id) {
-		this.u_id = u_id;
 	}
 
 
@@ -233,14 +293,6 @@ public class Orders {
 
 	public void setStatus(String status) {
 		this.status = status;
-	}
-
-	public boolean isPickup() {
-		return pickup;
-	}
-
-	public void setPickup(boolean pickup) {
-		this.pickup = pickup;
 	}
 
 
@@ -331,12 +383,12 @@ public class Orders {
 
 	@Override
 	public String toString() {
-		return "OrderArchive [o_id=" + o_id + ", u_id=" + u_id + ", username=" + username + ", productname1="
+		return "OrderArchive [o_id=" + o_id + ", Username=" + ousername + ", productname1="
 				+ productname1 + ", productname2=" + productname2 + ", productname3=" + productname3 + ", productname4="
 				+ productname4 + ", productname5=" + productname5 + ", productname6=" + productname6 + ", productname7="
 				+ productname7 + ", quantity1=" + quantity1 + ", quantity2=" + quantity2 + ", quantity3=" + quantity3
 				+ ", quantity4=" + quantity4 + ", quantity5=" + quantity5 + ", quantity6=" + quantity6 + ", quantity7="
-				+ quantity7 + ", price=" + price + ", comments="+ comments + ", status=" + status + ", pickup=" + pickup + ", menuitems=" + menuitems + "]";
+				+ quantity7 + ", price=" + price + ", comments="+ comments + ", status=" + status + "]";
 	}
 
 

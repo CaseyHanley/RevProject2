@@ -1,4 +1,4 @@
-package dev.stanley.repository;
+package dev.stanley.repositories;
 
 import java.util.List;
 
@@ -10,6 +10,6 @@ import dev.stanley.beans.DeliveryAddress;
 @Repository
 public interface DeliveryAddressRepository extends CrudRepository<DeliveryAddress,Integer>{
 
-	List<DeliveryAddress> findAllByUid(int u_id);
-
+	List<DeliveryAddress> findAllByUsername(String username);
+	DeliveryAddress findByUsername(String username);
 }

@@ -27,6 +27,7 @@ public class OrderController {
 	@RequestMapping(value="/orders", method=RequestMethod.POST, consumes="application/Json")
 	public Orders createOrder(@RequestBody Orders orders) {
 		System.out.println(orders);
+		
 		return os.createOrder(orders);
 	}
 	

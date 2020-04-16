@@ -25,7 +25,6 @@ public class DeliveryAddressController {
 	
 	@RequestMapping(value="/deliveryaddress", method=RequestMethod.POST, consumes="application/Json")
 	public DeliveryAddress createAddress(@RequestBody DeliveryAddress address) {
-		
 		return das.createAddress(address);
 		
 	}
@@ -37,9 +36,9 @@ public class DeliveryAddressController {
 	}
 	
 	@GetMapping(value = "/deliveryaddress/{u_id}")
-	public DeliveryAddress getAddressById(@PathVariable("u_id") int u_id) {
+	public DeliveryAddress getAddressByUsername(@PathVariable("username") String username) {
 		
-		return das.getAddressById(u_id);
+		return das.getAddressByUsername(username);
 	}
 	
 	
@@ -52,8 +51,8 @@ public class DeliveryAddressController {
 	
 	
 	@DeleteMapping(value="/deliveryaddress/{a_id}")
-	public boolean deleteDeliveryAddress(@PathVariable("a_id") int a_id) {
-		das.deleteDeliveryAddress(das.getAddressById(a_id));
+	public boolean deleteDeliveryAddress(@PathVariable("username") String username) {
+		das.deleteDeliveryAddress(das.getAddressByUsername(username));
 		return true;
 	}
 }
