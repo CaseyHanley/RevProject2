@@ -23,4 +23,8 @@ isLoggedin() :boolean{
   }
 }
 
+isChef(): boolean{
+  return sessionStorage.getItem('username') == 'rome';
+}
+
 }
