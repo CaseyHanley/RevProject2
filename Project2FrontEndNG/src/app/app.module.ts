@@ -1,9 +1,9 @@
   
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import{FormsModule} from '@angular/forms';
-// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-// import { NgbdCarouselBasic } from './carousel-basic';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -43,18 +43,19 @@ import { OrderService } from './service/order.service';
     NewUserComponent,
     StaffpageComponent,
     ContactusComponent
-    // NgbdCarouselBasic
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
-    // NgbModule
+    FormsModule,
+    SlickCarouselModule,
+    NgbModule
 
  
   ],
-  // schemas:[NO_ERRORS_SCHEMA],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA],
   providers: [AddressService, AuthenticateUserService, LoginService, OrderService],
   bootstrap: [AppComponent]
 })
