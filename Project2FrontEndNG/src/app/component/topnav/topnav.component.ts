@@ -23,4 +23,22 @@ isLoggedin() :boolean{
   }
 }
 
+isDriver() {
+  if(sessionStorage.getItem('username')==='joel'){
+    return true;
+  }else{
+    return false;
+  }
+}
+
+isEmployee() {
+  if(sessionStorage.getItem('username')==='sam' || sessionStorage.getItem('username')==='rome' || sessionStorage.getItem('username')==='casey' || sessionStorage.getItem('username')==='joel'){
+    return true;
+  }else{
+    return false;
+  }
+}
+
+
+
 }

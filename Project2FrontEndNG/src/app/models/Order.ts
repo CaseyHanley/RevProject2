@@ -6,7 +6,6 @@ export class Order{
     price: number;
     comments: String;
     status: string;
-    pickup: number;
 
     productname1: string;
     productname2: string;
@@ -43,7 +42,7 @@ export class Order{
         this.price = price;
         this.comments = comments;
         this.status = status;
-        this.pickup = pickup;
+
 
         this.productname1 = menuItem1;
         this.productname2 = menuItem3;
