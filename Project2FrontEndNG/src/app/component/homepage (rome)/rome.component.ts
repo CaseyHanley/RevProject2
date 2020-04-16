@@ -6,6 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./rome.component.css']
 })
 export class RomeComponent implements OnInit {
+  images = [
+    "../assets/Images/louis-hansel-shotsoflouis-adYREqRdHCs-unsplash.jpg",
+    "../assets/Images/Fine-Dining.jpg",
+    "../assets/Images/andres-medina-eGPlT_RXzi8-unsplash.jpg",
+    "../assets/Images/cody-chan-FdvHxVWHhzA-unsplash.jpg"
+
+    
+  ]
+
+  
 
   constructor() { }
 

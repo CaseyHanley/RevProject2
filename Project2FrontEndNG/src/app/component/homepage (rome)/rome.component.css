@@ -16,3 +16,13 @@
     background-image: url('/assets/Fine-Dining.jpg');
     display: inline-block;
   }
+
+  .slick-slider {  
+    width: 90%;  
+    margin: auto;  
+  } 
+
+  img{
+    height: 500px;
+    width: 60%;
+  }
