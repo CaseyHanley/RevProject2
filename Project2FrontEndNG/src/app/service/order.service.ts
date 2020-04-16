@@ -17,9 +17,9 @@ export class OrderService {
 
   constructor(private http: HttpClient) { }
 
-  getOrders(): Observable<Order[]>{
-    return this.http.get<Order[]>(this.url + '/orders/' + sessionStorage.getItem("username"));
+  getOrders(): Observable<Order>{
     console.log(this.url + '/orders/' + sessionStorage.getItem("username"));
+    return this.http.get<Order>(this.url + '/orders/' + sessionStorage.getItem("username"));
 
   }
 
