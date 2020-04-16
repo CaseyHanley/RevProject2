@@ -60,3 +60,4 @@ export class Order{
         this.quantity7 = quantity7;
 
 }
+}
