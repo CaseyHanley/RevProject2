@@ -25,6 +25,7 @@ import { StaffpageComponent } from './component/staffpage/staffpage.component';
 import { ContactusComponent } from './component/contactus/contactus.component';
 import { LoginService } from './service/login.service';
 import { OrderService } from './service/order.service';
+import { EditMenuComponent } from './edit-menu/edit-menu.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { OrderService } from './service/order.service';
     BottomnavComponent,
     NewUserComponent,
     StaffpageComponent,
-    ContactusComponent
+    ContactusComponent,
+    EditMenuComponent
   
   ],
   imports: [
