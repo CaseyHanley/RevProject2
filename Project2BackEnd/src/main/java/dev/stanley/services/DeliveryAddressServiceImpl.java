@@ -49,7 +49,7 @@ public class DeliveryAddressServiceImpl implements DeliveryAddressService {
 	@Override
 	public List<DeliveryAddress> getAddressesById(int u_id) {
 		
-		return (List<DeliveryAddress>) dar.finAllById(u_id);
+		return (List<DeliveryAddress>) dar.findAllByUid(u_id);
 	}
 
 }

@@ -10,6 +10,6 @@ import dev.stanley.beans.DeliveryAddress;
 @Repository
 public interface DeliveryAddressRepository extends CrudRepository<DeliveryAddress,Integer>{
 
-	List<DeliveryAddress> finAllById(int u_id);
+	List<DeliveryAddress> findAllByUid(int u_id);
 
 }

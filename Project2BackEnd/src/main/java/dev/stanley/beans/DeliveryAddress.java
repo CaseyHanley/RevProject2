@@ -14,10 +14,13 @@ public class DeliveryAddress {
 	private int a_id;
 	
 	@Column(name ="u_id")
-	private int u_id;
+	private int uid;
 	
 	@Column(name ="state")
 	private String state;
+	
+	@Column(name ="city")
+	private String city;
 	
 	@Column(name ="address")
 	private String address;
@@ -39,12 +42,13 @@ public class DeliveryAddress {
 		this.a_id = a_id;
 	}
 
-	public int getU_id() {
-		return u_id;
+
+	public int getUid() {
+		return uid;
 	}
 
-	public void setU_id(int u_id) {
-		this.u_id = u_id;
+	public void setUid(int uid) {
+		this.uid = uid;
 	}
 
 	public String getState() {
@@ -89,7 +93,7 @@ public class DeliveryAddress {
 
 	@Override
 	public String toString() {
-		return "DeliveryAddress [a_id=" + a_id + ", u_id=" + u_id + ", state=" + state + ", address=" + address
+		return "DeliveryAddress [a_id=" + a_id + ", u_id=" + uid + ", state=" + state + ", address=" + address
 				+ ", address2=" + address2 + ", zipcode=" + zipcode + ", comments=" + comments + "]";
 	}
 
@@ -102,7 +106,7 @@ public class DeliveryAddress {
 			String comments) {
 		super();
 		this.a_id = a_id;
-		this.u_id = u_id;
+		this.uid = u_id;
 		this.state = state;
 		this.address = address;
 		this.address2 = address2;
