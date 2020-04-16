@@ -1,6 +1,7 @@
 
 
 export class Order{
+    o_id: number;
     username: string;
     price: number;
     comments: String;

@@ -1,12 +1,12 @@
-<table width = 700 style = "margin: auto;">
+<table width = 700 style = "margin: auto;" *ngIf = "order != null">
     <tr  *ngIf = "order.productname1 != null">
         <td><img src = "{{'/assets/Images/' + order.productname1 + '.jpg'}}" width = 150></td>
         <td width = 100>{{order.productname1}}</td>
-        <td><button (click) = "remove(1)">Remove</button></td>
+        <!--<td><button (click) = "remove(1)">Remove</button></td>-->
     </tr>
 
     
-    <tr><td></td>
+    <tr><td><button (click) = "clear()">Clear</button></td>
     <td style = "text-align: right">
         Total:<br>{{order.price | currency: 'USD'}}
     </td>
