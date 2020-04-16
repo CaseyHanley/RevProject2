@@ -23,8 +23,6 @@ export class LoginService {
     return this.http.post<User>('http://localhost:8080/users',user,{headers : this.headers})
   }
 
-  
-
   authUserByUP() :Observable<LoginUser>{
     let params1 = new HttpParams().set("username",this.param1).set("password", this.param2);
 
