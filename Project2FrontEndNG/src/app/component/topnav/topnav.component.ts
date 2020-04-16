@@ -23,6 +23,7 @@ isLoggedin() :boolean{
   }
 }
 
+
 isDriver() {
   if(sessionStorage.getItem('username')==='joel'){
     return true;
@@ -39,6 +40,12 @@ isEmployee() {
   }
 }
 
+
+
+
+isChef(): boolean{
+  return sessionStorage.getItem('username') == 'rome';
+}
 
 
 }

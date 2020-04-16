@@ -1,0 +1,12 @@
+<table style = 'margin:auto'>
+    <tr><td></td><th>Add to Menu</th><td></td><th>Remove From Menu</th></tr>
+    <tr>
+        <td>Name:</td> <td style="margin-left: 100px;"><input [(ngModel)] = "name" type = "text"></td> <td>Name:</td> <td><input [(ngModel)] = "name" type = "text"></td>
+    </tr><tr>
+        <td>Price:</td> <td><input [(ngModel)] = "price" type = "number"></td> <td><button (click) = "deleteItem()">Remove</button></td>
+    </tr><tr>
+        <td>Description:</td><td><input [(ngModel)] = "description" type = "text"></td>
+    </tr><tr>
+        <td><button (click) = "addItem()">Add to Menu</button></td>
+</tr>
+</table>

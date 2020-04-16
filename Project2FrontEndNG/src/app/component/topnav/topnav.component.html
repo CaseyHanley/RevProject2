@@ -26,6 +26,9 @@
       <li class="nav-item">
         <a style="font-family: Cormo1; font-size: larger;" *ngIf="isLoggedin() && !isEmployee()" class="nav-link" routerLink="viewcart">View cart</a>
       </li>
+      <li class="nav-item">
+        <a style="font-family: Cormo1; font-size: larger;" *ngIf="isChef()" class="nav-link" href="additem">Edit Menu</a>
+      </li>
     </ul>
   
       <ul class="navbar-nav ml-auto">

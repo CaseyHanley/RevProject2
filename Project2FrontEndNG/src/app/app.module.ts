@@ -26,6 +26,8 @@ import { ContactusComponent } from './component/contactus/contactus.component';
 import { LoginService } from './service/login.service';
 import { OrderService } from './service/order.service';
 import { DriverComponent } from './component/driver/driver.component';
+import { EditMenuComponent } from './edit-menu/edit-menu.component';
+
 
 
 @NgModule({
@@ -43,7 +45,9 @@ import { DriverComponent } from './component/driver/driver.component';
     NewUserComponent,
     StaffpageComponent,
     ContactusComponent,
-    DriverComponent
+    DriverComponent,
+    EditMenuComponent
+
   
   ],
   imports: [

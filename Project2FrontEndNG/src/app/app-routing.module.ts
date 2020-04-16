@@ -11,6 +11,8 @@ import { StaffpageComponent } from './component/staffpage/staffpage.component';
 import { ContactusComponent } from './component/contactus/contactus.component';
 import { RomeComponent } from './component/homepage (rome)/rome.component';
 import { DriverComponent } from './component/driver/driver.component';
+import { EditMenuComponent } from './edit-menu/edit-menu.component';
+
 
 
 const routes: Routes = [
@@ -25,6 +27,7 @@ const routes: Routes = [
   {path : 'contactus', component : ContactusComponent},
   {path : 'registeruser', component : NewUserComponent},
   {path : 'driver', component : DriverComponent},
+  {path : 'additem', component : EditMenuComponent},
   {path : 'viewcart/payment', redirectTo : '/payment', pathMatch : 'full'},
   {path : 'login/registeruser', redirectTo : '/registeruser', pathMatch : 'full'},
   {path : '', redirectTo : '/homepage', pathMatch : 'full'}
