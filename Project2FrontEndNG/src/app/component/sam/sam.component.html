@@ -4,7 +4,8 @@
 <div style="text-align: center;">
     <div class = "centerpage">
         <h1 *ngIf="order ==null" style="font-style: italic; font-family: Cormo1;">Cart Empty</h1>
-        <h6 *ngIf="order ==null" style="font-style: italic; font-family: Cormo1;">Place an order above</h6>
+       <a routerLink = "neworder"><h6 *ngIf="order ==null" style="font-style: italic; font-family: Cormo1;">Place an order</h6></a> 
+        
     </div>
     
     <table width=700 style="margin: auto;" *ngIf="order != null && order.status == 'in cart'">
