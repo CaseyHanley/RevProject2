@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuItemService } from '../service/menu-item.service';
-import { MenuItem } from '../models/MenuItem';
+import { MenuItemService } from '../../service/menu-item.service';
+import { MenuItem } from 'src/app/models/MenuItem';
 
 @Component({
   selector: 'app-edit-menu',

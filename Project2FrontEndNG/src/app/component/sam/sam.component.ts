@@ -10,16 +10,19 @@ import { Order } from 'src/app/models/Order';
 })
 
 export class SamComponent implements OnInit {
+
+  ngOnInit(): void {
+    this.viewOrder();
+  }
   order: Order;
-  orderService: OrderService;
   total: number = 0;
 
-  constructor(order: OrderService) {
-    this.orderService = order;
-    order.getOrders().subscribe(
+  constructor(private orderService: OrderService) {}
+
+  viewOrder(){
+    this.orderService.getOrders().subscribe(
       (response) => {
         this.order = response;
-        console.log("success");
         console.log(this.order);
       },
 
@@ -28,9 +31,7 @@ export class SamComponent implements OnInit {
       }
     )
   }
-
-  ngOnInit(): void {
-  }
+ 
 
   remove(index: number): void{
     switch(index){
@@ -68,7 +69,7 @@ export class SamComponent implements OnInit {
   }
   clear(): void {
     if(this.order != null){
-      this.orderService.deleteOrders(this.order.o_id).subscribe(
+      this.orderService.deleteOrders(this.order.oid).subscribe(
         (response) => {
           this.order = null;
           console.log("Order successfully deleted");
