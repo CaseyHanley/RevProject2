@@ -10,63 +10,42 @@
     
     <table width=700 style="margin: auto;" *ngIf="order != null && order.status == 'in cart'">
         <tr *ngIf="order.productname1 != 'Null'">
-            <!-- <td><img src = "{{'/assets/Images/' + order.productname1 + '.jpg'}}" width = 150></td> -->
-            <td>
-                <img *ngIf = isBreadSticks() src="{{'/assets/Images/arugula-salad.jpg'}}" width=150>
-                <img *ngIf = checkCrab() src="{{'/assets/Images/crab-avocado-toasts.jpg'}}" width=150>
-                <img *ngIf = checkBru() src="{{'/assets/Images/bruschetta.jpg'}}" width=150>
-            </td>
+            <td><img src = "{{'/assets/Images/' + order.productname1 + '.jpg'}}" width = 150></td>
             <td width=100>{{order.productname1}}</td>
-            <!-- <td><button (click) = "remove(1)">Remove</button></td> -->
         </tr>
 
         <tr *ngIf="order.productname2 != 'Null'">
-            <td ><img *ngIf = isScallop() src="{{'/assets/Images/scallop-carpaccio.jpg'}}" width=150>
-                <img *ngIf = isPoached() src="{{'/assets/Images/poached-lobster-tail.jpg'}}" width=150>
-                <img *ngIf = isCaviar() src="{{'/assets/Images/Caviar.jpg'}}" width=150></td>
+            <td><img src = "{{'/assets/Images/' + order.productname2 + '.jpg'}}" width = 150></td>
             <td width=100>{{order.productname2}}</td>
             <!--<td><button (click) = "remove(2)">Remove</button></td>-->
         </tr>
 
         <tr *ngIf="order.productname3 != 'Null'">
-            <td>
-                <img *ngIf = aspSoup() src="{{'/assets/Images/asparagus-soup.jpg'}}" width=150>
-                <img *ngIf = frenchSoup() src="{{'/assets/Images/french-onion.jpg'}}" width=150>
-                <img *ngIf = cocoSoup() src="{{'/assets/Images/coconut-chicken-soup.jpg'}}" width=150></td>
+            <td><img src = "{{'/assets/Images/' + order.productname3 + '.jpg'}}" width = 150></td>
             <td width=100>{{order.productname3}}</td>
             <!--<td><button (click) = "remove(3)">Remove</button></td>-->
         </tr>
 
         <tr *ngIf="order.productname4 != 'Null'">
-            <td> 
-            <img *ngIf = isArugula() src="{{'/assets/Images/arugula-salad.jpg'}}" width=150>
-            <img *ngIf = isGarden() src="{{'/assets/Images/garden-salad.jpg'}}" width=150>
-            <img *ngIf = isCaesar() src="{{'/assets/Images/caesar-salad.jpg'}}" width=150></td>
+            <td><img src = "{{'/assets/Images/' + order.productname4 + '.jpg'}}" width = 150></td>
             <td width=100>{{order.productname4}}</td>
             <!--<td><button (click) = "remove(4)">Remove</button></td>-->
         </tr>
 
         <tr *ngIf="order.productname5 != 'Null'">
-            <td> 
-            <img *ngIf = isLobster() src="{{'/assets/Images/lobster-stuffed-crab.jpg'}}" width=150>
-            <img *ngIf = isRibeye() src="{{'/assets/Images/Steak.jpg'}}" width=150>
-            <img *ngIf = isSalmon() src="{{'/assets/Images/salmon-pasta.jpg'}}" width=150></td>
+            <td><img src = "{{'/assets/Images/' + order.productname5 + '.jpg'}}" width = 150></td>
             <td width=100>{{order.productname5}}</td>
             <!--<td><button (click) = "remove(5)">Remove</button></td>-->
         </tr>
 
         <tr *ngIf="order.productname6 != 'Null'">
-            <td> <img *ngIf = isStrawberry() src="{{'/assets/Images/strawberry-shortbread.jpg'}}" width=150>
-            <img *ngIf = isVelvet() src="{{'/assets/Images/red-velvet-cake.jpg'}}" width=150>
-            <img *ngIf = isMousse() src="{{'/assets/Images/chocolate-mousse.jpg'}}" width=150></td>
+            <td><img src = "{{'/assets/Images/' + order.productname6 + '.jpg'}}" width = 150></td>
             <td width=100>{{order.productname6}}</td>
             <!--<td><button (click) = "remove(6)">Remove</button></td>-->
         </tr>
 
         <tr *ngIf="order.productname7 != 'Null'">
-            <td>  <img *ngIf = isIced() src="{{'/assets/Images/iced-mocha-latte.jpg'}}" width=150>
-            <img *ngIf = isMai() src="{{'/assets/Images/mai-tai.jpg'}}" width=150>
-            <img *ngIf = isPina() src="{{'/assets/Images/pina-colada.jpg'}}" width=150></td>
+            <td><img src = "{{'/assets/Images/' + order.productname7 + '.jpg'}}" width = 150></td>
             <td width=100>{{order.productname7}}</td>
             <!--<td><button (click) = "remove(7)">Remove</button></td>-->
         </tr>
