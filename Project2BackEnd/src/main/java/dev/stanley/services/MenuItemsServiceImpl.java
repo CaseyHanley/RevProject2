@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import dev.stanley.beans.MenuItems;
-import dev.stanley.repository.MenuItemsRepository;
+import dev.stanley.repositories.MenuItemsRepository;
 
 @Service
 public class MenuItemsServiceImpl implements MenuItemsService {

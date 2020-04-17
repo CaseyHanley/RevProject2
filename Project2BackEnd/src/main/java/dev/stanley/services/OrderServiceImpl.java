@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import dev.stanley.beans.Orders;
-import dev.stanley.repository.OrdersRepository;
+import dev.stanley.repositories.OrdersRepository;
 
 @Service
 public class OrderServiceImpl implements OrderService {
@@ -48,7 +48,7 @@ public class OrderServiceImpl implements OrderService {
 
 	@Override
 	public Orders getOrder(String username) {
-		return or.findByUsername(username);
+		return or.findByousername(username);
 	}
 
 }
