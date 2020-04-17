@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Order } from 'src/app/models/Order';
+import { OrderService } from 'src/app/service/order.service';
 
 
 @Component({
@@ -10,12 +11,24 @@ import { Order } from 'src/app/models/Order';
 })
 export class JoelComponent implements OnInit {
 
-  constructor(private o1 : Order) { }
+  constructor(private os1 : OrderService) { }
 
-  let o1 = new Order(0,0,0,this.finalPrice,this.comments,"Pending",
-  0,this.starterName,this.appetizerName,this.soupName,this.saladName,
-  this.maincourseName,this.dessertName,this.beverageName);
+  submitOrder() {
 
+    let o1 = new Order(0,"test_usn",this.finalPrice,this.comments,
+  "Pending",this.starterName,this.appetizerName,
+  this.soupName,this.saladName,this.maincourseName,this.dessertName,
+  this.beverageName,this.starterQuantity,this.appetizerQuantity,
+  this.soupQuantity,this.saladQuantity,this.maincourseQuantity,
+  this.dessertQuantity,this.beverageQuantity);
+
+  this.os1.addOrders(o1).subscribe(
+    (response) => {
+      console.log(this.os1);
+    }
+  )
+
+  }
 
   //name
   starterName :string = "";
@@ -211,6 +224,7 @@ export class JoelComponent implements OnInit {
       this.starterPrice=15.99;
     }
   }
+  
   
 
   ngOnInit(): void {
