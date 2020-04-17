@@ -24,33 +24,50 @@ public class OrderController {
 	@Autowired
 	OrderService os;
 
-	@RequestMapping(value = "/orders", method = RequestMethod.POST, consumes = "application/Json")
+	@RequestMapping(value = "/order", method = RequestMethod.POST, consumes = "application/Json")
 	public Orders createOrder(@RequestBody Orders orders) {
 		System.out.println(orders);
 		return os.createOrder(orders);
 	}
 
-	@GetMapping(value = "/orders", produces = "application/Json")
+	@GetMapping(value = "/order", produces = "application/Json")
 	public List<Orders> allOrders() {
 		System.out.println("executing get all");
 		return os.allOrders();
 	}
 
-	@GetMapping(value = "/orders/{username}")
+//	@GetMapping(value = "/order/{username}")
+//	public List<Orders> getOrder(@PathVariable("username") String username) {
+//		System.out.println("executing get order");
+//		 
+//		 return order.getOrder(username);
+//
+//	}
+	
+	@GetMapping(value = "/order/{username}")
 	public Orders getOrder(@PathVariable("username") String username) {
-		System.out.println("executing get all");
-		return os.getOrder(username);
-
+		System.out.println("executing get order");
+		 List<Orders> order = os.getOrder(username);
+		 int temp =-1;
+		 for(int x =0 ; x < order.size(); x++) {
+			 if(order.get(x).getOid()>temp){
+				 temp = order.get(x).getOid();
+			 }
+		 }
+		 return os.getOrderById(temp);
 	}
+		
+	
+	
 
-	@PutMapping(value = "/orders", consumes = "application/Json")
+	@PutMapping(value = "/order", consumes = "application/Json")
 	public Orders updateOrder(@RequestBody Orders change) {
 		return os.updateOrder(change);
 
 	}
 
 	@AuthorizeDelete
-	@DeleteMapping(value = "/orders/{o_id}")
+	@DeleteMapping(value = "/order/{o_id}")
 	public boolean deleteItems(@PathVariable("o_id") int o_id) {
 		System.out.println("Executing Delete");
 		return os.deleteOrder(os.getOrderById(o_id));

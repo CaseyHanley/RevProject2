@@ -22,7 +22,7 @@ public class DeliveryDriverController {
 	
 	@RequestMapping(value = "/drivers", method = RequestMethod.POST, consumes = "application/Json")
 	public DeliveryDriver createDriver(@RequestBody DeliveryDriver driver) {
-		
+		System.out.println(driver);
 		return dds.createDriver(driver);
 	}
 	

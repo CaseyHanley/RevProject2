@@ -20,8 +20,8 @@ public class OrderServiceImpl implements OrderService {
 	}
 
 	@Override
-	public Orders getOrderById(int o_id) {
-		return or.findById(o_id).get();
+	public Orders getOrderById(int oid) {
+		return or.findById(oid).get();
 	}
 
 	@Override
@@ -47,7 +47,7 @@ public class OrderServiceImpl implements OrderService {
 	}
 
 	@Override
-	public Orders getOrder(String username) {
+	public List<Orders> getOrder(String username) {
 		return or.findByousername(username);
 	}
 

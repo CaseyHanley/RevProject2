@@ -25,25 +25,25 @@ public class Orders {
 	@Column(name = "status")
 	private String status;
 
-	@Column(name = "productname1", columnDefinition = "varchar(255) default 'Null'")
+	@Column(name = "productname1")
 	private String productname1;
 
-	@Column(name = "productname2", columnDefinition = "varchar(255) default 'Null'")
+	@Column(name = "productname2")
 	private String productname2;
 
-	@Column(name = "productname3", columnDefinition = "varchar(255) default 'Null'")
+	@Column(name = "productname3")
 	private String productname3;
 
-	@Column(name = "productname4", columnDefinition = "varchar(255) default 'Null'")
+	@Column(name = "productname4")
 	private String productname4;
 
-	@Column(name = "productname5", columnDefinition = "varchar(255) default 'Null'")
+	@Column(name = "productname5")
 	private String productname5;
 
-	@Column(name = "productname6", columnDefinition = "varchar(255) default 'Null'")
+	@Column(name = "productname6")
 	private String productname6;
 
-	@Column(name = "productname7", columnDefinition = "varchar(255) default 'Null'")
+	@Column(name = "productname7")
 	private String productname7;
 
 	@Column(name = "quanity1")
@@ -276,7 +276,7 @@ public class Orders {
 
 	@Override
 	public String toString() {
-		return "OrderArchive [o_id=" + oid + ", Username=" + ousername + ", productname1=" + productname1
+		return "Order [o_id=" + oid + ", Username=" + ousername + ", productname1=" + productname1
 				+ ", productname2=" + productname2 + ", productname3=" + productname3 + ", productname4=" + productname4
 				+ ", productname5=" + productname5 + ", productname6=" + productname6 + ", productname7=" + productname7
 				+ ", quantity1=" + quantity1 + ", quantity2=" + quantity2 + ", quantity3=" + quantity3 + ", quantity4="
