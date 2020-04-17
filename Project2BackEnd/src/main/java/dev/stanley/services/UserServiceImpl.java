@@ -29,7 +29,6 @@ public class UserServiceImpl implements UserService {
 		return ur.findByUsername(username);
 	}
 
-
 	@Override
 	public List<Users> allUsers() {
 		return (List<Users>) ur.findAll();
@@ -62,21 +61,16 @@ public class UserServiceImpl implements UserService {
 //			return false;
 //		}
 //	}
-	
+
 	@Override
 	public Users loginUser(String username, String password) {
-		return ur.findByUsernameAndPassword(username,password);
-		
-		
+		return ur.findByUsernameAndPassword(username, password);
+
 	}
 
 	@Override
 	public Users getUserByP(String password) {
 		return ur.findByPassword(password);
 	}
-
-
-
-
 
 }

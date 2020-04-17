@@ -22,11 +22,11 @@ public class DeliveryDriver {
 	private String driverUsername;
 	
 	
-	@Column(name="o_id")
-	private int o_id;
+	@Column(name="oid")
+	private int oid;
 	
 	@OneToMany(fetch = FetchType.EAGER) 
-	@JoinColumn(name = "o_id", referencedColumnName = "o_id")
+	@JoinColumn(name = "oid", referencedColumnName = "oid")
 	private List<Orders> DriverOrders;
 	
 	
@@ -34,6 +34,16 @@ public class DeliveryDriver {
 
 	public DeliveryDriver() {
 		super();
+	}
+
+
+
+	public DeliveryDriver(int driverid, String driverUsername, int oid, List<Orders> driverOrders) {
+		super();
+		this.driverid = driverid;
+		this.driverUsername = driverUsername;
+		this.oid = oid;
+		DriverOrders = driverOrders;
 	}
 
 

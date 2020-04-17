@@ -23,40 +23,38 @@ public class OrderController {
 
 	@Autowired
 	OrderService os;
-	
-	@RequestMapping(value="/orders", method=RequestMethod.POST, consumes="application/Json")
+
+	@RequestMapping(value = "/orders", method = RequestMethod.POST, consumes = "application/Json")
 	public Orders createOrder(@RequestBody Orders orders) {
 		System.out.println(orders);
-		
 		return os.createOrder(orders);
 	}
-	
-	@GetMapping(value="/orders", produces="application/Json")
-	public List<Orders>allOrders(){
+
+	@GetMapping(value = "/orders", produces = "application/Json")
+	public List<Orders> allOrders() {
 		System.out.println("executing get all");
 		return os.allOrders();
-	} 
-	
-	@GetMapping(value="/orders/{username}")
-	public Orders getOrder(@PathVariable("username") String username){
-		System.out.println("executing get all");	
-		return os.getOrder(username);
-		
 	}
-	
-	@PutMapping(value="/orders", consumes="application/Json")
+
+	@GetMapping(value = "/orders/{username}")
+	public Orders getOrder(@PathVariable("username") String username) {
+		System.out.println("executing get all");
+		return os.getOrder(username);
+
+	}
+
+	@PutMapping(value = "/orders", consumes = "application/Json")
 	public Orders updateOrder(@RequestBody Orders change) {
 		return os.updateOrder(change);
-		
+
 	}
-	
+
 	@AuthorizeDelete
-	@DeleteMapping(value="/orders/{o_id}")
+	@DeleteMapping(value = "/orders/{o_id}")
 	public boolean deleteItems(@PathVariable("o_id") int o_id) {
 		System.out.println("Executing Delete");
 		return os.deleteOrder(os.getOrderById(o_id));
-		
+
 	}
-	
-	
+
 }
