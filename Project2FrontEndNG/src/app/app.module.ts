@@ -25,7 +25,11 @@ import { StaffpageComponent } from './component/staffpage/staffpage.component';
 import { ContactusComponent } from './component/contactus/contactus.component';
 import { LoginService } from './service/login.service';
 import { OrderService } from './service/order.service';
-import { EditMenuComponent } from './edit-menu/edit-menu.component';
+import { DriverComponent } from './component/driver/driver.component';
+import { EditMenuComponent } from './component/edit-menu/edit-menu.component';
+import { MyaccountComponent } from './component/myaccount/myaccount.component';
+import { VerticaltitleComponent } from './component/verticaltitle/verticaltitle.component';
+
 
 
 @NgModule({
@@ -43,7 +47,11 @@ import { EditMenuComponent } from './edit-menu/edit-menu.component';
     NewUserComponent,
     StaffpageComponent,
     ContactusComponent,
-    EditMenuComponent
+    DriverComponent,
+    EditMenuComponent,
+    MyaccountComponent,
+    VerticaltitleComponent
+
   
   ],
   imports: [

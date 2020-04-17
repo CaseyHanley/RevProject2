@@ -2,7 +2,6 @@ import { identifierModuleUrl } from '@angular/compiler';
 
 export class User{
 
-   
     username :string;
     password :string;
     firstname :string;
