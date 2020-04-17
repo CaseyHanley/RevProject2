@@ -2,9 +2,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import{FormsModule} from '@angular/forms';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { SlickCarouselModule } from 'ngx-slick-carousel';
 
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,6 +26,11 @@ import { StaffpageComponent } from './component/staffpage/staffpage.component';
 import { ContactusComponent } from './component/contactus/contactus.component';
 import { LoginService } from './service/login.service';
 import { OrderService } from './service/order.service';
+import { DriverComponent } from './component/driver/driver.component';
+import { EditMenuComponent } from './component/edit-menu/edit-menu.component';
+import { MyaccountComponent } from './component/myaccount/myaccount.component';
+import { VerticaltitleComponent } from './component/verticaltitle/verticaltitle.component';
+
 
 
 @NgModule({
@@ -42,8 +47,11 @@ import { OrderService } from './service/order.service';
     BottomnavComponent,
     NewUserComponent,
     StaffpageComponent,
-    ContactusComponent
-    
+    ContactusComponent,
+    DriverComponent,
+    EditMenuComponent,
+    MyaccountComponent,
+    VerticaltitleComponent
   ],
   imports: [
     BrowserModule,
@@ -52,6 +60,7 @@ import { OrderService } from './service/order.service';
     FormsModule,
     SlickCarouselModule,
     NgbModule
+
 
  
   ],

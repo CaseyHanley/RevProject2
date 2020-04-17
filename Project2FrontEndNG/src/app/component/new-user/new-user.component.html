@@ -1,3 +1,6 @@
+<br>
+<br>
+<app-verticaltitle></app-verticaltitle>
 
 <form class="text-center border border-light p-5">
 
@@ -6,41 +9,48 @@
     <div class="form-row mb-4">
       <div class="col">
         
-        <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="First name" [(ngModel)] = "firstname" [ngModelOptions]="{standalone: true}">
+        <input type="text" class="form-control" placeholder="First name" [(ngModel)] = "firstname" [ngModelOptions]="{standalone: true}">
       </div>
       <div class="col">
       
-        <input type="text" id="defaultRegisterFormLastName" class="form-control" placeholder="Last name" [(ngModel)] = "lastname" [ngModelOptions]="{standalone: true}">
+        <input type="text" class="form-control" placeholder="Last name" [(ngModel)] = "lastname" [ngModelOptions]="{standalone: true}">
       </div>
     </div>
 
     
-    <input type="text" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="Username" [(ngModel)] = "username" [ngModelOptions]="{standalone: true}">
+    <input type="text"  class="form-control mb-4" placeholder="Username" [(ngModel)] = "username" [ngModelOptions]="{standalone: true}">
 
     
-    <input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock" [(ngModel)] = "password" [ngModelOptions]="{standalone: true}">
+    <input type="password" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock" [(ngModel)] = "password" [ngModelOptions]="{standalone: true}">
     <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
-      At least 8 characters and 1 digit
+      At least 4 characters and 1 digit
     </small>
 
-    <div class="form-row col-md-4" form = "form">
-      <select [(ngModel)] = "account_type" [ngModelOptions]="{standalone: true}">
-        <option selected>Account Type</option>
-        <option [ngValue] = "account_type" >Customer</option>
-        <option [ngValue] = "account_type" *ngIf = isManager()>Chef</option>
-        <option [ngValue] = "account_type" *ngIf = isManager()>Host</option>
-        <option [ngValue] = "account_type" *ngIf = isManager()>Manager</option>
-        <option [ngValue] = "account_type" *ngIf = isManager()>Driver</option>
+  
+    <div class="row">
+      <div class="col-md-6">
+      <select class="browser-default custom-select" [(ngModel)] = "account_type" [ngModelOptions]="{standalone: true}">
+        <option selected = "selected">Account Type</option>
+        <option value="Customer">Customer</option>
+        <option value="Chef" *ngIf = isManager()>Chef</option>
+        <option value="Host" *ngIf = isManager()>Host</option>
+        <option value="Manager" *ngIf = isManager()>Manager</option>
+        <option value="Driver" *ngIf = isManager()>Driver</option>
       </select>
     </div>
+  </div>
+   
+
+    <br>
+    <br>
     
 
-   <div *ngIf = isManager()>
+   <!-- <div *ngIf = isManager()>
     <input  type="text" id="defaultRegisterPhonePassword" class="form-control" placeholder="Account type" aria-describedby="defaultRegisterFormPhoneHelpBlock">
     <small id="defaultRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
       Host, Chef, Manager or Driver
     </small>
-  </div>
+  </div> -->
     <button (click)= addUser() type="submit">Submit</button>
 
     </form>

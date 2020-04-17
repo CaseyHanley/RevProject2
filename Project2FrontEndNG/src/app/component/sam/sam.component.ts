@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OrderService } from 'src/app/service/order.service';
-
-import { MenuItem } from 'src/app/Models/MenuItem';
-import { Order } from 'src/app/Models/Order';
+import { Order } from 'src/app/models/Order';
 
 
 @Component({
@@ -12,53 +10,76 @@ import { Order } from 'src/app/Models/Order';
 })
 
 export class SamComponent implements OnInit {
+
+  ngOnInit(): void {
+    this.viewOrder();
+  }
   order: Order;
   total: number = 0;
 
-  constructor(order: OrderService) {
-    order.getOrders().subscribe(
+  constructor(private orderService: OrderService) {}
+
+  viewOrder(){
+    this.orderService.getOrders().subscribe(
       (response) => {
-        this.order = response[0]
+        this.order = response;
+        console.log(this.order);
+      },
+
+      (response) => {
+        console.log("failure");
       }
     )
   }
-
-  ngOnInit(): void {
-  }
+ 
 
   remove(index: number): void{
     switch(index){
       case 1:{
-        this.order.menuItem1 = null;
+        this.order.productname1 = null;
         break;
       }
       case 2:{
-        this.order.menuItem2 = null;
+        this.order.productname2 = null;
         break;
       }
       case 3:{
-        this.order.menuItem3 = null;
+        this.order.productname3 = null;
         break;
       }
       case 4:{
-        this.order.menuItem4 = null;
+        this.order.productname4 = null;
         break;
       }
       case 5:{
-        this.order.menuItem5 = null;
+        this.order.productname5 = null;
         break;
       }
       case 6:{
-        this.order.menuItem6 = null;
+        this.order.productname6 = null;
         break;
       }
       case 7:{
-        this.order.menuItem7 = null;
+        this.order.productname7 = null;
         break;
       }
       
     }
+    
   }
+  clear(): void {
+    if(this.order != null){
+      this.orderService.deleteOrders(this.order.oid).subscribe(
+        (response) => {
+          this.order = null;
+          console.log("Order successfully deleted");
+        },
+        (response) => {
+          console.log("something went wrong");
+        }
+      )
+    }
+}
 
 
 }

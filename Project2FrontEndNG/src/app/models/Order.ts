@@ -1,19 +1,19 @@
 
 
 export class Order{
-    username: string;
+    oid: number;
+    ousername: string;
     price: number;
     comments: String;
     status: string;
-    pickup: number;
 
-    menuItem1: string;
-    menuItem2: string;
-    menuItem3: string;
-    menuItem4: string;
-    menuItem5: string;
-    menuItem6: string;
-    menuItem7: string;
+    productname1: string;
+    productname2: string;
+    productname3: string;
+    productname4: string;
+    productname5: string;
+    productname6: string;
+    productname7: string;
     quantity1: number;
     quantity2: number;
     quantity3: number;
@@ -22,13 +22,13 @@ export class Order{
     quantity6: number;
     quantity7: number;
 
-    constructor(username: string, price: number, comments: string, status: string, pickup: number,  menuItem1: string,
-        menuItem2: string,
-        menuItem3: string,
-        menuItem4: string,
-        menuItem5: string,
-        menuItem6: string,
-        menuItem7: string,
+    constructor(oid :number, ousername: string, price: number, comments: string, status: string, productname1: string,
+        productname2: string,
+        productname3: string,
+        productname4: string,
+        productname5: string,
+        productname6: string,
+        productname7: string,
         quantity1: number,
         quantity2: number,
         quantity3: number,
@@ -37,20 +37,18 @@ export class Order{
         quantity6: number,
         quantity7: number ){
        
-        this.username = username;
-
+        this.oid = oid;
+        this.ousername = ousername;
         this.price = price;
         this.comments = comments;
         this.status = status;
-        this.pickup = pickup;
-
-        this.menuItem1 = menuItem1;
-        this.menuItem2 = menuItem3;
-        this.menuItem3 = menuItem2;
-        this.menuItem4 = menuItem4;
-        this.menuItem5 = menuItem5;
-        this.menuItem6 = menuItem6;
-        this.menuItem7 = menuItem7;
+        this.productname1 = productname1;
+        this.productname2 = productname2;
+        this.productname3 = productname3;
+        this.productname4 = productname4;
+        this.productname5 = productname5;
+        this.productname6 = productname6;
+        this.productname7 = productname7;
         this.quantity1 = quantity1;
         this.quantity2 = quantity2;
         this.quantity3 = quantity3;
@@ -59,5 +57,7 @@ export class Order{
         this.quantity6 = quantity6;
         this.quantity7 = quantity7;
 
-}
+    }
+
+
 }

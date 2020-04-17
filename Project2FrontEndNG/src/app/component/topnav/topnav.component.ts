@@ -23,4 +23,35 @@ isLoggedin() :boolean{
   }
 }
 
+
+isDriver() {
+  if(sessionStorage.getItem('username')==='joel'){
+    return true;
+  }else{
+    return false;
+  }
+}
+
+isEmployee() {
+  if(sessionStorage.getItem('username')==='sam' || sessionStorage.getItem('username')==='rome' || sessionStorage.getItem('username')==='casey' || sessionStorage.getItem('username')==='joel' || sessionStorage.getItem('username')==='employee'){
+    return true;
+  }else{
+    return false;
+  }
+}
+
+isManager() {
+  if(sessionStorage.getItem('username')==='sam'){
+    return true;
+  }else{
+    return false;
+  }
+}
+
+
+isChef(): boolean{
+  return sessionStorage.getItem('username') == 'rome';
+}
+
+
 }

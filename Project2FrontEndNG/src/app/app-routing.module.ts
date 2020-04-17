@@ -10,6 +10,10 @@ import { NewUserComponent } from './component/new-user/new-user.component';
 import { StaffpageComponent } from './component/staffpage/staffpage.component';
 import { ContactusComponent } from './component/contactus/contactus.component';
 import { RomeComponent } from './component/homepage (rome)/rome.component';
+import { DriverComponent } from './component/driver/driver.component';
+import { EditMenuComponent } from './component/edit-menu/edit-menu.component';
+import { MyaccountComponent } from './component/myaccount/myaccount.component';
+
 
 
 const routes: Routes = [
@@ -23,6 +27,10 @@ const routes: Routes = [
   {path : 'logout', component : LogoutComponent},
   {path : 'contactus', component : ContactusComponent},
   {path : 'registeruser', component : NewUserComponent},
+  {path : 'driver', component : DriverComponent},
+  {path : 'additem', component : EditMenuComponent},
+  {path : 'account', component : MyaccountComponent},
+  {path : 'viewcart/payment', redirectTo : '/payment', pathMatch : 'full'},
   {path : 'viewcart/payment', redirectTo : '/payment', pathMatch : 'full'},
   {path : 'login/registeruser', redirectTo : '/registeruser', pathMatch : 'full'},
   {path : '', redirectTo : '/homepage', pathMatch : 'full'}

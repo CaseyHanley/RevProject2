@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/service/login.service';
 import { User } from 'src/app/models/user';
+import { Router } from '@angular/router';
+import { AuthenticateUserService } from 'src/app/service/authenticate-user.service';
 
 @Component({
   selector: 'app-new-user',
@@ -15,7 +17,7 @@ export class NewUserComponent implements OnInit {
   lastname :string;
   account_type :string;
 
-  constructor(private userService : LoginService) { }
+  constructor(private userService : LoginService, private router :Router, private authService: AuthenticateUserService) { }
 
   ngOnInit(): void {
   this.isManager();
@@ -30,13 +32,14 @@ export class NewUserComponent implements OnInit {
   }
 
   addUser(){
-    let user = new User(this.firstname, this.lastname,this.username, this.password, this.account_type);
+    let user = new User(this.username, this.password,this.firstname, this.lastname, this.account_type);
     this.userService.addNewUser(user).subscribe(
       (response) =>{
         this.welcomeUser();
         console.log(response);
       },
       (response) => {
+        this.rejectUser();
         console.log("no user")
       }
     )
@@ -44,5 +47,17 @@ export class NewUserComponent implements OnInit {
 
   welcomeUser(){
     alert('Successful Registration');
+    if(this.authService.isUserLoggedIn()){
+    this.router.navigate(['homepage'])
+    }else{
+      this.router.navigate(['login'])
+    }
+
+    
+  }
+
+  rejectUser(){
+    alert('Invalid Credentials');
+
   }
 }
