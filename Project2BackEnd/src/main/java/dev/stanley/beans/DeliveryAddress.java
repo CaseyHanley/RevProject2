@@ -13,16 +13,19 @@ public class DeliveryAddress {
 	@GeneratedValue
 	private int a_id;
 	
-	@Column(name ="u_id")
-	private int u_id;
+	@Column(name ="username")
+	private String username;
 	
 	@Column(name ="state")
 	private String state;
 	
+	@Column(name ="city")
+	private String city;
+	
 	@Column(name ="address")
 	private String address;
 	
-	@Column(name ="address2")
+	@Column(name ="address2", nullable =true)
 	private String address2;
 	
 	@Column(name ="zipcode")
@@ -39,13 +42,6 @@ public class DeliveryAddress {
 		this.a_id = a_id;
 	}
 
-	public int getU_id() {
-		return u_id;
-	}
-
-	public void setU_id(int u_id) {
-		this.u_id = u_id;
-	}
 
 	public String getState() {
 		return state;
@@ -89,7 +85,7 @@ public class DeliveryAddress {
 
 	@Override
 	public String toString() {
-		return "DeliveryAddress [a_id=" + a_id + ", u_id=" + u_id + ", state=" + state + ", address=" + address
+		return "DeliveryAddress [a_id=" + a_id + ", state=" + state + ", address=" + address
 				+ ", address2=" + address2 + ", zipcode=" + zipcode + ", comments=" + comments + "]";
 	}
 
@@ -98,18 +94,21 @@ public class DeliveryAddress {
 		// TODO Auto-generated constructor stub
 	}
 
-	public DeliveryAddress(int a_id, int u_id, String state, String address, String address2, int zipcode,
-			String comments) {
+	public DeliveryAddress(int a_id, String username, String state, String city, String address, String address2,
+			int zipcode, String comments) {
 		super();
 		this.a_id = a_id;
-		this.u_id = u_id;
+		this.username = username;
 		this.state = state;
+		this.city = city;
 		this.address = address;
 		this.address2 = address2;
 		this.zipcode = zipcode;
 		this.comments = comments;
 	}
 	
+	
+
 	
 	
 	

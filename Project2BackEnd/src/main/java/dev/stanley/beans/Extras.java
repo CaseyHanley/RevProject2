@@ -11,7 +11,7 @@ public class Extras {
 	@Id
 	@Column(name = "e_id")
 	@GeneratedValue
-	private int e_id;
+	private int eid;
 	
 	@Column(name = "descriptions")
 	private int descriptions;
@@ -23,11 +23,12 @@ public class Extras {
 	private int price;
 	
 	
-	public int getE_id() {
-		return e_id;
+	
+	public int getEid() {
+		return eid;
 	}
-	public void setE_id(int e_id) {
-		this.e_id = e_id;
+	public void setEid(int eid) {
+		this.eid = eid;
 	}
 	public int getDescriptions() {
 		return descriptions;
@@ -50,7 +51,7 @@ public class Extras {
 	
 	public Extras(int e_id, int descriptions, int ingredientname, int price) {
 		super();
-		this.e_id = e_id;
+		this.eid = e_id;
 		this.descriptions = descriptions;
 		this.ingredientname = ingredientname;
 		this.price = price;
@@ -63,7 +64,7 @@ public class Extras {
 	
 	@Override
 	public String toString() {
-		return "Extras [e_id=" + e_id + ", descriptions=" + descriptions + ", ingredientname=" + ingredientname
+		return "Extras [e_id=" + eid + ", descriptions=" + descriptions + ", ingredientname=" + ingredientname
 				+ ", price=" + price + "]";
 	}
 

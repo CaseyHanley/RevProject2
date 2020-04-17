@@ -28,7 +28,6 @@ public class UserController {
 
 	@RequestMapping(value = "/users", method = RequestMethod.POST, consumes = "application/Json")
 	public Users createUser(@RequestBody Users user) {
-		System.out.println(user);
 		return us.createUser(user);
 	}
 
@@ -42,9 +41,10 @@ public class UserController {
 		return us.getUserById(u_id);
 
 	}
-	
-	@GetMapping(value = "/users/{username}")
+
+	@GetMapping(value = "/users/username/{username}")
 	public Users getUser(@PathVariable("username") String username) {
+		System.out.println("called");
 		return us.getUser(username);
 
 	}
@@ -60,14 +60,6 @@ public class UserController {
 		return us.deleteUser(us.getUserById(u_id));
 	}
 
-	//this works but login needs to be a post request
-//	@AuthorizeUser
-//	@GetMapping(value = "/login", produces = "application/Json")
-//	public Users getUser(@RequestParam(required = true) String username,
-//			@RequestParam(required = true) String password) {
-//		return us.loginUser(username, password);
-//	}
-
 	@RequestMapping(value = "/users/login", method = RequestMethod.POST, consumes = "application/Json")
 	public Users loginUser(@Valid @RequestBody Users user) {
 		System.out.println(user.getUsername());
@@ -76,9 +68,5 @@ public class UserController {
 		String password = user.getPassword();
 		return us.loginUser(username, password);
 	}
-
-
-
-	
 
 }
