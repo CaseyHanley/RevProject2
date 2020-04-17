@@ -1,7 +1,8 @@
   
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import{FormsModule} from '@angular/forms';
+
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
@@ -25,7 +26,11 @@ import { StaffpageComponent } from './component/staffpage/staffpage.component';
 import { ContactusComponent } from './component/contactus/contactus.component';
 import { LoginService } from './service/login.service';
 import { OrderService } from './service/order.service';
-import { EditMenuComponent } from './edit-menu/edit-menu.component';
+import { DriverComponent } from './component/driver/driver.component';
+import { EditMenuComponent } from './component/edit-menu/edit-menu.component';
+import { MyaccountComponent } from './component/myaccount/myaccount.component';
+import { VerticaltitleComponent } from './component/verticaltitle/verticaltitle.component';
+
 
 
 @NgModule({
@@ -43,8 +48,10 @@ import { EditMenuComponent } from './edit-menu/edit-menu.component';
     NewUserComponent,
     StaffpageComponent,
     ContactusComponent,
-    EditMenuComponent
-  
+    DriverComponent,
+    EditMenuComponent,
+    MyaccountComponent,
+    VerticaltitleComponent
   ],
   imports: [
     BrowserModule,
@@ -53,11 +60,11 @@ import { EditMenuComponent } from './edit-menu/edit-menu.component';
     FormsModule,
     SlickCarouselModule,
     NgbModule
-   
+
 
  
   ],
-  // schemas:[NO_ERRORS_SCHEMA],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA],
   providers: [AddressService, AuthenticateUserService, LoginService, OrderService],
   bootstrap: [AppComponent]
 })
