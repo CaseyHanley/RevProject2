@@ -4,8 +4,7 @@ export class MenuItem{
     productName: String;
     price: number;
 
-    constructor(stock_id: number, descriptions: String, productName: String, price: number){
-        this.stock_id = stock_id;
+    constructor(descriptions: String, productName: String, price: number){
         this.descriptions = descriptions;
         this.productName = productName;
         this.price = price;
