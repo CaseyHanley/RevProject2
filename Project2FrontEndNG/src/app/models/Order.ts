@@ -56,5 +56,8 @@ export class Order{
         this.quantity5 = quantity5;
         this.quantity6 = quantity6;
         this.quantity7 = quantity7;
+
     }
+
+
 }
