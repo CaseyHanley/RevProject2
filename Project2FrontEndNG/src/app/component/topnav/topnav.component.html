@@ -14,21 +14,35 @@
         <a style="font-family: Cormo1; font-size: larger;" class="nav-link" routerLink = "staff">Meet Our Staff</a>
       </li>
 
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a style="font-family: Cormo1; font-size: larger;" class="nav-link" routerLink = "homepage">Location</a>
       
+      </li> -->
+
+      <li class="nav-item">
+        <a style="font-family: Cormo1; font-size: larger;" class="nav-link" *ngIf = "isManager()" routerLink = "allOrders">View All Orders</a>
+      
+      </li>
+      
+      <li class="nav-item">
+        <a style="font-family: Cormo1; font-size: larger;" *ngIf="isLoggedin() && !isEmployee()"  class="nav-link" routerLink="neworder">Place an order</a>
       </li>
 
       <li class="nav-item">
-        <a style="font-family: Cormo1; font-size: larger;" *ngIf="isLoggedin()" class="nav-link" href="neworder">Place an order</a>
+        <a style="font-family: Cormo1; font-size: larger;" *ngIf="isLoggedin() && !isEmployee()" class="nav-link" routerLink="viewcart">View cart</a>
       </li>
-
       <li class="nav-item">
-        <a style="font-family: Cormo1; font-size: larger;" *ngIf="isLoggedin()" class="nav-link" href="viewcart">View cart</a>
+        <a style="font-family: Cormo1; font-size: larger;" *ngIf="isChef()" class="nav-link" routerLink="additem">Edit Menu</a>
       </li>
     </ul>
   
       <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a  style="font-family: Cormo1; font-size: larger;" *ngIf="isLoggedin() && isDriver()" class="nav-link" routerLink = "driver">My Deliveries</a>
+      </li>
+      <li class="nav-item">
+        <a  style="font-family: Cormo1; font-size: larger;" *ngIf="isLoggedin() && !isEmployee()" class="nav-link" routerLink = "account">My Account</a>
+    </li>
           <li class="nav-item">
               <a  style="font-family: Cormo1; font-size: larger;" *ngIf="!isLoggedin()" class="nav-link" routerLink = "login">Login</a>
           </li>

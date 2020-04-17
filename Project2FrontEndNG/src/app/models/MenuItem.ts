@@ -1,12 +1,12 @@
 export class MenuItem{
     descriptions: String;
-    productName: String;
+    productname: String;
     price: number;
     
 
     constructor(descriptions: String, productName: String, price: number){
         this.descriptions = descriptions;
-        this.productName = productName;
+        this.productname = productName;
         this.price = price;
         
     }
