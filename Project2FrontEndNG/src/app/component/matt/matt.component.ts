@@ -32,6 +32,7 @@ export class MattComponent implements OnInit {
 
 
   viewMyAddress() {
+    // this.myaddress.getAddresses(sessionStorage.getItem("username")).subscribe(
     this.myaddress.getAddresses(this.uid).subscribe(
       (response) => {
         this.addressList = response;

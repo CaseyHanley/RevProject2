@@ -1,101 +1,255 @@
-<!--- payment info
-    - pick an address
-    - review their item list-->
-<div style="text-align: center;">
-<h2>Starters</h2>
-<table>
-    <tr>
-        <th style="text-align: center;"><img src="\assets\Images\breadsticks.jpg" width = 150></th>
-    </tr>
-    <tr>
-        <td style="text-align: center;">Breadsticks</td>
-    </tr>
-    <tr>
-        <td style="text-align: center;">Price: $2.99</td>
-    </tr>
-    <tr>
-        <td style="text-align: center;"><button style="text-align: center;">Select</button></td>
-    </tr>
-</table>
-<h2>Appetizers</h2>
-<table>
-    <tr>
-        <th style="text-align: center;"><img src="\assets\Images\scallop-carpaccio.jpg" width = 150></th>
-    </tr>
-    <tr>
-        <td style="text-align: center;">Scallop Carpaccio</td>
-    </tr>
-    <tr>
-        <td style="text-align: center;">Price: $10.99</td>
-    </tr>
-    <tr>
-        <td style="text-align: center;"><button style="text-align: center;">Select</button></td>
-    </tr>
-</table>
-<h2>Soups</h2>
-<table>
-    <tr>
-        <th style="text-align: center;"><img src="\assets\Images\asparagus-soup.jpg" width = 150></th>
-    </tr>
-    <tr>
-        <td style="text-align: center;">Asparagus Soup</td>
-    </tr>
-    <tr>
-        <td style="text-align: center;">Price: $8.99</td>
-    </tr>
-    <tr>
-        <td style="text-align: center;"><button style="text-align: center;">Select</button></td>
-    </tr>
-</table>
-<h2>Salads</h2>
-<table>
-    <tr>
-        <th style="text-align: center;"><img src="\assets\Images\arugula-salad.jpg" width = 150></th>
-    </tr>
-    <tr>
-        <td style="text-align: center;">Arugula Salad</td>
-    </tr>
-    <tr>
-        <td style="text-align: center;">Price: $11.99</td>
-    </tr>
-    <tr>
-        <td style="text-align: center;"><button style="text-align: center;">Select</button></td>
-    </tr>
-</table>
-<h2>Main Courses</h2>
-<table>
-    <tr>
-        <th style="text-align: center;"><img src="\assets\Images\lobster-stuffed-crab.jpg" width = 150></th>
-    </tr>
-    <tr>
-        <td style="text-align: center;">Lobster Stuffed Crab</td>
-    </tr>
-    <tr>
-        <td style="text-align: center;">Price: $28.49</td>
-    </tr>
-    <tr>
-        <td style="text-align: center;"><button style="text-align: center;">Select</button></td>
-    </tr>
-</table>
-<h2>Desserts</h2>
-<table>
-    <tr>
-        <th style="text-align: center;"><img src="\assets\Images\strawberry-shortbread.jpg" width = 150></th>
-    </tr>
-    <tr>
-        <td style="text-align: center;">Strawberry Shortbread</td>
-    </tr>
-    <tr>
-        <td style="text-align: center;">Price: $9.99</td>
-    </tr>
-    <tr>
-        <td style="text-align: center;"><button style="text-align: center;">Select</button></td>
-    </tr>
-</table>
-<h2>Beverages</h2>
-<p>Will fill this out later when come up with alcohol/beverage ideas</p>
-
-<br>
-<br>
-<br>
+<div>
+    <h2>Starters</h2>
+    <table align="center">
+        <tr>
+            <th><img src="\assets\Images\breadsticks.jpg" width = 150></th>
+            <th><img src="\assets\Images\bruschetta.jpg" width = 150></th>
+            <th><img src="\assets\Images\crab-avocado-toasts.jpg" width = 150></th>
+        </tr>
+        <tr>
+            <td style = "text-align: center;">Breadsticks</td>
+            <td style = "text-align: center;">Crab and Avocado Toasts</td>
+            <td style = "text-align: center;">Bruschetta </td>
+        </tr>
+        <tr>
+            <td style = "text-align: center;">Price: $2.99</td>
+            <td style = "text-align: center;">Price: $13.99</td>
+            <td style = "text-align: center;">Price: $15.99</td>
+        </tr>
+        <tr>
+            <td style = "text-align: center;"><button id="starter_id1" (click)="selectStarter(1);" style = "text-align: center;">Select</button></td>
+            <td style = "text-align: center;"><button id="starter_id2" (click)="selectStarter(2);" style = "text-align: center;">Select</button></td>
+            <td style = "text-align: center;"><button id="starter_id3" (click)="selectStarter(3);" style = "text-align: center;">Select</button></td>
+        </tr>
+        <br>
+        <tr>
+            <td></td>
+            <td style = "text-align: center;"><button (click)="subtractStarter();">-</button> {{starterQuantity}} <button (click)="addStarter()">+</button></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style = "text-align: center;">{{starterName}} Quantity</td>
+            <td></td>
+        </tr>
+    </table>
+    <br>
+    <h2>Appetizers</h2>
+    <table align="center">
+        <tr>
+            <th><img src="\assets\Images\scallop-carpaccio.jpg" width = 150></th>
+            <th><img src="\assets\Images\poached-lobster-tail.jpg" width = 150></th>
+            <th><img src="\assets\Images\Caviar.jpg" width = 150></th>
+        </tr>
+        <tr>
+            <td style = "text-align: center;">Scallop Carpaccio</td>
+            <td style = "text-align: center;">Poached Lobster Tail</td>
+            <td style = "text-align: center;">Caviar</td>
+        </tr>
+        <tr>
+            <td style = "text-align: center;">Price: $12.99</td>
+            <td style = "text-align: center;">Price: $18.99</td>
+            <td style = "text-align: center;">Price: $21.99</td>
+        </tr>
+        <tr>
+            <td style = "text-align: center;"><button id="app_id1" (click)="selectAppetizer(1);" style = "text-align: center;">Select</button></td>
+            <td style = "text-align: center;"><button id="app_id2" (click)="selectAppetizer(2);" style = "text-align: center;">Select</button></td>
+            <td style = "text-align: center;"><button id="app_id3" (click)="selectAppetizer(3);" style = "text-align: center;">Select</button></td>
+        </tr>
+        <br>
+        <tr>
+            <td></td>
+            <td style = "text-align: center;"><button (click)="subtractAppetizer();">-</button> {{appetizerQuantity}} <button (click)="addAppetizer()">+</button></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style = "text-align: center;">{{appetizerName}} Quantity</td>
+            <td></td>
+        </tr>
+    </table>
+    <br>
+    <h2>Soups</h2>
+    <table align="center">
+        <tr>
+            <th><img src="\assets\Images\asparagus-soup.jpg" width = 150></th>
+            <th><img src="\assets\Images\french-onion.jpg" width = 150></th>
+            <th><img src="\assets\Images\coconut-chicken-soup.jpg" width = 150></th>
+        </tr>
+        <tr>
+            <td style = "text-align: center;">Asparagus Soup</td>
+            <td style = "text-align: center;">French Onion Soup</td>
+            <td style = "text-align: center;">Coconut Chicken Soup</td>
+        </tr>
+        <tr>
+            <td style = "text-align: center;">Price: $5.99</td>
+            <td style = "text-align: center;">Price: $5.99</td>
+            <td style = "text-align: center;">Price: $6.99</td>
+        </tr>
+        <tr>
+            <td style = "text-align: center;"><button id="soup_id1" (click)="selectSoup(1);" style = "text-align: center;">Select</button></td>
+            <td style = "text-align: center;"><button id="soup_id2" (click)="selectSoup(2);" style = "text-align: center;">Select</button></td>
+            <td style = "text-align: center;"><button id="soup_id3" (click)="selectSoup(3);" style = "text-align: center;">Select</button></td>
+        </tr>
+        <br>
+        <tr>
+            <td></td>
+            <td style = "text-align: center;"><button (click)="subtractSoup();">-</button> {{soupQuantity}} <button (click)="addSoup()">+</button></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style = "text-align: center;">{{soupName}} Quantity</td>
+            <td></td>
+        </tr>
+    </table>
+    <br>
+    <h2>Salads</h2>
+    <table align="center">
+        <tr>
+            <th><img src="\assets\Images\arugula-salad.jpg" width = 150></th>
+            <th><img src="\assets\Images\garden-salad.jpg" width = 150></th>
+            <th><img src="\assets\Images\caesar-salad.jpg" width = 150></th>
+        </tr>
+        <tr>
+            <td style = "text-align: center;">Arugula Salad</td>
+            <td style = "text-align: center;">Garden Salad</td>
+            <td style = "text-align: center;">Caesar Salad</td>
+        </tr>
+        <tr>
+            <td style = "text-align: center;">Price: $11.49</td>
+            <td style = "text-align: center;">Price: $8.99</td>
+            <td style = "text-align: center;">Price: $8.99</td>
+        </tr>
+        <tr>
+            <td style = "text-align: center;"><button id="salad_id1" (click)="selectSalad(1);" style = "text-align: center;">Select</button></td>
+            <td style = "text-align: center;"><button id="salad_id2" (click)="selectSalad(2);" style = "text-align: center;">Select</button></td>
+            <td style = "text-align: center;"><button id="salad_id3" (click)="selectSalad(3);" style = "text-align: center;">Select</button></td>
+        </tr>
+        <br>
+        <tr>
+            <td></td>
+            <td style = "text-align: center;"><button (click)="subtractSalad();">-</button> {{saladQuantity}} <button (click)="addSalad()">+</button></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style = "text-align: center;">{{saladName}} Quantity</td>
+            <td></td>
+        </tr>
+    </table>
+    <br>
+    <h2>Main Courses</h2>
+    <table align="center">
+        <tr>
+            <th><img src="\assets\Images\lobster-stuffed-crab.jpg" width = 150></th>
+            <th><img src="\assets\Images\Steak.jpg" width = 150></th>
+            <th><img src="\assets\Images\salmon-pasta.jpg" width = 150></th>
+        </tr>
+        <tr>
+            <td style = "text-align: center;">Lobster Stuffed Crab</td>
+            <td style = "text-align: center;">Ribeye Steak Special</td>
+            <td style = "text-align: center;">Grilled Salmon Pasta</td>
+        </tr>
+        <tr>
+            <td style = "text-align: center;">Price: $28.49</td>
+            <td style = "text-align: center;">Price: $33.79</td>
+            <td style = "text-align: center;">Price: $25.99</td>
+        </tr>
+        <tr>
+            <td style = "text-align: center;"><button id="main_id1" (click)="selectMain(1);" style = "text-align: center;">Select</button></td>
+            <td style = "text-align: center;"><button id="main_id2" (click)="selectMain(2);" style = "text-align: center;">Select</button></td>
+            <td style = "text-align: center;"><button id="main_id3" (click)="selectMain(3);" style = "text-align: center;">Select</button></td>
+        </tr>
+        <br>
+        <tr>
+            <td></td>
+            <td style = "text-align: center;"><button (click)="subtractMaincourse();">-</button> {{maincourseQuantity}} <button (click)="addMaincourse()">+</button></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style = "text-align: center;">{{maincourseName}} Quantity</td>
+            <td></td>
+        </tr>
+    </table>
+    <br>
+    <h2>Desserts</h2>
+    <table align="center">
+        <tr>
+            <th><img src="\assets\Images\strawberry-shortbread.jpg" width = 150></th>
+            <th><img src="\assets\Images\red-velvet-cake.jpg" width = 150></th>
+            <th><img src="\assets\Images\chocolate-mousse.jpg" width = 150></th>
+        </tr>
+        <tr>
+            <td style ="text-align: center;">Strawberry Shortbread</td>
+            <td style = "text-align: center;">Red Velvet Cake</td>
+            <td style = "text-align: center;">Chocolate Mousse</td>
+        </tr>
+        <tr>
+            <td style = "text-align: center;">Price: $9.99</td>
+            <td style = "text-align: center;">Price: $9.99</td>
+            <td style = "text-align: center;">Price: $9.99</td>
+        </tr>
+        <tr>
+            <td style = "text-align: center;"><button id="dessert_id1" (click)="selectDessert(1);" style = "text-align: center;">Select</button></td>
+            <td style = "text-align: center;"><button id="dessert_id2" (click)="selectDessert(2);" style = "text-align: center;">Select</button></td>
+            <td style = "text-align: center;"><button id="dessert_id3" (click)="selectDessert(3);" style = "text-align: center;">Select</button></td>
+        </tr>
+        <br>
+        <tr>
+            <td></td>
+            <td style = "text-align: center;"><button (click)="subtractDessert();">-</button> {{dessertQuantity}} <button (click)="addDessert()">+</button></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style = "text-align: center;">{{dessertName}} Quantity</td>
+            <td></td>
+        </tr>
+    </table>
+    <br>
+    <h2>Beverages</h2>
+    <table align="center">
+        <tr>
+            <th><img src="\assets\Images\iced-mocha-latte.jpg" width = 150></th>
+            <th><img src="\assets\Images\mai-tai.jpg" width = 150></th>
+            <th><img src="\assets\Images\pina-colada.jpg" width = 150></th>
+        </tr>
+        <tr>
+            <td style = "text-align: center;">Iced Mocha Latte</td>
+            <td style = "text-align: center;">Mai-Tai</td>
+            <td style = "text-align: center;">Pina Colada</td>
+        </tr>
+        <tr>
+            <td style = "text-align: center;">Price: $7.99</td>
+            <td style = "text-align: center;">Price: $11.99</td>
+            <td style = "text-align: center;">Price: $12.99</td>
+        </tr>
+        <tr>
+            <td style = "text-align: center;"><button id="bev_id1" (click)="selectBeverage(1);" style = "text-align: center;">Select</button></td>
+            <td style = "text-align: center;"><button id="bev_id2" (click)="selectBeverage(2);" style = "text-align: center;">Select</button></td>
+            <td style = "text-align: center;"><button id="bev_id3" (click)="selectBeverage(3);" style = "text-align: center;">Select</button></td>
+        </tr>
+        <br>
+        <tr>
+            <td></td>
+            <td style = "text-align: center;"><button (click)="subtractBeverage();">-</button> {{beverageQuantity}} <button (click)="addBeverage()">+</button></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style = "text-align: center;">{{beverageName}} Quantity</td>
+            <td></td>
+        </tr>
+    </table>
+    <br>
+    <button (click)="submitOrder();" style = "text-align: center;">Submit Order</button>
+    
 </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

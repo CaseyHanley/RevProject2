@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { OrderService } from 'src/app/service/order.service';
 import { Order } from 'src/app/models/Order';
+import { CheckboxRequiredValidator } from '@angular/forms';
+import { Router } from '@angular/router';
+import { DriverService } from 'src/app/service/driver.service';
+import { DeliveryDriver } from 'src/app/models/DeliveryDriver';
 
 
 @Component({
@@ -16,8 +20,11 @@ export class SamComponent implements OnInit {
   }
   order: Order;
   total: number = 0;
+  driverUsername: string;
+  ousername :string;
+  oid :number;
 
-  constructor(private orderService: OrderService) {}
+  constructor(private driver : DriverService, private orderService: OrderService, private router:Router) {}
 
   viewOrder(){
     this.orderService.getOrders().subscribe(
@@ -31,7 +38,168 @@ export class SamComponent implements OnInit {
       }
     )
   }
+
+  setDriver(){
+    let newDriver = new DeliveryDriver('joel', sessionStorage.getItem("username"), this.order.oid);
+    this.driver.addDriver(newDriver).subscribe(
+      (response) => {
+      console.log(response);
+      this.router.navigate(['payment'])
+      },
+      (response) => {
+        console.log("no response");
+      }
+    )
+  }
  
+  isBreadSticks(){
+    if(this.order.productname1=='Breadsticks'){
+      return true;
+    }else{
+      return false;
+    }
+  }
+    checkCrab(){
+    if(this.order.productname1=='Crab and Avocado Toasts'){
+      return true;
+    }else{
+      return false;
+    }
+    }
+   checkBru(){
+    if(this.order.productname1=='Bruschetta'){
+      return true;
+    }else{
+      return false;
+    }
+  }
+  isScallop(){
+    if(this.order.productname2=='Scallop Carpaccio'){
+      return true;
+    }else{
+      return false;
+    }
+  }
+    isPoached(){
+    if(this.order.productname2=='Poached Lobster Tail'){
+      return true;
+    }else{
+      return false;
+    }
+    }
+   isCaviar(){
+    if(this.order.productname2=='Caviar'){
+      return true;
+    }else{
+      return false;
+    }
+  }
+  aspSoup(){
+    if(this.order.productname3=='Asparagus Soup'){
+      return true;
+    }else{
+      return false;
+    }
+  }
+    frenchSoup(){
+    if(this.order.productname3=='French Onion Soup'){
+      return true;
+    }else{
+      return false;
+    }
+    }
+   cocoSoup(){
+    if(this.order.productname3=='Coconut Chicken Soup'){
+      return true;
+    }else{
+      return false;
+    }
+  }
+  isArugula(){
+    if(this.order.productname4=='Arugula Salad'){
+      return true;
+    }else{
+      return false;
+    }
+  }
+    isGarden(){
+    if(this.order.productname4=='Garden Salad'){
+      return true;
+    }else{
+      return false;
+    }
+    }
+   isCaesar(){
+    if(this.order.productname4=='Caesar Salad'){
+      return true;
+    }else{
+      return false;
+    }
+  }
+  isLobster(){
+    if(this.order.productname5=='Lobster Stuffed Crab'){
+      return true;
+    }else{
+      return false;
+    }
+  }
+    isRibeye(){
+    if(this.order.productname5=='Ribeye Steak Special'){
+      return true;
+    }else{
+      return false;
+    }
+    }
+   isSalmon(){
+    if(this.order.productname5=='Grilled Salmon Pasta'){
+      return true;
+    }else{
+      return false;
+    }
+  }
+  isStrawberry(){
+    if(this.order.productname6=='Strawberry Shortbread'){
+      return true;
+    }else{
+      return false;
+    }
+  }
+    isVelvet(){
+    if(this.order.productname6=='Red Velvet Cake'){
+      return true;
+    }else{
+      return false;
+    }
+    }
+   isMousse(){
+    if(this.order.productname6=='Chocolate Mousse'){
+      return true;
+    }else{
+      return false;
+    }
+  }
+  isIced(){
+    if(this.order.productname7=='Iced Mocha Latte'){
+      return true;
+    }else{
+      return false;
+    }
+  }
+    isMai(){
+    if(this.order.productname7=='Mai-Tai'){
+      return true;
+    }else{
+      return false;
+    }
+    }
+   isPina(){
+    if(this.order.productname7=='Pina Colada'){
+      return true;
+    }else{
+      return false;
+    }
+  }
+    
 
   remove(index: number): void{
     switch(index){
