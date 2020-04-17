@@ -1,7 +1,8 @@
   
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import{FormsModule} from '@angular/forms';
+
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
@@ -51,8 +52,6 @@ import { VerticaltitleComponent } from './component/verticaltitle/verticaltitle.
     EditMenuComponent,
     MyaccountComponent,
     VerticaltitleComponent
-
-  
   ],
   imports: [
     BrowserModule,
@@ -61,11 +60,11 @@ import { VerticaltitleComponent } from './component/verticaltitle/verticaltitle.
     FormsModule,
     SlickCarouselModule,
     NgbModule
-   
+
 
  
   ],
-  // schemas:[NO_ERRORS_SCHEMA],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA],
   providers: [AddressService, AuthenticateUserService, LoginService, OrderService],
   bootstrap: [AppComponent]
 })
