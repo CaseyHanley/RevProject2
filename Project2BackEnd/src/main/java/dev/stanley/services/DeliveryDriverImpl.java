@@ -17,8 +17,6 @@ public class DeliveryDriverImpl implements DeliveryDriverService {
 		return ddr.save(driver);
 	}
 	
-	
-
 	@Override
 	public DeliveryDriver getDriverByUsername(String driverUsername) {
 		return ddr.findBydriverUsername(driverUsername);
