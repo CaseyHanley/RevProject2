@@ -1,35 +1,60 @@
-import { MenuItem } from './MenuItem';
+
 
 export class Order{
-    o_id: number;
-    u_id: number;
-    a_id: number;
+    oid: number;
+    ousername: string;
     price: number;
     comments: String;
-    status: String;
-    pickup: number;
-    menuItem1: MenuItem;
-    menuItem2: MenuItem;
-    menuItem3: MenuItem;
-    menuItem4: MenuItem;
-    menuItem5: MenuItem;
-    menuItem6: MenuItem;
-    menuItem7: MenuItem;
+    status: string;
 
-    constructor(o_id: number, u_id: number, a_id: number, price: number, comments: String, status: String, pickup: number, MenuItem1: MenuItem, MenuItem2: MenuItem, MenuItem3: MenuItem, MenuItem4: MenuItem, MenuItem5: MenuItem, MenuItem6: MenuItem, MenuItem7: MenuItem,){
-        this.o_id = o_id;
-        this.u_id = u_id;
-        this.a_id = a_id;
+    productname1: string;
+    productname2: string;
+    productname3: string;
+    productname4: string;
+    productname5: string;
+    productname6: string;
+    productname7: string;
+    quantity1: number;
+    quantity2: number;
+    quantity3: number;
+    quantity4: number;
+    quantity5: number;
+    quantity6: number;
+    quantity7: number;
+
+    constructor(oid :number, ousername: string, price: number, comments: string, status: string, productname1: string,
+        productname2: string,
+        productname3: string,
+        productname4: string,
+        productname5: string,
+        productname6: string,
+        productname7: string,
+        quantity1: number,
+        quantity2: number,
+        quantity3: number,
+        quantity4: number,
+        quantity5: number,
+        quantity6: number,
+        quantity7: number ){
+       
+        this.oid = oid;
+        this.ousername = ousername;
         this.price = price;
         this.comments = comments;
         this.status = status;
-        this.pickup = pickup;
-        this.menuItem1 = MenuItem1;
-        this.menuItem2 = MenuItem3;
-        this.menuItem3 = MenuItem2;
-        this.menuItem4 = MenuItem4;
-        this.menuItem5 = MenuItem5;
-        this.menuItem6 = MenuItem6;
-        this.menuItem7 = MenuItem7;
+        this.productname1 = productname1;
+        this.productname2 = productname2;
+        this.productname3 = productname3;
+        this.productname4 = productname4;
+        this.productname5 = productname5;
+        this.productname6 = productname6;
+        this.productname7 = productname7;
+        this.quantity1 = quantity1;
+        this.quantity2 = quantity2;
+        this.quantity3 = quantity3;
+        this.quantity4 = quantity4;
+        this.quantity5 = quantity5;
+        this.quantity6 = quantity6;
+        this.quantity7 = quantity7;
     }
 }

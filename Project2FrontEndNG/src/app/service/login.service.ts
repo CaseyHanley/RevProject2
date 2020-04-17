@@ -1,16 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { LoginUser } from '../models/loginuser';
 import { User } from '../models/user';
+import { LoginUser } from '../models/loginuser';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
 
-  param1 :string;
-  param2 :string;
 
   constructor(private http: HttpClient) {}
   private headers = new HttpHeaders({'Content-Type' : 'application/json'});
@@ -23,12 +21,10 @@ export class LoginService {
     return this.http.post<User>('http://localhost:8080/users',user,{headers : this.headers})
   }
 
+  getUser() :Observable<User>{
   
-
-  authUserByUP() :Observable<LoginUser>{
-    let params1 = new HttpParams().set("username",this.param1).set("password", this.param2);
-
-    return this.http.get<LoginUser>('http://localhost:8080/users/auth', {params:params1});
+    return this.http.get<User>('http://localhost:8080/users/username/'+sessionStorage.getItem('username'));
+    
   }
   
 }

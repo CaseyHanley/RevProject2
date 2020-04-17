@@ -25,6 +25,10 @@
     "cors": "^2.8.5",
     "jquery": "^3.5.0",
     "ngx-slick-carousel": "^0.5.0",
+<<<<<<< HEAD
+=======
+    "rebuild": "^0.1.2",
+>>>>>>> 5782228f26815457741e3dc095ccd964227523c0
     "rxjs": "~6.5.4",
     "slick-carousel": "^1.8.1",
     "tslib": "^1.10.0",
@@ -50,5 +54,10 @@
     "ts-node": "~8.3.0",
     "tslint": "~5.18.0",
     "typescript": "~3.7.5"
-  }
+  },
+  "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.7.",
+  "main": "karma.conf.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

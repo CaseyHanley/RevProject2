@@ -1,0 +1,9 @@
+div.left{
+    position: absolute;
+    left: 4vw;
+}
+
+div.right{
+    position: absolute;
+    right: 4vw;
+}
