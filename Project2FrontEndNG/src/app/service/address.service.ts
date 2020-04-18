@@ -17,7 +17,7 @@ export class AddressService {
     return this.http.get<Address[]>('http://localhost:8080/deliveryaddress/all/' + username);
   }
 
-  getAddressesbyUsername(username :string): Observable<Address> {
+  getAddressbyUsername(username :string): Observable<Address> {
 
     return this.http.get<Address>('http://localhost:8080/deliveryaddress/' + username);
   }

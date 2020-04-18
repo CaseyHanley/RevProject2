@@ -112,7 +112,7 @@ export class MattComponent implements OnInit {
         order.status = "out for delivery";
         this.orderService.updateOrders(order).subscribe(
           (Response) => {
-            console.log("response");
+            console.log(Response);
             alert("Order successfully placed")
             this.router.navigate(['homepage'])
           },
