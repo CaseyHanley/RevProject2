@@ -17,7 +17,7 @@ import dev.stanley.beans.DeliveryAddress;
 import dev.stanley.services.DeliveryAddressService;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
+@CrossOrigin(origins = "http://devhanley-bucket.s3-website.us-east-2.amazonaws.com/", allowedHeaders = "*")
 public class DeliveryAddressController {
 
 	@Autowired
@@ -25,6 +25,7 @@ public class DeliveryAddressController {
 	
 	@RequestMapping(value="/deliveryaddress", method=RequestMethod.POST, consumes="application/Json")
 	public DeliveryAddress createAddress(@RequestBody DeliveryAddress address) {
+		System.out.println(address);
 		return das.createAddress(address);
 		
 	}
@@ -37,6 +38,7 @@ public class DeliveryAddressController {
 	
 	@GetMapping(value = "/deliveryaddress/{username}")
 	public DeliveryAddress getAddressByUsername(@PathVariable("username") String username) {
+		System.out.println(das.getAddressByUsername(username));
 		return das.getAddressByUsername(username);
 	}
 	
