@@ -35,12 +35,15 @@ public class DeliveryAddressController {
 		
 	}
 	
-	@GetMapping(value = "/deliveryaddress/{u_id}")
+	@GetMapping(value = "/deliveryaddress/{username}")
 	public DeliveryAddress getAddressByUsername(@PathVariable("username") String username) {
-		
 		return das.getAddressByUsername(username);
 	}
 	
+	@GetMapping(value = "/deliveryaddress/all/{username}")
+	public List<DeliveryAddress> getAllAddressByUsername(@PathVariable("username") String username) {
+		return das.getAllAddressByUsername(username);
+	}
 	
 	
 	@PutMapping(value="/deliveryaddress", consumes="application/Json")
@@ -50,9 +53,9 @@ public class DeliveryAddressController {
 	}
 	
 	
-	@DeleteMapping(value="/deliveryaddress/{a_id}")
-	public boolean deleteDeliveryAddress(@PathVariable("username") String username) {
-		das.deleteDeliveryAddress(das.getAddressByUsername(username));
+	@DeleteMapping(value="/deliveryaddress/{aid}")
+	public boolean deleteDeliveryAddress(@PathVariable("aid") int aid) {
+		das.deleteDeliveryAddress(das.getAddressById(aid));
 		return true;
 	}
 }
