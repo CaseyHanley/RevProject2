@@ -36,13 +36,6 @@ public class OrderController {
 		return os.allOrders();
 	}
 
-//	@GetMapping(value = "/order/{username}")
-//	public List<Orders> getOrder(@PathVariable("username") String username) {
-//		System.out.println("executing get order");
-//		 
-//		 return order.getOrder(username);
-//
-//	}
 	
 	@GetMapping(value = "/order/{username}")
 	public Orders getOrder(@PathVariable("username") String username) {

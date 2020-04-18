@@ -83,15 +83,17 @@ public class DeliveryAddress {
 		this.comments = comments;
 	}
 
+	
+
 	@Override
 	public String toString() {
-		return "DeliveryAddress [a_id=" + a_id + ", state=" + state + ", address=" + address
-				+ ", address2=" + address2 + ", zipcode=" + zipcode + ", comments=" + comments + "]";
+		return "DeliveryAddress [a_id=" + a_id + ", username=" + username + ", state=" + state + ", city=" + city
+				+ ", address=" + address + ", address2=" + address2 + ", zipcode=" + zipcode + ", comments=" + comments
+				+ "]";
 	}
 
 	public DeliveryAddress() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public DeliveryAddress(int a_id, String username, String state, String city, String address, String address2,

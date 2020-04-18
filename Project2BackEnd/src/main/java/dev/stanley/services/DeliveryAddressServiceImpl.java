@@ -23,6 +23,11 @@ public class DeliveryAddressServiceImpl implements DeliveryAddressService {
 	public DeliveryAddress getAddressByUsername(String username) {
 		return dar.findByUsername(username);
 	}
+	
+	@Override
+	public DeliveryAddress getAddressById(int aid) {
+		return dar.findById(aid).get();
+	}
 
 	@Override
 	public DeliveryAddress updateAddress(DeliveryAddress change) {
@@ -47,8 +52,7 @@ public class DeliveryAddressServiceImpl implements DeliveryAddressService {
 	}
 
 	@Override
-	public List<DeliveryAddress> getAddressesByUsername(String username) {
-		
+	public List<DeliveryAddress> getAllAddressByUsername(String username) {
 		return (List<DeliveryAddress>) dar.findAllByUsername(username);
 	}
 
