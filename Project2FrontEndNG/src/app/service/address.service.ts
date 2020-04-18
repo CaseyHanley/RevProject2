@@ -12,9 +12,14 @@ export class AddressService {
   constructor(private http: HttpClient) { }
   private headers = new HttpHeaders({'Content-Type':'application/json'});
   
-  getAddresses(uid : number): Observable<Address[]> {
+  getAddresses(username: string): Observable<Address[]> {
 
-    return this.http.get<Address[]>('http://localhost:8080/deliveryaddress/' + uid);
+    return this.http.get<Address[]>('http://localhost:8080/deliveryaddress/all/' + username);
+  }
+
+  getAddressesbyUsername(username :string): Observable<Address> {
+
+    return this.http.get<Address>('http://localhost:8080/deliveryaddress/' + username);
   }
 
   addAddress(add: Address): Observable<Address>{

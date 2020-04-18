@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Order } from 'src/app/models/Order';
 import { OrderService } from 'src/app/service/order.service';
 @Component({
@@ -56,13 +57,13 @@ export class JoelComponent implements OnInit {
   beveragePrice :number = 0;
   finalPrice :number = 0;
   calculateFinalPrice() {
-    this.finalPrice = (this.starterPrice * this.starterQuantity)
+    this.finalPrice = ((this.starterPrice * this.starterQuantity)
     + (this.appetizerPrice * this.appetizerQuantity)
     + (this.soupPrice * this.soupQuantity)
     + (this.saladPrice * this.saladQuantity)
     + (this.maincoursePrice * this.maincourseQuantity)
     + (this.dessertPrice * this.dessertQuantity)
-    + (this.beveragePrice * this.beverageQuantity);
+    + (this.beveragePrice * this.beverageQuantity));
   }
   addDessert() {this.dessertQuantity +=1; this.calculateFinalPrice()}
   subtractDessert() {if(this.dessertQuantity > 0) this.dessertQuantity -=1; this.calculateFinalPrice()}
@@ -94,7 +95,8 @@ export class JoelComponent implements OnInit {
       this.beverageDesc="A sweet cocktail made with rum, cream of coconut or coconut milk, and pineapple juice";
       this.beveragePrice=12.99;
     }
-    this.beverageQuantity=1;
+    this.beverageQuantity=0;
+    this.addBeverage();
   }
   selectDessert(id :number) {
     if(id==1) {
@@ -112,7 +114,8 @@ export class JoelComponent implements OnInit {
       this.dessertDesc="Made creamy and thick";
       this.dessertPrice=9.99;
     }
-    this.dessertQuantity=1;
+    this.dessertQuantity=0;
+    this.addDessert();
   }
   selectMain(id :number) {
     if(id==1) {
@@ -130,7 +133,8 @@ export class JoelComponent implements OnInit {
       this.maincourseDesc="Fresh salmon seasoned with fine herbs and served with your choice of pesto or marinara";
       this.maincoursePrice=25.99;
     }
-    this.maincourseQuantity=1;
+    this.maincourseQuantity=0;
+    this.addMaincourse();
   }
   selectSalad(id :number) {
     if(id==1) {
@@ -148,7 +152,8 @@ export class JoelComponent implements OnInit {
       this.saladDesc="Topped with freshly grated parmesan, croutons, and Caesar dressing";
       this.saladPrice=8.99;
     }
-    this.saladQuantity=1;
+    this.saladQuantity=0;
+    this.addSalad();
   }
   selectSoup(id :number) {
     if(id==1) {
@@ -166,7 +171,8 @@ export class JoelComponent implements OnInit {
       this.soupDesc="Zesty chicken with cream of coconut";
       this.soupPrice=6.99;
     }
-    this.soupQuantity=1;
+    this.soupQuantity=0;
+    this.addSoup;
   }
   selectAppetizer(id :number) {
     if(id==1) {
@@ -184,7 +190,8 @@ export class JoelComponent implements OnInit {
       this.appetizerDesc="Fine salmon caviar";
       this.appetizerPrice=21.99;
     }
-    this.appetizerQuantity=1;
+    this.appetizerQuantity=0;
+    this.addAppetizer();
   }
   selectStarter(id :number) {
     if(id==1) {
@@ -202,7 +209,8 @@ export class JoelComponent implements OnInit {
       this.starterDesc="Served with fresh garden raised tomatoes and onions";
       this.starterPrice=15.99;
     }
-    this.starterQuantity=1;
+    this.starterQuantity=0;
+    this.addStarter();
   }
   ngOnInit(): void {
   }
