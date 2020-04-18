@@ -3,7 +3,7 @@
 <app-verticaltitle></app-verticaltitle>
     <div style="text-align: center;">
     <table>
-        <tr>
+        <tr style="text-align: center;">
             <th>Address</th>
             <th>Instructions</th>
             <th>Action</th>
@@ -29,7 +29,7 @@
 
     Special Instructions: <input type="text" [(ngModel)] = "comments" (input) = "validateInputFields()"><br>
     <button (click) = "addAddress()">Submit</button>
-    <p *ngIf="!valid">You have invalid fields!</p>
+    <!-- <p *ngIf="!valid">You have invalid fields!</p> -->
 </div>    
     <button (click)="Pay()">Pay your bill</button>    
 </div>

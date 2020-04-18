@@ -4,6 +4,7 @@ import { Address } from 'src/app/models/Address'
 import { AddressService } from 'src/app/service/address.service'
 import { OrderService } from 'src/app/service/order.service';
 import { Order } from 'src/app/models/Order';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-matt',
@@ -12,19 +13,19 @@ import { Order } from 'src/app/models/Order';
 })
 export class MattComponent implements OnInit {
 
-  constructor(private myaddress: AddressService, private orderService: OrderService) { }
+  constructor(private router: Router, private myaddress: AddressService, private orderService: OrderService) { }
 
   ngOnInit(): void {
     this.viewMyAddress()
   }
 
-  uid: number = 1; //Need User ID
+  
   addressList: Array<Address>;
-  a_id: string;
+  username :string;
+  state: String;
+  city: String;
   address: string;
   address2 : string;
-  city: String;
-  state: String;
   zipcode: number;
   comments: String;
   valid :boolean = false;
@@ -32,7 +33,8 @@ export class MattComponent implements OnInit {
 
 
   viewMyAddress() {
-    this.myaddress.getAddresses(this.uid).subscribe(
+    // this.myaddress.getAddresses(sessionStorage.getItem("username")).subscribe(
+    this.myaddress.getAddresses(sessionStorage.getItem("username")).subscribe(
       (response) => {
         this.addressList = response;
       },
@@ -51,7 +53,7 @@ export class MattComponent implements OnInit {
   addAddress(){
 
     if (this.validateInputFields()) {
-      let address = new Address (this.address, this.address2, this.city, this.state, this.zipcode, this.comments, null, this.uid)
+      let address = new Address (sessionStorage.getItem("username"), this.state, this.city, this.address, this.address2, this.zipcode, this.comments)
       this.myaddress.addAddress(address).subscribe(
         (response) => {
           console.log(response);
@@ -85,10 +87,11 @@ export class MattComponent implements OnInit {
 
   deleteMyAddress(x){
    
-   //var rowIndex = $(x).closest('tr').index();
-    var rowIndex = (x).closest('tr').index();
+    
+  //  var rowIndex = $(x).closest('tr').index();
+  //   var rowIndex = (x).closest('tr').index();
 
-    this.myaddress.deleteAddress(this.addressList[rowIndex].a_id);
+  //   this.myaddress.deleteAddress(this.addressList[rowIndex].a_id);
   }
 
 
@@ -105,11 +108,13 @@ export class MattComponent implements OnInit {
   Pay(){
     this.orderService.getOrders().subscribe(
       (Response) => {
-        var order = Response;
-        order.status = "delivery";
+        let order = Response;
+        order.status = "out for delivery";
         this.orderService.updateOrders(order).subscribe(
           (Response) => {
-            console.log("Sucess");
+            console.log(Response);
+            alert("Order successfully placed")
+            this.router.navigate(['homepage'])
           },
           (Response) => {
             console.log("Error: Could not Update");

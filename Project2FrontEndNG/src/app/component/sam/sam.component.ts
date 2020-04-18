@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { OrderService } from 'src/app/service/order.service';
 import { Order } from 'src/app/models/Order';
+import { CheckboxRequiredValidator } from '@angular/forms';
+import { Router } from '@angular/router';
+import { DriverService } from 'src/app/service/driver.service';
+import { DeliveryDriver } from 'src/app/models/DeliveryDriver';
 
 
 @Component({
@@ -16,8 +20,11 @@ export class SamComponent implements OnInit {
   }
   order: Order;
   total: number = 0;
+  driverUsername: string;
+  ousername :string;
+  oid :number;
 
-  constructor(private orderService: OrderService) {}
+  constructor(private driver : DriverService, private orderService: OrderService, private router:Router) {}
 
   viewOrder(){
     this.orderService.getOrders().subscribe(
@@ -31,8 +38,20 @@ export class SamComponent implements OnInit {
       }
     )
   }
- 
 
+  setDriver(){
+    let newDriver = new DeliveryDriver('joel', sessionStorage.getItem("username"), this.order.oid);
+    this.driver.addDriver(newDriver).subscribe(
+      (response) => {
+      console.log(response);
+      this.router.navigate(['payment'])
+      },
+      (response) => {
+        console.log("no response");
+      }
+    )
+  }
+    
   remove(index: number): void{
     switch(index){
       case 1:{
