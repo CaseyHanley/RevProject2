@@ -17,7 +17,7 @@ import dev.stanley.beans.DeliveryDriver;
 import dev.stanley.services.DeliveryDriverService;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
+@CrossOrigin(origins = "http://devhanley-bucket.s3-website.us-east-2.amazonaws.com/", allowedHeaders = "*")
 public class DeliveryDriverController {
 
 	@Autowired
