@@ -26,6 +26,11 @@ export class OrderService {
     return this.http.get<Order>(this.url + '/order/' + sessionStorage.getItem("username"));
   }
 
+  getOrderForDriver(username :string): Observable<Order>{
+  
+    return this.http.get<Order>(this.url + '/order/' +username);
+  }
+
   deleteOrders(id:number): Observable<boolean>{
     console.log(this.url + '/order/' + id);
     return this.http.delete<boolean>(this.url + '/order/' + id, {headers : this.authorized});
