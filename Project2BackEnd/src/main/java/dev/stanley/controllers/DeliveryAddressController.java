@@ -25,6 +25,7 @@ public class DeliveryAddressController {
 	
 	@RequestMapping(value="/deliveryaddress", method=RequestMethod.POST, consumes="application/Json")
 	public DeliveryAddress createAddress(@RequestBody DeliveryAddress address) {
+		System.out.println(address);
 		return das.createAddress(address);
 		
 	}
@@ -37,6 +38,7 @@ public class DeliveryAddressController {
 	
 	@GetMapping(value = "/deliveryaddress/{username}")
 	public DeliveryAddress getAddressByUsername(@PathVariable("username") String username) {
+		System.out.println(das.getAddressByUsername(username));
 		return das.getAddressByUsername(username);
 	}
 	
