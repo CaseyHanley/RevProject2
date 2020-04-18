@@ -33,14 +33,14 @@ export class DriverComponent implements OnInit {
         this.getDriverOrder();
         console.log(response);
       },(response) =>{
-        console.log('failed');
+        console.log('failed driver');
       }
 
     )
   }
 
   getUserAddress(){
-    this.addressService.getAddressesbyUsername(this.newdriver.ousername).subscribe(
+    this.addressService.getAddresses(this.newdriver.ousername).subscribe(
       (response) => {
         console.log(response);
       },
@@ -56,7 +56,7 @@ export class DriverComponent implements OnInit {
         console.log(response);
       },
       (response) =>{
-        console.log('failed call');
+        console.log('failed call2');
       }
     )
     
