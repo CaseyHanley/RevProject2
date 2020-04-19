@@ -17,7 +17,7 @@ export class MattComponent implements OnInit {
   constructor(private router: Router, private myaddress: AddressService, private orderService: OrderService) { }
 
   ngOnInit(): void {
-    // this.viewMyAddress()
+
   }
 
   
@@ -34,7 +34,7 @@ export class MattComponent implements OnInit {
 
 
   viewMyAddress() {
-    // this.myaddress.getAddresses(sessionStorage.getItem("username")).subscribe(
+   
     this.myaddress.getAddresses(sessionStorage.getItem("username")).subscribe(
       (response) => {
         this.addressList = response;
@@ -68,7 +68,7 @@ ViewAddPayment(){
       this.myaddress.addAddress(address).subscribe(
         (response) => {
           console.log(response);
-          // this.addressList.push(response);
+          
         },
         (response) => {
           console.log("Failed to add Address")

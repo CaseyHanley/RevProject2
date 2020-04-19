@@ -5,11 +5,6 @@
 }
 
 @font-face{
-  src: url(assets/fonts/Viaoda_Libre/ViaodaLibre-Regular.ttf);
-  font-family: Viaoda;
-}
-
-@font-face{
   src: url(assets/fonts/Alex_Brush/AlexBrush-Regular.ttf);
   font-family: AlexB;
 }
@@ -29,8 +24,21 @@
   font-family: Cormo1;
 }
 @font-face{
-  src: url(assets/fonts/Clicker_Script/ClickerScript-Regular.ttf);
+  src: url(assets/fonts/Clicker/ClickerScript-Regular.ttf);
   font-family: Click;
+}
+@font-face{
+  src: url(assets/fonts/Miss_Fajardose/MissFajardose-Regular.ttf);
+  font-family: Miss;
+}
+@font-face{
+  src: url(assets/fonts/Dynalight/Dynalight-Regular.ttf);
+  font-family: Dyn;
+}
+
+@font-face{
+  src: url(assets/fonts/Almendra_SC/AlmendraSC-Regular.ttf);
+  font-family: Alm;
 }
 
 body,html {

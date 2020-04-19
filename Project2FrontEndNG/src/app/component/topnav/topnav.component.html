@@ -1,6 +1,6 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a style="font-family: Click; font-size: 32px;" class="navbar-brand" routerLink = "homepage">Vision Fine Dining</a>
+  <a style="font-family: AlexB; font-size: 32px;" class="navbar-brand" routerLink = "homepage">Vision Fine Dining</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -14,15 +14,7 @@
         <a style="font-family: Cormo1; font-size: larger;" class="nav-link" routerLink = "staff">Meet Our Staff</a>
       </li>
 
-      <!-- <li class="nav-item">
-        <a style="font-family: Cormo1; font-size: larger;" class="nav-link" routerLink = "homepage">Location</a>
-      
-      </li> -->
-
-      <li class="nav-item">
-        <a style="font-family: Cormo1; font-size: larger;" class="nav-link" *ngIf = "isManager()" routerLink = "allOrders">View All Orders</a>
-      
-      </li>
+     
       
       <li class="nav-item">
         <a style="font-family: Cormo1; font-size: larger;" *ngIf="isLoggedin() && !isEmployee()"  class="nav-link" routerLink="neworder">Place an order</a>
@@ -31,9 +23,7 @@
       <li class="nav-item">
         <a style="font-family: Cormo1; font-size: larger;" *ngIf="isLoggedin() && !isEmployee()" class="nav-link" routerLink="viewcart">View cart</a>
       </li>
-      <!-- <li class="nav-item">
-        <a style="font-family: Cormo1; font-size: larger;" *ngIf="isChef()" class="nav-link" routerLink="additem">Edit Menu</a>
-      </li> -->
+ 
     </ul>
   
       <ul class="navbar-nav ml-auto">

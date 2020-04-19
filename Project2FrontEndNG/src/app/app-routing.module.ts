@@ -14,6 +14,7 @@ import { DriverComponent } from './component/driver/driver.component';
 import { EditMenuComponent } from './component/edit-menu/edit-menu.component';
 import { MyaccountComponent } from './component/myaccount/myaccount.component';
 import { PaymentComponent } from './component/payment/payment.component';
+import { EventsComponent } from './component/events/events.component';
 
 
 
@@ -31,6 +32,7 @@ const routes: Routes = [
   {path : 'registeruser', component : NewUserComponent},
   {path : 'driver', component : DriverComponent},
   {path : 'additem', component : EditMenuComponent},
+  {path : 'events', component : EventsComponent},
   {path : 'account', component : MyaccountComponent},
   {path : 'viewcart/payment', redirectTo : '/payment', pathMatch : 'full'},
   {path : 'login/registeruser', redirectTo : '/registeruser', pathMatch : 'full'},

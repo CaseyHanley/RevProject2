@@ -33,6 +33,7 @@ import { EditMenuComponent } from './component/edit-menu/edit-menu.component';
 import { MyaccountComponent } from './component/myaccount/myaccount.component';
 import { VerticaltitleComponent } from './component/verticaltitle/verticaltitle.component';
 import { PaymentComponent } from './component/payment/payment.component';
+import { EventsComponent } from './component/events/events.component';
 
 
 
@@ -55,7 +56,8 @@ import { PaymentComponent } from './component/payment/payment.component';
     EditMenuComponent,
     MyaccountComponent,
     VerticaltitleComponent,
-    PaymentComponent
+    PaymentComponent,
+    EventsComponent
   ],
   imports: [
     BrowserModule,
