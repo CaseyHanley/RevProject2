@@ -14,6 +14,7 @@ export class MenuItemService {
   
     private headers = new HttpHeaders({'Content-Type':'application/json'});
 
+    // private url = 'http://devhanley-bucket.s3-website.us-east-2.amazonaws.com';
     private url = 'http://localhost:8080';
 
     getMenuItems(): Observable<MenuItem[]>{

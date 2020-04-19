@@ -1,0 +1,14 @@
+div.table{
+    text-align: center;
+    position: absolute;
+    width: 800px;
+    position: absolute;
+    left: 21vw;
+    border: solid lightgray ;
+}
+div.centerpage{
+    position: absolute;
+    left: 41vw;
+    top: 25vh;
+    
+}

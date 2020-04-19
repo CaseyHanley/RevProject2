@@ -5,6 +5,7 @@ import { AddressService } from 'src/app/service/address.service'
 import { OrderService } from 'src/app/service/order.service';
 import { Order } from 'src/app/models/Order';
 import { Router } from '@angular/router';
+import { ElementSchemaRegistry } from '@angular/compiler';
 
 @Component({
   selector: 'app-matt',
@@ -16,18 +17,18 @@ export class MattComponent implements OnInit {
   constructor(private router: Router, private myaddress: AddressService, private orderService: OrderService) { }
 
   ngOnInit(): void {
-    this.viewMyAddress()
+    // this.viewMyAddress()
   }
 
   
   addressList: Array<Address>;
   username :string;
-  state: String;
-  city: String;
+  state: string;
+  city: string;
   address: string;
   address2 : string;
   zipcode: number;
-  comments: String;
+  comments: string;
   valid :boolean = false;
 
 
@@ -37,6 +38,7 @@ export class MattComponent implements OnInit {
     this.myaddress.getAddresses(sessionStorage.getItem("username")).subscribe(
       (response) => {
         this.addressList = response;
+        console.log(response);
       },
 
       (response) => {
@@ -46,8 +48,17 @@ export class MattComponent implements OnInit {
     );
   }
 
+  hideAddress(){
+    
+  }
+
   ViewAddAddress(){
     document.getElementById("addressform").style.display = "block";
+
+}
+
+ViewAddPayment(){
+  document.getElementById("paymentform").style.display = "block";
 
 }
   addAddress(){
@@ -57,7 +68,7 @@ export class MattComponent implements OnInit {
       this.myaddress.addAddress(address).subscribe(
         (response) => {
           console.log(response);
-          this.addressList.push(response);
+          // this.addressList.push(response);
         },
         (response) => {
           console.log("Failed to add Address")
@@ -85,45 +96,26 @@ export class MattComponent implements OnInit {
     }
   }
 
-  deleteMyAddress(x){
-   
-    
-  //  var rowIndex = $(x).closest('tr').index();
-  //   var rowIndex = (x).closest('tr').index();
-
-  //   this.myaddress.deleteAddress(this.addressList[rowIndex].a_id);
-  }
-
-
-  EditMyAddress(x){
-    //var rowIndex = $(x).closest('tr').index();
-    var rowIndex = (x).closest('tr').index();
-    var edit = this.addressList[rowIndex];
-
-    //Todo not sure how I want to build this yet.
-
-    this.myaddress.editAddress(edit);
-    }
 
   Pay(){
-    this.orderService.getOrders().subscribe(
-      (Response) => {
-        let order = Response;
-        order.status = "out for delivery";
-        this.orderService.updateOrders(order).subscribe(
-          (Response) => {
-            console.log(Response);
-            alert("Order successfully placed")
-            this.router.navigate(['homepage'])
-          },
-          (Response) => {
-            console.log("Error: Could not Update");
-          }
-        )},
-        (Response) => {
-          console.log("Error: could not get order");
-        }
-    )
 
   }
+
+  showBill :string = "";
+  viewBillOnSubmit() {
+    this.showBill = "Show Bill";
+  }
+
+  showButton :string = "";
+  showBButton() {
+    this.showButton = "noshow";
+  }
+
+  showPayment(){
+    if(this.addressList !=null)
+    return true;
+    else
+    return false;
+  }
+
   }

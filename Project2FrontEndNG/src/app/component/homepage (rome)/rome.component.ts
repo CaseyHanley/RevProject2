@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticateUserService } from 'src/app/service/authenticate-user.service';
 
 @Component({
   selector: 'app-rome',
@@ -19,12 +20,20 @@ export class RomeComponent implements OnInit {
 
 
 
-  constructor() { }
+  constructor(private loginService : AuthenticateUserService) { }
 
   ngOnInit(): void {
   }
 
   showText: boolean = true;
+
+  isLoggedin() :boolean{
+    if(this.loginService.isUserLoggedIn()){
+      return true
+    }else{
+      return false
+    }
+  }
 
   showAbout(){
     this.showText = true;

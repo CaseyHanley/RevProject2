@@ -4,3 +4,9 @@ div.centerpage{
     top: 25vh;
     
 }
+
+div.clearbutton{
+    position: absolute;
+    bottom : -23vh;
+    left : 30.8vw;
+}

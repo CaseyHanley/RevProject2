@@ -11,7 +11,7 @@ export class JoelComponent implements OnInit {
   constructor(private os1 : OrderService) { }
   submitOrder() {
     let o1 = new Order(0,sessionStorage.getItem("username"),this.finalPrice,this.comments,
-  "in cart",this.starterName,this.appetizerName,
+  "In cart",this.starterName,this.appetizerName,
   this.soupName,this.saladName,this.maincourseName,this.dessertName,
   this.beverageName,this.starterQuantity,this.appetizerQuantity,
   this.soupQuantity,this.saladQuantity,this.maincourseQuantity,
@@ -86,7 +86,7 @@ export class JoelComponent implements OnInit {
       this.beveragePrice=7.99;
     }
     else if(id==2) {
-      this.beverageName="Mai Tai";
+      this.beverageName="Mai-Tai";
       this.beverageDesc="A cocktail based on rum, Curaçao liqueur, orgeat syrup, and lime juice";
       this.beveragePrice=11.99;
     }
@@ -172,7 +172,7 @@ export class JoelComponent implements OnInit {
       this.soupPrice=6.99;
     }
     this.soupQuantity=0;
-    this.addSoup;
+    this.addSoup();
   }
   selectAppetizer(id :number) {
     if(id==1) {
@@ -212,6 +212,12 @@ export class JoelComponent implements OnInit {
     this.starterQuantity=0;
     this.addStarter();
   }
+
+  viewCart :string = "";
+  viewCartOnSubmit() {
+    this.viewCart = "View Cart"
+  }
+  
   ngOnInit(): void {
   }
 }
