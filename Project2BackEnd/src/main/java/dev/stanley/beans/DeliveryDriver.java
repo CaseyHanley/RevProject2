@@ -32,7 +32,6 @@ public class DeliveryDriver {
 
 	public DeliveryDriver() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public int getDriverid() {
