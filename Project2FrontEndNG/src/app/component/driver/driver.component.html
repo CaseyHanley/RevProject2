@@ -1,3 +1,66 @@
 <br>
 <br>
 <app-verticaltitle></app-verticaltitle>
+
+
+<div class = "centerpage">
+    <h1 *ngIf="orders ==null" style="font-style: italic; font-family: Cormo1;">No Deliveries</h1>
+   
+</div>
+
+<div style="text-align: center;"> 
+<h1 *ngIf="orders !=null" style="font-style: italic; font-family: Cormo1;">My Deliveries</h1>
+</div>
+<div class = "table" *ngIf="orders !=null">
+
+    <table  class="table table-striped">
+   
+    <tr>
+        <th>Order # :</th>
+        <td>{{orders.oid}}</td>
+    </tr>
+
+    <tr>
+        <th></th><th></th>
+        <th>Customer Address:</th>
+        <th></th><th></th><th>
+        
+    </tr>
+    <tr>
+        <th>Street : </th>
+        <th>Line 2 :</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Zipcode</th>  
+        <th></th>
+    </tr>
+    <tr>
+        <td>{{address[0].address}}</td>
+        <td>{{address[0].address2}}</td>
+        <td>{{address[0].city}}</td>
+        <td>{{address[0].state}}</td>
+        <td>{{address[0].zipcode}}</td>
+        <td></td>
+    </tr>
+   
+    <tr>
+        
+        <th>Customer comments : </th>
+        <td>{{address[0].comments}}</td>
+        <th></th><th></th><th></th><th></th>
+    </tr>
+    <tr>
+        
+        <th>Status : </th>
+        <td>{{orders.status}}</td>
+        <th></th><th></th><th></th><th></th>
+    </tr>
+</table>
+
+<!-- <button>Checkout</button> -->
+<button *ngIf = "orders.status == 'In cart'" type="button" class="btn btn-primary" (click) = "checkout()">Checkout</button>
+<button *ngIf = "orders.status == 'out for delivery'" type="button" class="btn btn-primary" (click) = "completeOrder()">Check in</button>
+
+<br>
+<br>
+</div>

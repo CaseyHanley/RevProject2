@@ -8,8 +8,9 @@ import { Observable } from 'rxjs';
 })
 export class DriverService {
   private headers = new HttpHeaders({'Content-Type':'application/json'});
-  private url = 'http://localhost:8080';
+  // private url = 'http://devhanley-bucket.s3-website.us-east-2.amazonaws.com';
 
+  private url ='http://localhost:8080';
   constructor(private http: HttpClient) { }
 
   addDriver(driver: DeliveryDriver): Observable<DeliveryDriver>{
@@ -18,5 +19,9 @@ export class DriverService {
   getDriver(): Observable<DeliveryDriver>{
     return this.http.get<DeliveryDriver>(this.url+ '/drivers/'+sessionStorage.getItem("username"));
 
+  }
+
+  deleteDriver(id:number): Observable<boolean>{
+    return this.http.delete<boolean>(this.url + '/drivers/' + id);
   }
 }

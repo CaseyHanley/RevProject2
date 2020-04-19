@@ -17,7 +17,8 @@ export class OrderService {
   private authorized = new HttpHeaders({'authorized':'pa$$word'});
 
 
-  private url = 'http://localhost:8080';
+  // private url = 'http://devhanley-bucket.s3-website.us-east-2.amazonaws.com';
+  private url = 'http://localhost:8080'
 
   constructor(private http: HttpClient) { }
 

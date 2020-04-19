@@ -1,7 +1,10 @@
-div{
+div.inside{
     text-align: center;
     width: 500px;
     position: absolute;
+    top:28vh;
     left: 33vw;
     border: solid lightgray ;
+    background-color: rgba(186, 204, 216, 0.2);
+   
 }

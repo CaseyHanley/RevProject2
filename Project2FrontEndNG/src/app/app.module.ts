@@ -5,6 +5,8 @@ import{FormsModule} from '@angular/forms';
 
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -30,6 +32,7 @@ import { DriverComponent } from './component/driver/driver.component';
 import { EditMenuComponent } from './component/edit-menu/edit-menu.component';
 import { MyaccountComponent } from './component/myaccount/myaccount.component';
 import { VerticaltitleComponent } from './component/verticaltitle/verticaltitle.component';
+import { PaymentComponent } from './component/payment/payment.component';
 
 
 
@@ -51,7 +54,8 @@ import { VerticaltitleComponent } from './component/verticaltitle/verticaltitle.
     DriverComponent,
     EditMenuComponent,
     MyaccountComponent,
-    VerticaltitleComponent
+    VerticaltitleComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +63,8 @@ import { VerticaltitleComponent } from './component/verticaltitle/verticaltitle.
     HttpClientModule,
     FormsModule,
     SlickCarouselModule,
-    NgbModule
+    NgbModule,
+    BrowserAnimationsModule
 
 
  
