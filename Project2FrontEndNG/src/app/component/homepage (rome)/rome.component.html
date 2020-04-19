@@ -1,23 +1,24 @@
-
 <br>
-<h1 class="display-1" style="text-align: center; font-weight: bolder; text-transform: uppercase; font-family: CinzelD;">Vision</h1>
-<h1 class="display-5" style="text-align: center; font-weight: lighter; text-decoration: whitesmoke; font-family: AlexB;">Fine Dining</h1>
+<h1 class="display-1" style="text-align: center;  text-transform: uppercase; font-family: Cormo1; ">
+  V &#8226; I &#8226; S &#8226; I &#8226; O &bull; N</h1>
+<h1 class="display-5"
+  style="text-align: center; font-weight: lighter; text-decoration: whitesmoke; font-family: AlexB;">Fine Dining</h1>
 <hr>
 
 
 <ngb-carousel *ngIf="images">
   <ng-template ngbSlide>
-    <div style ="text-align: center;" class="picsum-img-wrapper">
+    <div style="text-align: center;" class="picsum-img-wrapper">
       <img [src]="images[0]" alt="Random first slide">
-      
+
     </div>
     <div class="carousel-caption">
       <h3>Great View</h3>
-      <p  >Located atop The Monongahela Incline, we offer a beutiful view of Pittsburgh</p>
+      <p>Located atop The Monongahela Incline, we offer a beutiful view of Pittsburgh</p>
     </div>
   </ng-template>
   <ng-template ngbSlide>
-    <div style ="text-align: center;" class="picsum-img-wrapper">
+    <div style="text-align: center;" class="picsum-img-wrapper">
       <img [src]="images[1]" alt="Random second slide">
     </div>
     <div class="carousel-caption">
@@ -26,7 +27,7 @@
     </div>
   </ng-template>
   <ng-template ngbSlide>
-    <div style ="text-align: center;" class="picsum-img-wrapper">
+    <div style="text-align: center;" class="picsum-img-wrapper">
       <img [src]="images[2]" alt="Random third slide">
     </div>
     <div class="carousel-caption">
@@ -35,7 +36,7 @@
     </div>
   </ng-template>
   <ng-template ngbSlide>
-    <div style ="text-align: center;" class="picsum-img-wrapper">
+    <div style="text-align: center;" class="picsum-img-wrapper">
       <img [src]="images[3]" alt="Random fourth slide">
     </div>
     <div class="carousel-caption">
@@ -44,7 +45,7 @@
     </div>
   </ng-template>
   <ng-template ngbSlide>
-    <div style ="text-align: center;" class="picsum-img-wrapper">
+    <div style="text-align: center;" class="picsum-img-wrapper">
       <img [src]="images[4]" alt="Random fifth slide">
     </div>
     <div class="carousel-caption">
@@ -53,7 +54,7 @@
     </div>
   </ng-template>
   <ng-template ngbSlide>
-    <div style ="text-align: center;" class="picsum-img-wrapper">
+    <div style="text-align: center;" class="picsum-img-wrapper">
       <img [src]="images[5]" alt="Random sixth slide">
     </div>
     <div class="carousel-caption">
@@ -61,17 +62,72 @@
       <p>Rent out private rooms that sit up to 100 people</p>
     </div>
   </ng-template>
-</ngb-carousel>  
+</ngb-carousel>
 
 
 <br>
 <br>
+<div style="text-align: center;">
+  <div class="about">
+    <p style="font-size: larger;">Vision is a high class restauraunt located in the Downtown Pittsburgh area. Our
+      restaurant sits atop The Monongahela Incline, allowing us to offer a great view of the city along with pristine
+      fine dining.</p>
+    <p style="font-size: larger;">Due to the outbreak of Covid-19 we will no longer be offering sit-down service until
+      further notice. Instead, we will be offering delivery to any customer with an acccount. During this time we also
+      We appologize for the
+      inconvenience.</p>
+    <a href="newuser" *ngIf="!isLoggedin()">
+      <h6 style="font-style: italic; font-family: Cormo1;">Register for an account</h6>
+    </a>
+  </div>
+  <br>
+  <div><img style="width: 100%; height: 600px;" src="assets/Images/vidar-nordli-mathisen-9HGqJq3vglc-unsplash.jpg">
+  </div>
 
-<div class="about">
-     <p style= "font-size: larger;">Vision is a high class resteraunt located in the Pittsburgh area. Located at the top of The Monongahela Incline, we offer fine dining with a great view of the city.</p>
-     <p style="font-size: larger;">Due to the outbreak of Covid-19 we will no longer be offering sit-down service until further notice. Instead, we will be offering free pickup and delivery. We appologize for the inconvenience</p>
-   <div class = "photo"></div>
+  <div style="width: 100%; height: 490px; background-color:rgba(186, 204, 216, 0.2);">
+    <br>
+
+    <div style="position: absolute; right: 20vw;">
+      <h1 style="font-family: AlexB;">Pittsbutgh, PA</h1>
+      <p>HOURS OF OPERATION</p>
+
+      <p>Mon-Thu: Closed</p>
+      <p>Friday: 3-8 PM - To Go Only</p>
+      <p>Saturday: 3-8 PM - To Go Only</p>
+      <p>Sunday: 12-5 PM - To Go Only</p>
+      <p>HOLIDAYS</p>
+      <p>Thanksgiving Day: Closed</p>
+      <p>Christmas Eve: 12PM-9PM</p>
+      <p>Christmas Day: Closed</p>
+      <br>
+    </div>
+    <div><img class="img1" src="/assets/Images/igor-oliyarnik-ElMQhXn3eRU-unsplash.jpg"></div>
+
+  </div>
+
+  <div style="background-color:rgba(186, 204, 216, 0.2);" class="media">
+    <img class="d-flex mr-3" src="/assets/Images/lance-anderson-OrpU0RA_HQ8-unsplash.jpg"
+      alt="Generic placeholder image">
+    <div class="media-body">
+      <br>
+      <h1 class="display3" style="font-family: AlexB;">Announcements</h1>
+      <p>Our Dine In Services have been temporarily closed. At Vision, family is very important to us and our
+        utmost concern is the well-being of all our guests and team members. This decision was made to support community
+        efforts to mitigate the spread of the COVID-19 virus</p>
+      <!-- <a href="events">
+        <p>Upcoming Events</p>
+      </a> -->
+    </div>
+  </div>
+
+
+
+
+
+
+
 </div>
+
 
 
 <br>

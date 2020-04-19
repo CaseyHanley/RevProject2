@@ -5,15 +5,15 @@
 
 <form class="text-center border border-light p-5">
 
-    <p class="h4 mb-4">Contact us</p>
+    <p style="font-family: Cormo1; font-size: xx-large;" class="h4 mb-4">Contact us</p>
   
-    <input type="text" id="defaultContactFormName" class="form-control mb-4" placeholder="Name">
+    <input style="font-family: Cormo1; font-size: large;" type="text" id="defaultContactFormName" class="form-control mb-4" placeholder="Name">
   
-    <input type="email" id="defaultContactFormEmail" class="form-control mb-4" placeholder="E-mail">
+    <input style="font-family: Cormo1; font-size: large;" type="email" id="defaultContactFormEmail" class="form-control mb-4" placeholder="E-mail">
   
    
-    <label>Subject</label>
-    <select class="browser-default custom-select mb-4">
+    <label style="font-family: Cormo1; font-size: large;">Subject</label>
+    <select style="font-family: Cormo1; font-size: large;" class="browser-default custom-select mb-4">
       
       <option value="" selected>Choose Option</option>
       <option value="1">Career Options</option>
@@ -23,15 +23,23 @@
   
     
     <div class="form-group">
-      <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3" placeholder="Message"></textarea>
+      <textarea style="font-family: Cormo1; font-size: large;" class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3" placeholder="Message"></textarea>
     </div>
   
 
   
   
-    <button mdbBtn color="info" block="true" type="submit">Send</button>
-    <!-- add function to add message to database -->
-  
+    <button style="font-family: Cormo1;" type="button" (click)="callAlert()" class="btn btn-primary">Select</button>
+    <div id="map-container-google-1" class="z-depth-1 map-container">
+      <br>
+      <iframe src="https://maps.google.com/maps?q=manhatan&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
+        style="border:0; width: 300px; height: 200px;" allowfullscreen></iframe>
+        <br>
+<br>
+<br>
+<br>
+    </div>
+
   </form>
 
 </div>

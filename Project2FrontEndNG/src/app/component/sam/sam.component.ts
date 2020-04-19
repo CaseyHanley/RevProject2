@@ -40,7 +40,8 @@ export class SamComponent implements OnInit {
   }
 
   setDriver(){
-    let newDriver = new DeliveryDriver('joel', sessionStorage.getItem("username"), this.order.oid);
+    let name = sessionStorage.getItem("username");
+    let newDriver = new DeliveryDriver(0,'joel', name, this.order.oid);
     this.driver.addDriver(newDriver).subscribe(
       (response) => {
       console.log(response);

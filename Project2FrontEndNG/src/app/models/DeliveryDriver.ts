@@ -1,12 +1,14 @@
 export class DeliveryDriver{
    
+    driverid : number;
     driverUsername: string;
     ousername :string;
     oid :number;
 
 
 
-    constructor(driverUsername: string, ousername: string, oid){
+    constructor(driverid: number, driverUsername: string, ousername: string, oid: number){
+        this.driverid = driverid;
         this.driverUsername = driverUsername;
         this.ousername = ousername;
         this.oid = oid;

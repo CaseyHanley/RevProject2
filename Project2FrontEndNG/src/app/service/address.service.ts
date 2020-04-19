@@ -31,7 +31,7 @@ export class AddressService {
   }
     
   editAddress(edit: Address){
-      return this.http.put<Address>('http://localhost:8080/deliveryaddress/', edit, {headers: this.headers});
+      return this.http.put<Address>('http://devhanley-bucket.s3-website.us-east-2.amazonaws.com/deliveryaddress/', edit, {headers: this.headers});
 
   }
  

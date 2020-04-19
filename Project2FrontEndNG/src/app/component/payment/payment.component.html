@@ -1,0 +1,96 @@
+
+<div class="padding">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card">
+                <h1 class="display-5" style="text-align: center; font-family: Cormo1; font-style: italic;">Make Payment</h1>
+                <div class="card-header">
+                    <strong style="font-family: Cormo1; font-size: larger;">Credit Card</strong>
+                    <small style="font-family: Cormo1; font-size: medium;"> enter your card details</small>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label style="font-family: Cormo1;" for="name">Name</label>
+                                <input style="font-family: Cormo1;" class="form-control" id="name" type="text" placeholder="Enter your name">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="ccnumber" style="font-family: Cormo1;">Credit Card Number</label>
+                                <div class="input-group">
+                                    <input style="font-family: Cormo1;" class="form-control" id ="ccnumber" type="text" placeholder="0000 0000 0000 0000" autocomplete="email">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">
+                                            <i class="mdi mdi-credit-card"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-sm-4">
+                            <label for="ccmonth" style="font-family: Cormo1;">Month</label>
+                            <select class="form-control" id="ccmonth">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
+                                <option>11</option>
+                                <option>12</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-sm-4">
+                            <label for="ccyear" style="font-family: Cormo1; font-size: larger;">Year</label>
+                            <select class="form-control" id="ccyear">
+                                <option >2014</option>
+                                <option>2015</option>
+                                <option>2016</option>
+                                <option>2017</option>
+                                <option>2018</option>
+                                <option>2019</option>
+                                <option>2020</option>
+                                <option>2021</option>
+                                <option>2022</option>
+                                <option>2023</option>
+                                <option>2024</option>
+                                <option>2025</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label for="cvv" style="font-family: Cormo1;">CVV/CVC</label>
+                                <input style="font-family: Cormo1;" class="form-control" id="cvv" type="text" placeholder="123">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-sm btn btn-primary float-right" (click) = "submitAlert()" type="submit">
+                        <i class="mdi mdi-gamepad-circle"></i> Continue</button>
+                    <button class="btn btn-sm btn-danger" (click)="clearText()" type="reset">
+                        <i class="mdi mdi-lock-reset"></i> Reset</button>
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <h5 id = "submittext" style="font-family: Cormo1;"></h5>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<br>
+<br>
+<br>
+<br>

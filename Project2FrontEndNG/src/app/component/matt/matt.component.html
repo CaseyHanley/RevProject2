@@ -1,35 +1,34 @@
 <br>
 <br>
 <app-verticaltitle></app-verticaltitle>
-    <div style="text-align: center;">
-    <table>
-        <tr style="text-align: center;">
-            <th>Address</th>
-            <th>Instructions</th>
-            <th>Action</th>
-        </tr>
-        <tr *ngFor = "let p of addressList">
-            <td> {{p.address}} <br>
-                {{p.address2}} <br>
-                {{p.city}} {{p.state}}, {{p.zipcode}}
-            </td>
-            <td>{{p.SpecInstr}</td>
-            <td><button (click)="EditMyAddress(this)">Edit Address </button>    
-                <button (click)="deleteMyAddress(this)">Delete</button>   
-             </td>
-        </tr>
-    </table>
-    <button (click) = "ViewAddAddress()"> Add Addresses</button>
-    <div id="addressform" style = "display:none">
-    Street: <input type="text" [(ngModel)] = "address" (input) = "validateInputFields()"><br>
-    2nd Line: <input type="text" [(ngModel)] = "address2" (input) = "validateInputFields()"><br>
-    City: <input type="text" [(ngModel)] = "city" (input) = "validateInputFields()"><br>
-    State: <input type="text" [(ngModel)] = "state" (input) = "validateInputFields()"><br>
-    Zip: <input type="number" [(ngModel)] = "zipcode" (input) = "validateInputFields()"><br><br>
 
-    Special Instructions: <input type="text" [(ngModel)] = "comments" (input) = "validateInputFields()"><br>
-    <button (click) = "addAddress()">Submit</button>
-    <!-- <p *ngIf="!valid">You have invalid fields!</p> -->
-</div>    
-    <button (click)="Pay()">Pay your bill</button>    
-</div>
+    <div style="text-align: center;">
+        <h1 style="font-family: Cormo1; font-style: italic;" >~ Submit Address ~</h1>
+    <button type="button" class="btn btn-primary" style="font-family: Cormo1;" *ngIf = "showButton !== 'noshow'" (click) = "ViewAddAddress(); showBButton()">Add Address</button>
+    <br>
+    
+    <div *ngIf="!showPayment()" id="addressform" style = "display:none">
+        <div style="width: 800px; position: absolute; left: 21.5vw;">
+            <form class="text-center border border-light p-5">
+                <p style="font-family: Cormo1;" class="h4 mb-4">Add address</p>
+        <input type="text"  class="form-control mb-4" style="font-family: Cormo1;" placeholder="Street" [(ngModel)] = "address" [ngModelOptions]="{standalone: true}">
+        <input type="text"  class="form-control mb-4" style="font-family: Cormo1;" placeholder="Line 2" [(ngModel)] = "address2" [ngModelOptions]="{standalone: true}">
+        <input type="text"  class="form-control mb-4" style="font-family: Cormo1;" placeholder="City" [(ngModel)] = "city" [ngModelOptions]="{standalone: true}">
+        <input type="text"  class="form-control mb-4" style="font-family: Cormo1;" placeholder="State" [(ngModel)] = "state" [ngModelOptions]="{standalone: true}">
+        <input type="text"  class="form-control mb-4" style="font-family: Cormo1;" placeholder="Zip" [(ngModel)] = "zipcode" [ngModelOptions]="{standalone: true}">
+        <input type="text"  class="form-control mb-4" style="font-family: Cormo1;" placeholder="Special Instructions" [(ngModel)] = "comments" [ngModelOptions]="{standalone: true}">
+
+        <button type="button" class="btn btn-primary" style="font-family: Cormo1;" (click) = "addAddress() ; viewBillOnSubmit()">Submit</button>
+        <br>
+        <br>
+        <button *ngIf = "showBill == 'Show Bill'" type="button" class="btn btn-primary" style="font-family: Cormo1;" routerLink = 'makepayment'>Pay Bill</button>  
+        </form>
+        </div>
+   
+
+    
+<br>
+<br>
+<br>
+<br>
+

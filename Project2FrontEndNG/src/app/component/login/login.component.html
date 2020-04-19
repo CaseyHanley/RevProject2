@@ -4,16 +4,17 @@
 <div style="width: 500px; height: 500px; position: absolute; left: 32vw;">
   <br>
 <form class="text-center border border-light p-5">
-  <p class="h4 mb-4">Sign in</p>
+  <p style="font-family: Cormo1; font-size: xx-large;" class="h4 mb-4">Sign in</p>
 
-  <input type="text" id="username" [(ngModel)] = "username" class="form-control mb-2" placeholder="Username" [ngModelOptions]="{standalone: true}">
+  <input style="font-family: Cormo1; font-size: large;" type="text" id="username" [(ngModel)] = "username" class="form-control mb-2" placeholder="Username" [ngModelOptions]="{standalone: true}">
 
-  <input type="password" id="password" [(ngModel)] = "password" class="form-control mb-2" placeholder="Password" [ngModelOptions]="{standalone: true}">
+  <input style="font-family: Cormo1; font-size: large;" type="password" id="password" [(ngModel)] = "password" class="form-control mb-2" placeholder="Password" [ngModelOptions]="{standalone: true}">
 
-  <button (click) = "login()" class="my-2">Sign in</button>
+ 
+  <button style="font-family: Cormo1; font-size: large;" type="button" (click)="login()" class="btn btn-primary">Sign in</button>
 
-  <p>Not a member?
-    <a href routerLink = "registeruser">Register</a>
+  <p style="font-family: Cormo1;">Not a member?
+    <a href routerLink = "registeruser" >Register</a>
   </p>
 </form>
 </div>

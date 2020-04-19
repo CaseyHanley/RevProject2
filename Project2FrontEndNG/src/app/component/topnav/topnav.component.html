@@ -14,15 +14,7 @@
         <a style="font-family: Cormo1; font-size: larger;" class="nav-link" routerLink = "staff">Meet Our Staff</a>
       </li>
 
-      <!-- <li class="nav-item">
-        <a style="font-family: Cormo1; font-size: larger;" class="nav-link" routerLink = "homepage">Location</a>
-      
-      </li> -->
-
-      <li class="nav-item">
-        <a style="font-family: Cormo1; font-size: larger;" class="nav-link" *ngIf = "isManager()" routerLink = "allOrders">View All Orders</a>
-      
-      </li>
+     
       
       <li class="nav-item">
         <a style="font-family: Cormo1; font-size: larger;" *ngIf="isLoggedin() && !isEmployee()"  class="nav-link" routerLink="neworder">Place an order</a>
@@ -31,9 +23,7 @@
       <li class="nav-item">
         <a style="font-family: Cormo1; font-size: larger;" *ngIf="isLoggedin() && !isEmployee()" class="nav-link" routerLink="viewcart">View cart</a>
       </li>
-      <!-- <li class="nav-item">
-        <a style="font-family: Cormo1; font-size: larger;" *ngIf="isChef()" class="nav-link" routerLink="additem">Edit Menu</a>
-      </li> -->
+ 
     </ul>
   
       <ul class="navbar-nav ml-auto">
@@ -56,7 +46,7 @@
 
 
 <div style="text-align: center; border-bottom: solid black; background-color: rgb(226, 221, 187); border-width: thin; font-family: Cormo">
-  123 Vision Place, Morgantown, WV 26505  |    Open from 5pm to 2am 
+  123 Vision Place, Pittsburgh, Pa 19801  |    Open from 5pm to 2am 
 </div>
 
 
