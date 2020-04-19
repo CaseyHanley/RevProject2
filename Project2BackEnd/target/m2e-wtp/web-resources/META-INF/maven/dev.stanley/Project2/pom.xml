@@ -11,8 +11,8 @@
 	<groupId>dev.stanley</groupId>
 	<artifactId>Project2</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
 	<name>Project2</name>
+	<packaging>war</packaging>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -63,7 +63,6 @@
 			</plugin>
 		</plugins>
 		
-		<finalName>${project.artifactId}</finalName>
 	</build>
 
 </project>
