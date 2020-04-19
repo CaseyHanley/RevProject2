@@ -1,12 +1,8 @@
 
 .about{
-    text-align: center;
-    padding: 5px;
-    border: solid rgba(30, 27, 26, 0.81) ;
-    width: 800px;
-    height: 700px;
+    width: 50%;
     margin: auto;
-    /* background-color: rgba(186, 204, 216, 0.2); */
+  
   }
   
   h3{
@@ -20,15 +16,7 @@
     font-style: italic;
   }
   
-  .photo{
-    border: solid red;
-    height: 65%;
-    width: 500px;
-    padding: 5px;
-    /* background-image: url('/assets/Fine-Dining.jpg'); */
-    display: inline-block;
-  }
-
+ 
   .slick-slider {  
     width: 90%;  
     margin: auto;  
@@ -36,5 +24,15 @@
 
   img{
     height: 500px;
-    width: 60%;
+    width: 80%;
   }
+
+  img.img1{
+    width: 550px; 
+    height: 400px; 
+    position: 
+    absolute; 
+    left: 10vw;
+    bottom: -182vh;
+  }
+

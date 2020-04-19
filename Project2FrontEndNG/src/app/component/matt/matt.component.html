@@ -6,8 +6,6 @@
         <h1 style="font-family: Cormo1; font-style: italic;" >~ Submit Address ~</h1>
     <button type="button" class="btn btn-primary" style="font-family: Cormo1;" *ngIf = "showButton !== 'noshow'" (click) = "ViewAddAddress(); showBButton()">Add Address</button>
     <br>
-    <br>
-    <button type="button" class="btn btn-primary" style="font-family: Cormo1;" *ngIf = "showButton !== 'noshow'" (click) = "showBButton(); viewMyAddress()">View my Addresses</button>
     
     <div *ngIf="!showPayment()" id="addressform" style = "display:none">
         <div style="width: 800px; position: absolute; left: 21.5vw;">
@@ -27,26 +25,7 @@
         </form>
         </div>
    
-<!-- <div >
-    <table>
-        <tr style="text-align: center;">
-            <th>Address</th>
-            <th>Instructions</th>
-            <th>Action</th>
-        </tr>
-        <tr *ngFor = "let p of addressList">
-            <td> {{p.address}} </td>
-            <td>  {{p.address2}} </td>
-            <td> {{p.city}} </td>
-            <td> {{p.state}} </td>
-            <td> {{p.zipcode}}</td>
-            <td>{{p.SpecInstr}</td>
-            <td><button (click)="EditMyAddress(this)">Edit Address </button>    
-                <button (click)="deleteMyAddress(this)">Delete</button>   
-             </td>
-        </tr>
-    </table>
-</div> -->
+
     
 <br>
 <br>

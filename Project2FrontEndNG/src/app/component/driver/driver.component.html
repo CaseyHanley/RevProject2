@@ -57,9 +57,9 @@
     </tr>
 </table>
 
-<!-- <button>Checkout</button> -->
+
 <button *ngIf = "orders.status == 'In cart'" type="button" class="btn btn-primary" (click) = "checkout()">Checkout</button>
-<button *ngIf = "orders.status == 'out for delivery'" type="button" class="btn btn-primary" (click) = "completeOrder()">Check in</button>
+<button *ngIf = "orders.status == 'Out for delivery'" type="button" class="btn btn-primary" (click) = "completeOrder()">Check in</button>
 
 <br>
 <br>

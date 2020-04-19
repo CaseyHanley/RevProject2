@@ -17,6 +17,7 @@ import { PaymentComponent } from './component/payment/payment.component';
 
 
 
+
 const routes: Routes = [
   {path : 'menu', component : CaseyComponent},
   {path : 'neworder', component : JoelComponent},

@@ -36,6 +36,7 @@ import { PaymentComponent } from './component/payment/payment.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,7 +56,8 @@ import { PaymentComponent } from './component/payment/payment.component';
     EditMenuComponent,
     MyaccountComponent,
     VerticaltitleComponent,
-    PaymentComponent
+    PaymentComponent,
+
   ],
   imports: [
     BrowserModule,
