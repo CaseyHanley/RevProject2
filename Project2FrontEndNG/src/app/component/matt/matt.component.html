@@ -3,14 +3,13 @@
 <app-verticaltitle></app-verticaltitle>
 
     <div style="text-align: center;">
-        <h1 style="font-family: Cormo1; font-style: italic; text-decoration: underline;" >Submit Address</h1>
+        <h1 style="font-family: Cormo1; font-style: italic;" >~ Submit Address ~</h1>
     <button type="button" class="btn btn-primary" style="font-family: Cormo1;" *ngIf = "showButton !== 'noshow'" (click) = "ViewAddAddress(); showBButton()">Add Address</button>
     <br>
     <br>
     <button type="button" class="btn btn-primary" style="font-family: Cormo1;" *ngIf = "showButton !== 'noshow'" (click) = "showBButton(); viewMyAddress()">View my Addresses</button>
     
     <div *ngIf="!showPayment()" id="addressform" style = "display:none">
-        <!-- <div id="addressform"> -->
         <div style="width: 800px; position: absolute; left: 21.5vw;">
             <form class="text-center border border-light p-5">
                 <p style="font-family: Cormo1;" class="h4 mb-4">Add address</p>

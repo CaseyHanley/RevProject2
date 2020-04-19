@@ -28,6 +28,10 @@
   src: url(assets/fonts/Cormorant_Infant/CormorantInfant-Regular.ttf);
   font-family: Cormo1;
 }
+@font-face{
+  src: url(assets/fonts/Clicker_Script/ClickerScript-Regular.ttf);
+  font-family: Click;
+}
 
 body,html {
     margin: 0;

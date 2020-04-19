@@ -9,7 +9,7 @@
         
     </div>
     <div>
-        <h1 *ngIf="order != null && order.status == 'In cart'" style="font-family: Cormo1; font-style: italic; text-decoration: underline;" >Your cart</h1>
+        <h1 *ngIf="order != null && order.status == 'In cart'" style="font-family: Cormo1; font-style: italic;">~ Your cart ~</h1>
     </div>
     <table width=700 style="margin: auto;" *ngIf="order != null && order.status == 'In cart'">
         <tr>
