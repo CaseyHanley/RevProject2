@@ -5,6 +5,8 @@ import{FormsModule} from '@angular/forms';
 
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -61,7 +63,8 @@ import { PaymentComponent } from './component/payment/payment.component';
     HttpClientModule,
     FormsModule,
     SlickCarouselModule,
-    NgbModule
+    NgbModule,
+    BrowserAnimationsModule
 
 
  

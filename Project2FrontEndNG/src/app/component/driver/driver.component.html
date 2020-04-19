@@ -5,10 +5,12 @@
 
 <div class = "centerpage">
     <h1 *ngIf="orders ==null" style="font-style: italic; font-family: Cormo1;">No Deliveries</h1>
-    
+   
 </div>
-       
+
+<div style="text-align: center;"> 
 <h1 *ngIf="orders !=null" style="font-style: italic; font-family: Cormo1;">My Deliveries</h1>
+</div>
 <div class = "table" *ngIf="orders !=null">
 
     <table  class="table table-striped">

@@ -1,35 +1,35 @@
 <br>
 <br>
 <app-verticaltitle></app-verticaltitle>
-<div style="width: 1100px; position: absolute; left: 20vw;">
+<div style="width: 800px; position: absolute; left: 21vw;">
 <form class="text-center border border-light p-5">
 
-    <p class="h4 mb-4">Sign up</p>
+    <p class="h4 mb-4" style="font-family: Cormo1; font-size: xx-large;">Sign up</p>
 
     <div class="form-row mb-4">
       <div class="col">
         
-        <input type="text" class="form-control" placeholder="First name" [(ngModel)] = "firstname" [ngModelOptions]="{standalone: true}">
+        <input style="font-family: Cormo1; font-size: large;" type="text" class="form-control" placeholder="First name" [(ngModel)] = "firstname" [ngModelOptions]="{standalone: true}">
       </div>
       <div class="col">
       
-        <input type="text" class="form-control" placeholder="Last name" [(ngModel)] = "lastname" [ngModelOptions]="{standalone: true}">
+        <input style="font-family: Cormo1; font-size: large;" type="text" class="form-control" placeholder="Last name" [(ngModel)] = "lastname" [ngModelOptions]="{standalone: true}">
       </div>
     </div>
 
     
-    <input type="text"  class="form-control mb-4" placeholder="Username" [(ngModel)] = "username" [ngModelOptions]="{standalone: true}">
+    <input type="text" style="font-family: Cormo1;" class="form-control mb-4" placeholder="Username" [(ngModel)] = "username" [ngModelOptions]="{standalone: true}">
 
     
-    <input type="password" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock" [(ngModel)] = "password" [ngModelOptions]="{standalone: true}">
-    <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+    <input style="font-family: Cormo1; font-size: large;" type="password" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock" [(ngModel)] = "password" [ngModelOptions]="{standalone: true}">
+    <small style="font-family: Cormo1;" id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
       At least 4 characters and 1 digit
     </small>
 
   
     <div class="row">
-      <div class="col-md-6">
-      <select class="browser-default custom-select" [(ngModel)] = "account_type" [ngModelOptions]="{standalone: true}">
+      <div  class="col-md-6">
+      <select style="font-family: Cormo1; font-size: large;" class="browser-default custom-select mb-4" [(ngModel)] = "account_type" [ngModelOptions]="{standalone: true}">
         <option selected = "selected">Account Type</option>
         <option value="Customer">Customer</option>
         <option value="Chef" *ngIf = isManager()>Chef</option>
@@ -45,13 +45,7 @@
     <br>
     
 
-   <!-- <div *ngIf = isManager()>
-    <input  type="text" id="defaultRegisterPhonePassword" class="form-control" placeholder="Account type" aria-describedby="defaultRegisterFormPhoneHelpBlock">
-    <small id="defaultRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
-      Host, Chef, Manager or Driver
-    </small>
-  </div> -->
-    <button (click)= addUser() type="submit">Submit</button>
+    <button style="font-family: Cormo1; font-size: large;" type="button" (click)="addUser()" class="btn btn-primary">Submit</button>
 
     </form>
   </div>

@@ -1,46 +1,60 @@
 <br>
 <br>
 <app-verticaltitle></app-verticaltitle>
+
 <div style="text-align: center;">
     <div class = "centerpage">
         <h1 *ngIf="order ==null" style="font-style: italic; font-family: Cormo1;">Cart Empty</h1>
        <a href = "neworder" *ngIf="order ==null"><h6  style="font-style: italic; font-family: Cormo1;">Place an order</h6></a> 
         
     </div>
-    
+    <div>
+        <h1 *ngIf="order != null && order.status == 'In cart'" style="font-family: Cormo1; font-style: italic; text-decoration: underline;" >Your cart</h1>
+    </div>
     <table width=700 style="margin: auto;" *ngIf="order != null && order.status == 'In cart'">
+        <tr>
+            <th></th>
+            <th style ="font-style: italic; font-family: Cormo; font-size: x-large; font-weight: bold; text-decoration: underline;">Product</th>
+            <th style ="font-style: italic; font-family: Cormo; font-size: x-large; font-weight: bold; text-decoration: underline;">Quantity</th>
+        </tr>
         <tr *ngIf="order.productname1 != 'Null'">
             <td><img src = "{{'/assets/Images/' + order.productname1 + '.jpg'}}" width = 150></td>
             <td style ="font-style: italic; font-family: Cormo1; font-size: larger; font-weight: bold; width:100">{{order.productname1}}</td>
+            <td>{{order.quantity1}}</td>
         </tr>
 
         <tr *ngIf="order.productname2 != 'Null'">
             <td><img src = "{{'/assets/Images/' + order.productname2 + '.jpg'}}" width = 150></td>
             <td style ="font-style: italic; font-family: Cormo1; font-size: larger; font-weight: bold; width:100">{{order.productname2}}</td>
+            <td>{{order.quantity2}}</td>
             <!--<td><button (click) = "remove(2)">Remove</button></td>-->
         </tr>
 
         <tr *ngIf="order.productname3 != 'Null'">
             <td><img src = "{{'/assets/Images/' + order.productname3 + '.jpg'}}" width = 150></td>
             <td style ="font-style: italic; font-family: Cormo1; font-size: larger; font-weight: bold; width:100">{{order.productname3}}</td>
+            <td>{{order.quantity3}}</td>
             <!--<td><button (click) = "remove(3)">Remove</button></td>-->
         </tr>
 
         <tr *ngIf="order.productname4 != 'Null'">
             <td><img src = "{{'/assets/Images/' + order.productname4 + '.jpg'}}" width = 150></td>
             <td style ="font-style: italic; font-family: Cormo1; font-size: larger; font-weight: bold; width:100">{{order.productname4}}</td>
+            <td>{{order.quantity4}}</td>
             <!--<td><button (click) = "remove(4)">Remove</button></td>-->
         </tr>
 
         <tr *ngIf="order.productname5 != 'Null'">
             <td><img src = "{{'/assets/Images/' + order.productname5 + '.jpg'}}" width = 150></td>
             <td style ="font-style: italic; font-family: Cormo1; font-size: larger; font-weight: bold; width:100">{{order.productname5}}</td>
+            <td>{{order.quantity5}}</td>
             <!--<td><button (click) = "remove(5)">Remove</button></td>-->
         </tr>
 
         <tr *ngIf="order.productname6 != 'Null'">
             <td><img src = "{{'/assets/Images/' + order.productname6 + '.jpg'}}" width = 150></td>
             <td style ="font-style: italic; font-family: Cormo1; font-size: larger; font-weight: bold; width:100">{{order.productname6}}</td>
+            <td>{{order.quantity6}}</td>
             <!--<td><button (click) = "remove(6)">Remove</button></td>-->
         </tr>
 
@@ -49,12 +63,13 @@
         <tr *ngIf="order.productname7 != 'Null'">
             <td><img src = "{{'/assets/Images/' + order.productname7 + '.jpg'}}" width = 150></td>
             <td style ="font-style: italic; font-family: Cormo1; font-size: larger; font-weight: bold; width:100">{{order.productname7}}</td>
+            <td>{{order.quantity7}}</td>
             <!--<td><button (click) = "remove(7)">Remove</button></td>-->
         </tr>
 
 
         <tr>
-            <!-- <td><button (click)="clear()">Clear</button></td> -->
+ 
             <td></td>
             <td style="font-style: italic; font-family: Cormo1; font-size: 30px; font-weight: bolder; width:100">
                 Total: {{order.price | currency: 'USD'}}
@@ -62,9 +77,9 @@
         </tr>
         <tr><td></td></tr>
         <tr>
-            <!-- <td><button (click) = setDriver()>Checkout</button></td> -->
+
             <td></td>
-            <!-- <td><img style ="width: 150px; height: 50px;"  class = clr src="\assets\Images\checkout-onhover.jpg" id="submitImage" (click)="setDriver()"></td> -->
+
             <td><button style="font-family: Cormo1;" type="button" (click)="setDriver()" class="btn btn-primary">Checkout</button></td>
         </tr>
     </table>
@@ -72,7 +87,6 @@
 <router-outlet></router-outlet>
 
 <div class = "clearbutton">
-    <!-- <td><img style ="width: 150px; height: 50px;" class = clr src="\assets\Images\clear-onhover.jpg" (click)="clear()"></td> -->
     <td><button style="font-family: Cormo1;" type="button" (click)="clear()" class="btn btn-primary">Cancel order</button></td>
 </div>
 <br>
