@@ -17,7 +17,8 @@ import dev.stanley.beans.DeliveryAddress;
 import dev.stanley.services.DeliveryAddressService;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
+//@CrossOrigin(origins = "http://devhanley-bucket.s3-website.us-east-2.amazonaws.com/", allowedHeaders = "*")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class DeliveryAddressController {
 
 	@Autowired
@@ -25,7 +26,7 @@ public class DeliveryAddressController {
 	
 	@RequestMapping(value="/deliveryaddress", method=RequestMethod.POST, consumes="application/Json")
 	public DeliveryAddress createAddress(@RequestBody DeliveryAddress address) {
-		
+		System.out.println(address);
 		return das.createAddress(address);
 		
 	}
@@ -36,12 +37,16 @@ public class DeliveryAddressController {
 		
 	}
 	
-	@GetMapping(value = "/deliveryaddress/{u_id}")
-	public DeliveryAddress getAddressById(@PathVariable("u_id") int u_id) {
-		
-		return das.getAddressById(u_id);
+	@GetMapping(value = "/deliveryaddress/{username}")
+	public DeliveryAddress getAddressByUsername(@PathVariable("username") String username) {
+		System.out.println(das.getAddressByUsername(username));
+		return das.getAddressByUsername(username);
 	}
 	
+	@GetMapping(value = "/deliveryaddress/all/{username}")
+	public List<DeliveryAddress> getAllAddressByUsername(@PathVariable("username") String username) {
+		return das.getAllAddressByUsername(username);
+	}
 	
 	
 	@PutMapping(value="/deliveryaddress", consumes="application/Json")
@@ -51,9 +56,9 @@ public class DeliveryAddressController {
 	}
 	
 	
-	@DeleteMapping(value="/deliveryaddress/{a_id}")
-	public boolean deleteDeliveryAddress(@PathVariable("a_id") int a_id) {
-		das.deleteDeliveryAddress(das.getAddressById(a_id));
+	@DeleteMapping(value="/deliveryaddress/{aid}")
+	public boolean deleteDeliveryAddress(@PathVariable("aid") int aid) {
+		das.deleteDeliveryAddress(das.getAddressById(aid));
 		return true;
 	}
 }

@@ -17,7 +17,7 @@ import dev.stanley.beans.DiscountCodes;
 import dev.stanley.services.DiscountCodesService;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class DiscountCodesController {
 
 	@Autowired

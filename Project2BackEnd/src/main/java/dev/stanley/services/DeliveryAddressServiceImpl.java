@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import dev.stanley.beans.DeliveryAddress;
-import dev.stanley.repository.DeliveryAddressRepository;
+import dev.stanley.repositories.DeliveryAddressRepository;
 
 @Service
 public class DeliveryAddressServiceImpl implements DeliveryAddressService {
@@ -20,8 +20,13 @@ public class DeliveryAddressServiceImpl implements DeliveryAddressService {
 	}
 
 	@Override
-	public DeliveryAddress getAddressById(int u_id) {
-		return dar.findById(u_id).get();
+	public DeliveryAddress getAddressByUsername(String username) {
+		return dar.findByUsername(username);
+	}
+	
+	@Override
+	public DeliveryAddress getAddressById(int aid) {
+		return dar.findById(aid).get();
 	}
 
 	@Override
@@ -47,9 +52,8 @@ public class DeliveryAddressServiceImpl implements DeliveryAddressService {
 	}
 
 	@Override
-	public List<DeliveryAddress> getAddressesById(int u_id) {
-		
-		return (List<DeliveryAddress>) dar.findAllByUid(u_id);
+	public List<DeliveryAddress> getAllAddressByUsername(String username) {
+		return (List<DeliveryAddress>) dar.findAllByUsername(username);
 	}
 
 }

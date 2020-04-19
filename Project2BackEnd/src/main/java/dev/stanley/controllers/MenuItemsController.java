@@ -18,7 +18,7 @@ import dev.stanley.beans.MenuItems;
 import dev.stanley.services.MenuItemsService;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class MenuItemsController {
 
 	@Autowired
@@ -43,10 +43,10 @@ public class MenuItemsController {
 	}
 	
 	@AuthorizeDelete
-	@DeleteMapping(value="/menuitems/{stock_id}")
-	public boolean deleteItems(@PathVariable("stock_id") int stock_id) {
+	@DeleteMapping(value="/menuitems/{productname}")
+	public boolean deleteItems(@PathVariable("productname") String productname) {
 		System.out.println("Executing Delete");
-		return ms.removeItem(ms.getItemById(stock_id));
+		return ms.removeItem(ms.getItem(productname));
 		
 	}
 	

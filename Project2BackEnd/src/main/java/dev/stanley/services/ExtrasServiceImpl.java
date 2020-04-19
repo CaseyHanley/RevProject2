@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import dev.stanley.beans.Extras;
-import dev.stanley.repository.ExtrasRepository;
+import dev.stanley.repositories.ExtrasRepository;
 
 
 @Service

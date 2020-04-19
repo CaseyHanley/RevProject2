@@ -13,8 +13,8 @@ public class DeliveryAddress {
 	@GeneratedValue
 	private int a_id;
 	
-	@Column(name ="u_id")
-	private int uid;
+	@Column(name ="username")
+	private String username;
 	
 	@Column(name ="state")
 	private String state;
@@ -25,7 +25,7 @@ public class DeliveryAddress {
 	@Column(name ="address")
 	private String address;
 	
-	@Column(name ="address2")
+	@Column(name ="address2", nullable =true)
 	private String address2;
 	
 	@Column(name ="zipcode")
@@ -43,12 +43,20 @@ public class DeliveryAddress {
 	}
 
 
-	public int getUid() {
-		return uid;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setUid(int uid) {
-		this.uid = uid;
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
 	}
 
 	public String getState() {
@@ -91,29 +99,34 @@ public class DeliveryAddress {
 		this.comments = comments;
 	}
 
+	
+
 	@Override
 	public String toString() {
-		return "DeliveryAddress [a_id=" + a_id + ", u_id=" + uid + ", state=" + state + ", address=" + address
-				+ ", address2=" + address2 + ", zipcode=" + zipcode + ", comments=" + comments + "]";
+		return "DeliveryAddress [a_id=" + a_id + ", username=" + username + ", state=" + state + ", city=" + city
+				+ ", address=" + address + ", address2=" + address2 + ", zipcode=" + zipcode + ", comments=" + comments
+				+ "]";
 	}
 
 	public DeliveryAddress() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
-	public DeliveryAddress(int a_id, int u_id, String state, String address, String address2, int zipcode,
-			String comments) {
+	public DeliveryAddress(int a_id, String username, String state, String city, String address, String address2,
+			int zipcode, String comments) {
 		super();
 		this.a_id = a_id;
-		this.uid = u_id;
+		this.username = username;
 		this.state = state;
+		this.city = city;
 		this.address = address;
 		this.address2 = address2;
 		this.zipcode = zipcode;
 		this.comments = comments;
 	}
 	
+	
+
 	
 	
 	

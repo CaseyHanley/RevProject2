@@ -17,7 +17,7 @@ import dev.stanley.beans.Extras;
 import dev.stanley.services.ExtrasService;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class ExtrasController {
 	
 	@Autowired

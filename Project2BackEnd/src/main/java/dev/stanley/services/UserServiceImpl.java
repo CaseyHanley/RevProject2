@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import dev.stanley.beans.Users;
-import dev.stanley.repository.UserRepository;
+import dev.stanley.repositories.UserRepository;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -28,7 +28,6 @@ public class UserServiceImpl implements UserService {
 	public Users getUser(String username) {
 		return ur.findByUsername(username);
 	}
-
 
 	@Override
 	public List<Users> allUsers() {
@@ -62,21 +61,16 @@ public class UserServiceImpl implements UserService {
 //			return false;
 //		}
 //	}
-	
+
 	@Override
 	public Users loginUser(String username, String password) {
-		return ur.findByUsernameAndPassword(username,password);
-		
-		
+		return ur.findByUsernameAndPassword(username, password);
+
 	}
 
 	@Override
 	public Users getUserByP(String password) {
 		return ur.findByPassword(password);
 	}
-
-
-
-
 
 }
