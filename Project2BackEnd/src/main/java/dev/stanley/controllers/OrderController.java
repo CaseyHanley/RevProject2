@@ -18,7 +18,7 @@ import dev.stanley.beans.Orders;
 import dev.stanley.services.OrderService;
 
 @RestController
-@CrossOrigin
+@CrossOrigin(origins = "http://devhanley-bucket.s3-website.us-east-2.amazonaws.com/", allowedHeaders = "*")
 public class OrderController {
 
 	@Autowired

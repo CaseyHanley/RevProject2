@@ -18,7 +18,7 @@ import dev.stanley.services.DeliveryAddressService;
 
 @RestController
 //@CrossOrigin(origins = "http://devhanley-bucket.s3-website.us-east-2.amazonaws.com/", allowedHeaders = "*")
-@CrossOrigin
+@CrossOrigin(origins = "http://devhanley-bucket.s3-website.us-east-2.amazonaws.com/", allowedHeaders = "*")
 public class DeliveryAddressController {
 
 	@Autowired
