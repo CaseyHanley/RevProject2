@@ -17,7 +17,7 @@ import dev.stanley.beans.DiscountCodes;
 import dev.stanley.services.DiscountCodesService;
 
 @RestController
-@CrossOrigin(allowedHeaders = "*", origins = "http://devhanley-bucket.s3-website.us-east-2.amazonaws.com")
+@CrossOrigin
 public class DiscountCodesController {
 
 	@Autowired
