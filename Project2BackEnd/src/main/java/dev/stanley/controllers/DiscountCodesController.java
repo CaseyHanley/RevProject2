@@ -16,37 +16,42 @@ import org.springframework.web.bind.annotation.RestController;
 import dev.stanley.beans.DiscountCodes;
 import dev.stanley.services.DiscountCodesService;
 
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
-@CrossOrigin(origins = "http://ec2-3-134-96-132.us-east-2.compute.amazonaws.com:8080", allowedHeaders = "*")
 public class DiscountCodesController {
 
 	@Autowired
 	DiscountCodesService dcs;
 	
+	@CrossOrigin
 	@RequestMapping(value="/discountcodes", method=RequestMethod.POST, consumes="application/Json")
 	public DiscountCodes createDiscountCodes(@RequestBody DiscountCodes code) {
 		
 		return dcs.createDiscountCodes(code);
 	}
 	
+	@CrossOrigin
 	@GetMapping(value="/discountcodes", produces="application/Json")
 	public List<DiscountCodes> getAllDiscountCodes(){
 		
 		return dcs.getAllDiscountCodes();
 	}
 	
+	@CrossOrigin
 	@GetMapping(value = "/discountcodess/{dc_id}")
 	public DiscountCodes getDiscountCodesById(@PathVariable("dc_id") int dc_id) {
 		
 		return dcs.getDiscountCodesById(dc_id);
 	}
 	
+	@CrossOrigin
 	@PutMapping(value="/discountcodes", consumes="application/Json")
 	public DiscountCodes updateDiscountCodes(@RequestBody DiscountCodes change) {
 		
 		return dcs.updateDiscountCodes(change);
 	}
 	
+	@CrossOrigin
 	@DeleteMapping(value="/discountcodes/{dc_id}")
 	public boolean deleteDiscountCodes(@PathVariable("dc_id") int dc_id) {
 		

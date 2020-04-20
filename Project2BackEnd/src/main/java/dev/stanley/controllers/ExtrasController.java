@@ -16,34 +16,39 @@ import org.springframework.web.bind.annotation.RestController;
 import dev.stanley.beans.Extras;
 import dev.stanley.services.ExtrasService;
 
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
-@CrossOrigin(origins = "http://ec2-3-134-96-132.us-east-2.compute.amazonaws.com:8080", allowedHeaders = "*")
 public class ExtrasController {
 	
 	@Autowired
 	ExtrasService es;
 	
+	@CrossOrigin
 	@RequestMapping(value="/extras", method=RequestMethod.POST, consumes="application/Json")
 	public Extras createExtras(@RequestBody Extras extra) {
 		
 		return es.createExtras(extra);
 	}
 	
+	@CrossOrigin
 	@GetMapping(value="/extras", produces="application/Json")
 	public List<Extras> getAllExtras(){
 		return (List<Extras>) es.getAllExtras();
 	}
 	
+	@CrossOrigin
 	@GetMapping(value = "/extras/{e_id}")
 	public Extras getExtrasById(@PathVariable("e_id") int e_id){
 		return es.getExtrasById(e_id);
 	}
 	
+	@CrossOrigin
 	@PutMapping(value="/extras", consumes="application/Json")
 	public Extras updateExtras(@RequestBody Extras change) {
 		return es.updateExtras(change);
 	}
 	
+	@CrossOrigin
 	@DeleteMapping(value="/extras/{e_id}")
 	public boolean deleteExtras(@PathVariable("e_id") int e_id) {
 		return es.deleteExtras(es.getExtrasById(e_id));

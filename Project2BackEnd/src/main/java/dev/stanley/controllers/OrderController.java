@@ -17,26 +17,29 @@ import dev.stanley.aspects.AuthorizeDelete;
 import dev.stanley.beans.Orders;
 import dev.stanley.services.OrderService;
 
+
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
-@CrossOrigin(origins = "http://ec2-3-134-96-132.us-east-2.compute.amazonaws.com:8080", allowedHeaders = "*")
 public class OrderController {
 
 	@Autowired
 	OrderService os;
 
+	@CrossOrigin
 	@RequestMapping(value = "/order", method = RequestMethod.POST, consumes = "application/Json")
 	public Orders createOrder(@RequestBody Orders orders) {
 		System.out.println(orders);
 		return os.createOrder(orders);
 	}
 
+	@CrossOrigin
 	@GetMapping(value = "/order", produces = "application/Json")
 	public List<Orders> allOrders() {
 		System.out.println("executing get all");
 		return os.allOrders();
 	}
 
-	
+	@CrossOrigin
 	@GetMapping(value = "/order/{username}")
 	public Orders getOrder(@PathVariable("username") String username) {
 		System.out.println("executing get order");
@@ -52,13 +55,14 @@ public class OrderController {
 		
 	
 	
-
+	@CrossOrigin
 	@PutMapping(value = "/order", consumes = "application/Json")
 	public Orders updateOrder(@RequestBody Orders change) {
 		return os.updateOrder(change);
 
 	}
 
+	@CrossOrigin
 	@AuthorizeDelete
 	@DeleteMapping(value = "/order/{o_id}")
 	public boolean deleteItems(@PathVariable("o_id") int o_id) {

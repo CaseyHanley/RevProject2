@@ -16,14 +16,14 @@ import org.springframework.web.bind.annotation.RestController;
 import dev.stanley.beans.DeliveryAddress;
 import dev.stanley.services.DeliveryAddressService;
 
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
-//@CrossOrigin(origins = "http://devhanley-bucket.s3-website.us-east-2.amazonaws.com/", allowedHeaders = "*")
-@CrossOrigin(origins = "http://ec2-3-134-96-132.us-east-2.compute.amazonaws.com:8080", allowedHeaders = "*")
 public class DeliveryAddressController {
 
 	@Autowired
 	DeliveryAddressService das;
 	
+	@CrossOrigin
 	@RequestMapping(value="/deliveryaddress", method=RequestMethod.POST, consumes="application/Json")
 	public DeliveryAddress createAddress(@RequestBody DeliveryAddress address) {
 		System.out.println(address);
@@ -31,31 +31,34 @@ public class DeliveryAddressController {
 		
 	}
 	
+	@CrossOrigin
 	@GetMapping(value="/deliveryaddress", produces="application/Json")
 	public List<DeliveryAddress>allAddresses(){
 		return (List<DeliveryAddress>)das.allAddresses();
 		
 	}
 	
+	@CrossOrigin
 	@GetMapping(value = "/deliveryaddress/{username}")
 	public DeliveryAddress getAddressByUsername(@PathVariable("username") String username) {
 		System.out.println(das.getAddressByUsername(username));
 		return das.getAddressByUsername(username);
 	}
 	
+	@CrossOrigin
 	@GetMapping(value = "/deliveryaddress/all/{username}")
 	public List<DeliveryAddress> getAllAddressByUsername(@PathVariable("username") String username) {
 		return das.getAllAddressByUsername(username);
 	}
 	
-	
+	@CrossOrigin
 	@PutMapping(value="/deliveryaddress", consumes="application/Json")
 	public DeliveryAddress updateAddress(@RequestBody DeliveryAddress change) {
 		
 		return das.updateAddress(change);
 	}
 	
-	
+	@CrossOrigin
 	@DeleteMapping(value="/deliveryaddress/{aid}")
 	public boolean deleteDeliveryAddress(@PathVariable("aid") int aid) {
 		das.deleteDeliveryAddress(das.getAddressById(aid));

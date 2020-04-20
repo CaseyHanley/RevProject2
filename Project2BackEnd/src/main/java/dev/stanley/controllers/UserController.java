@@ -2,6 +2,7 @@ package dev.stanley.controllers;
 
 import java.util.List;
 
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,29 +20,33 @@ import dev.stanley.aspects.AuthorizeDelete;
 import dev.stanley.beans.Users;
 import dev.stanley.services.UserService;
 
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
-@CrossOrigin(origins = "http://ec2-3-134-96-132.us-east-2.compute.amazonaws.com:8080", allowedHeaders = "*")
 public class UserController {
 
 	@Autowired
 	UserService us;
 
+	@CrossOrigin
 	@RequestMapping(value = "/users", method = RequestMethod.POST, consumes = "application/Json")
 	public Users createUser(@RequestBody Users user) {
 		return us.createUser(user);
 	}
 
+	@CrossOrigin
 	@GetMapping(value = "/users", produces = "application/Json")
 	public List<Users> allUsers() {
 		return us.allUsers();
 	}
-
+	
+	@CrossOrigin
 	@GetMapping(value = "/users/{u_id}")
 	public Users getUserById(@PathVariable("u_id") int u_id) {
 		return us.getUserById(u_id);
 
 	}
 
+	@CrossOrigin
 	@GetMapping(value = "/users/username/{username}")
 	public Users getUser(@PathVariable("username") String username) {
 		System.out.println("called");
@@ -49,17 +54,20 @@ public class UserController {
 
 	}
 
+	@CrossOrigin
 	@PutMapping(value = "/users", consumes = "application/Json")
 	public Users updateUser(@RequestBody Users change) {
 		return us.updateUser(change);
 	}
 
+	@CrossOrigin
 	@AuthorizeDelete
 	@DeleteMapping(value = "/users/{u_id}")
 	public boolean deleteUser(@PathVariable("u_id") int u_id) {
 		return us.deleteUser(us.getUserById(u_id));
 	}
 
+	@CrossOrigin
 	@RequestMapping(value = "/users/login", method = RequestMethod.POST, consumes = "application/Json")
 	public Users loginUser(@Valid @RequestBody Users user) {
 		System.out.println(user.getUsername());

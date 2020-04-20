@@ -16,20 +16,21 @@ import org.springframework.web.bind.annotation.RestController;
 import dev.stanley.beans.DeliveryDriver;
 import dev.stanley.services.DeliveryDriverService;
 
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
-//@CrossOrigin(origins = "http://devhanley-bucket.s3-website.us-east-2.amazonaws.com/", allowedHeaders = "*")
-@CrossOrigin(origins = "http://ec2-3-134-96-132.us-east-2.compute.amazonaws.com:8080", allowedHeaders = "*")
 public class DeliveryDriverController {
 
 	@Autowired
 	DeliveryDriverService dds;
 	
+	@CrossOrigin
 	@RequestMapping(value = "/drivers", method = RequestMethod.POST, consumes = "application/Json")
 	public DeliveryDriver createDriver(@RequestBody DeliveryDriver driver) {
 		System.out.println(driver);
 		return dds.createDriver(driver);
 	}
 	
+	@CrossOrigin
 	@GetMapping(value = "/drivers/{driverUsername}")
 	public DeliveryDriver getDriver(@PathVariable("driverUsername") String driverUsername) {
 		List<DeliveryDriver> drivers = dds.getDriverByUsername(driverUsername);
@@ -44,17 +45,20 @@ public class DeliveryDriverController {
 
 	}
 	
+	@CrossOrigin
 	@GetMapping(value = "/drivers/all")
 	public List<DeliveryDriver> getAll() {
 		return dds.alldrivers();
 
 	}
 	
+	@CrossOrigin
 	@PutMapping(value = "/drivers", consumes = "application/Json")
 	public DeliveryDriver updateDriver(@RequestBody DeliveryDriver change) {
 		return dds.updateDriver(change);
 	}
 	
+	@CrossOrigin
 	@DeleteMapping(value = "/drivers/{driverid}")
 	public boolean deleteItems(@PathVariable("driverid") int driverid) {
 		System.out.println("Executing Delete");
