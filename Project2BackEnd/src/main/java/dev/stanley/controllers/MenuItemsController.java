@@ -18,7 +18,7 @@ import dev.stanley.beans.MenuItems;
 import dev.stanley.services.MenuItemsService;
 
 @RestController
-@CrossOrigin(origins = "*", allowedHeaders = "*")
+@CrossOrigin(allowedHeaders = "*", origins = "http://devhanley-bucket.s3-website.us-east-2.amazonaws.com")
 public class MenuItemsController {
 
 	@Autowired
